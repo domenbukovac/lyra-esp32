@@ -1,0 +1,49 @@
+#include <time.h>
+#include <errno.h>
+#include <sys/fcntl.h>
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/event_groups.h"
+
+
+#include "esp_system.h"
+#include "driver/gpio.h"
+#include "esp_system.h"
+
+#include "esp_event_loop.h"
+#include "esp_log.h"
+#include "nvs_flash.h"
+
+#include "esp_heap_alloc_caps.h"
+#include "spiffs_vfs.h"
+
+#include "spi_master_lobo.h"
+#include "EPD.h"
+
+#include "display.h"
+
+
+
+
+char battery_level[5];
+Configuration display = {"", "", "", "", "Line2", "Line 2", "Line_3", "Table #5"};
+
+
+void app_main()
+{
+    ESP_ERROR_CHECK( nvs_flash_init() );
+
+    initialize_display();
+
+	vfs_spiffs_register();
+
+
+    xTaskCreate(&updateScreen, "update screen", 4096 * 2, &display, 5, NULL);
+
+
+}
