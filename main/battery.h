@@ -79,7 +79,10 @@ uint32_t get_battery_level(char *battery_level)
     // difference = 600
     // so.. voltage of 3900 mV = 300 more than 3600 and max, 4200 = 600 more... 
 
-    int percentage = (voltage - 3600) / 6;
+    int percentage = 0;
+    if (voltage > 3600) {
+        percentage = (voltage - 3600) / 6;
+    }
 
     printf("Voltage: %dmV\n", voltage);
     sprintf(battery_level, "%i", percentage);

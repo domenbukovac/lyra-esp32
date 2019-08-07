@@ -37,8 +37,8 @@
 #include "spi_master_lobo.h"
 #include "EPD.h"
 
-#define URL "192.168.1.30"
-// #define URL "172.20.10.2"
+#define API_URL "192.168.1.53:5000/api/lyra/v1"
+#define URL "192.168.1.53"
 #define PORT "5000"
 
 // #define URL "dev.reetab.com"
@@ -322,8 +322,8 @@ static void http_get_data(void *ptr)
         if (((uxBits & CONNECTED_BIT) > 0) & ((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) == 0))
         { /* Device is connected to wifi, but was not set yet */
             strcpy(request,
-                   "GET http://" URL ":" PORT "/api/reservations/devices/register/ HTTP/1.1\r\n"
-                   "Host: " URL ":" PORT "\r\n"
+                   "GET http://" API_URL "/register HTTP/1.1\r\n"
+                   "Host: " API_URL "\r\n"
                    "User-Agent: esp-idf/1.0 esp32\r\n"
                    "\r\n");
         }
@@ -334,12 +334,12 @@ static void http_get_data(void *ptr)
             //send request for registration with new id, delay task for 30 seconds
 
             strcpy(request,
-                   "GET http://" URL ":" PORT "/api/reservations/devices/register/");
+                   "GET http://" API_URL "/register/");
 
             strcat(request, data_config->device_id);
 
-            strcat(request, "/ HTTP/1.1\r\n"
-                            "Host: " URL ":" PORT "\r\n"
+            strcat(request, " HTTP/1.1\r\n"
+                            "Host: " API_URL "\r\n"
                             "User-Agent: esp-idf/1.0 esp32\r\n"
                             "\r\n");
             vTaskDelay(10000 / portTICK_PERIOD_MS);
@@ -353,7 +353,7 @@ static void http_get_data(void *ptr)
             // send request with device id and battery status.
 
             strcpy(request,
-                   "GET http://" URL ":" PORT "/api/reservations/devices/");
+                   "GET http://" API_URL "/");
 
             strcat(request, data_config->device_id);
             strcat(request, "/");
@@ -364,8 +364,8 @@ static void http_get_data(void *ptr)
 
             strcat(request, battery_percent);
 
-            strcat(request, "/ HTTP/1.1\r\n"
-                            "Host: " URL ":" PORT "\r\n"
+            strcat(request, " HTTP/1.1\r\n"
+                            "Host: " API_URL "\r\n"
                             "User-Agent: esp-idf/1.0 esp32\r\n"
                             "\r\n");
         }
@@ -450,6 +450,7 @@ static void http_get_data(void *ptr)
                 r = read(s, recv_buf, sizeof(recv_buf) - 1);
                 for (int i = 0; i < r; i++)
                 {
+                    printf("%c", (recv_buf[i]));
                     int k = 0;
                     if ((recv_buf[i]) == '{')
                     {
@@ -536,8 +537,8 @@ static void data_processing(void *ptr)
                 lines[2].left_margin = CENTER;
 
                 lines[0].top_margin = 20;
-                lines[1].top_margin = 40;
-                lines[2].top_margin = 80;
+                lines[1].top_margin = 55;
+                lines[2].top_margin = 105;
 
                 xEventGroupSetBits(main_event_group, DATA_CHANGE_BIT);
             }
@@ -581,9 +582,11 @@ static void data_processing(void *ptr)
 
 void app_main()
 {
-    if (get_battery_level(&battery_percent) < 10)
+    int start_battery_level = get_battery_level(&battery_percent);
+    printf("battery level: %d\n",start_battery_level);
+    if (start_battery_level < 10)
     {
-        go_to_sleep(5 * 60); // sleep for 5 minutes
+//        go_to_sleep(5 * 60); // sleep for 5 minutes
     }
 
     printf("wifi channel: %i\n", wifi_channel);
