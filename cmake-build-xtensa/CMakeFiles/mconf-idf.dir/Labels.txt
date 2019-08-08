@@ -1,0 +1,13 @@
+# Target labels
+ mconf-idf
+# Source files and their labels
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/mconf-idf
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/mconf-idf.rule
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/mconf-idf-complete.rule
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-install.rule
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-mkdir.rule
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download.rule
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-update.rule
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-patch.rule
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure.rule
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build.rule

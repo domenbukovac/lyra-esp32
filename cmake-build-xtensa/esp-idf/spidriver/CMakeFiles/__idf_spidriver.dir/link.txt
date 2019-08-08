@@ -1,0 +1,2 @@
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-ar qc libspidriver.a  CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-ranlib libspidriver.a
