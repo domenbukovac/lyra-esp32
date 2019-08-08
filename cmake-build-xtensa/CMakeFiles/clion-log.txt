@@ -1,12 +1,10 @@
 "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc -DCMAKE_CXX_COMPILER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-c++ -DIDF_PATH=~/esp/esp-idf -G "CodeBlocks - Unix Makefiles" /Users/domenbukovac/LepusLabs/lyra-esp32
--- Project version: 6e22592
+-- Project version: 6960af4-dirty
 -- Building ESP-IDF components for target esp32
 -- Checking Python dependencies...
 ('lala', '/Users/domenbukovac/esp/esp-idf/requirements.txt')
 Python requirements from ~/esp/esp-idf/requirements.txt are satisfied.
 Loading defaults file /Users/domenbukovac/LepusLabs/lyra-esp32/sdkconfig.defaults...
--- Found PythonInterp: /usr/bin/python (found version "2.7.10") 
--- Found Perl: /usr/bin/perl (found version "5.18.4") 
 -- Adding linker script /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp32/esp32_out.ld
 -- Adding linker script /Users/domenbukovac/esp/esp-idf/components/esp32/ld/esp32.project.ld.in
 -- Adding linker script /Users/domenbukovac/esp/esp-idf/components/esp32/ld/esp32.peripherals.ld
@@ -44,7 +42,7 @@ CMAKE_C_COMPILER= /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Project version: 6e22592
+-- Project version: 6960af4-dirty
 -- Building ESP-IDF components for target esp32
 -- Checking Python dependencies...
 ('lala', '/Users/domenbukovac/esp/esp-idf/requirements.txt')
