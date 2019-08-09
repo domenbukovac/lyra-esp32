@@ -132,19 +132,15 @@ clean: CMakeFiles/size.dir/clean
 # Target rules for target CMakeFiles/Lyra.elf.dir
 
 # All Build rule for target.
-CMakeFiles/Lyra.elf.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/freemodbus/CMakeFiles/__idf_freemodbus.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/expat/CMakeFiles/__idf_expat.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/asio/CMakeFiles/__idf_asio.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/coap/CMakeFiles/__idf_coap.dir/all
-CMakeFiles/Lyra.elf.dir/all: CMakeFiles/_project_elf_src.dir/all
-CMakeFiles/Lyra.elf.dir/all: CMakeFiles/__idf_build_target.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/ulp/CMakeFiles/__idf_ulp.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_adc_cal/CMakeFiles/__idf_esp_adc_cal.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
@@ -154,20 +150,24 @@ CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ot
 CMakeFiles/Lyra.elf.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+CMakeFiles/Lyra.elf.dir/all: CMakeFiles/_project_elf_src.dir/all
+CMakeFiles/Lyra.elf.dir/all: CMakeFiles/__idf_build_target.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/asio/CMakeFiles/__idf_asio.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/coap/CMakeFiles/__idf_coap.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/expat/CMakeFiles/__idf_expat.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/freemodbus/CMakeFiles/__idf_freemodbus.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/jsmn/CMakeFiles/__idf_jsmn.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/json/CMakeFiles/__idf_json.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/libsodium/CMakeFiles/__idf_libsodium.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/ulp/CMakeFiles/__idf_ulp.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/all
 	$(MAKE) -f CMakeFiles/Lyra.elf.dir/build.make CMakeFiles/Lyra.elf.dir/depend
 	$(MAKE) -f CMakeFiles/Lyra.elf.dir/build.make CMakeFiles/Lyra.elf.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num= "Built target Lyra.elf"
@@ -401,9 +401,9 @@ clean: CMakeFiles/___idf_wear_levelling.dir/clean
 # Target rules for target CMakeFiles/flash.dir
 
 # All Build rule for target.
+CMakeFiles/flash.dir/all: esp-idf/partition_table/CMakeFiles/partition_table.dir/all
 CMakeFiles/flash.dir/all: CMakeFiles/bootloader.dir/all
 CMakeFiles/flash.dir/all: CMakeFiles/app.dir/all
-CMakeFiles/flash.dir/all: esp-idf/partition_table/CMakeFiles/partition_table.dir/all
 	$(MAKE) -f CMakeFiles/flash.dir/build.make CMakeFiles/flash.dir/depend
 	$(MAKE) -f CMakeFiles/flash.dir/build.make CMakeFiles/flash.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num= "Built target flash"
@@ -2874,9 +2874,9 @@ esp-idf/all: esp-idf/ulp/all
 esp-idf/all: esp-idf/unity/all
 esp-idf/all: esp-idf/wifi_provisioning/all
 esp-idf/all: esp-idf/main/all
+esp-idf/all: esp-idf/spidriver/all
 esp-idf/all: esp-idf/epaper/all
 esp-idf/all: esp-idf/mkspiffs/all
-esp-idf/all: esp-idf/spidriver/all
 esp-idf/all: esp-idf/spiffs_image/all
 
 .PHONY : esp-idf/all
@@ -2948,9 +2948,9 @@ esp-idf/clean: esp-idf/ulp/clean
 esp-idf/clean: esp-idf/unity/clean
 esp-idf/clean: esp-idf/wifi_provisioning/clean
 esp-idf/clean: esp-idf/main/clean
+esp-idf/clean: esp-idf/spidriver/clean
 esp-idf/clean: esp-idf/epaper/clean
 esp-idf/clean: esp-idf/mkspiffs/clean
-esp-idf/clean: esp-idf/spidriver/clean
 esp-idf/clean: esp-idf/spiffs_image/clean
 
 .PHONY : esp-idf/clean
@@ -3022,9 +3022,9 @@ esp-idf/preinstall: esp-idf/ulp/preinstall
 esp-idf/preinstall: esp-idf/unity/preinstall
 esp-idf/preinstall: esp-idf/wifi_provisioning/preinstall
 esp-idf/preinstall: esp-idf/main/preinstall
+esp-idf/preinstall: esp-idf/spidriver/preinstall
 esp-idf/preinstall: esp-idf/epaper/preinstall
 esp-idf/preinstall: esp-idf/mkspiffs/preinstall
-esp-idf/preinstall: esp-idf/spidriver/preinstall
 esp-idf/preinstall: esp-idf/spiffs_image/preinstall
 
 .PHONY : esp-idf/preinstall
@@ -4376,17 +4376,15 @@ esp-idf/esp32/preinstall:
 # Target rules for target esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir
 
 # All Build rule for target.
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/freemodbus/CMakeFiles/__idf_freemodbus.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/expat/CMakeFiles/__idf_expat.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/asio/CMakeFiles/__idf_asio.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/coap/CMakeFiles/__idf_coap.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/ulp/CMakeFiles/__idf_ulp.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_adc_cal/CMakeFiles/__idf_esp_adc_cal.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
@@ -4396,20 +4394,22 @@ esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_ht
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/asio/CMakeFiles/__idf_asio.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/coap/CMakeFiles/__idf_coap.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/expat/CMakeFiles/__idf_expat.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/freemodbus/CMakeFiles/__idf_freemodbus.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/jsmn/CMakeFiles/__idf_jsmn.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/json/CMakeFiles/__idf_json.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/libsodium/CMakeFiles/__idf_libsodium.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/ulp/CMakeFiles/__idf_ulp.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/all
 	$(MAKE) -f esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/build.make esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/depend
 	$(MAKE) -f esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/build.make esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num= "Built target __ldgen_output_esp32.project.ld"
@@ -5644,10 +5644,10 @@ esp-idf/esp_http_client/preinstall:
 # Target rules for target esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir
 
 # All Build rule for target.
+esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
 esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
 esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
-esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
 	$(MAKE) -f esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/build.make esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/depend
 	$(MAKE) -f esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/build.make esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=18 "Built target __idf_esp_http_client"
@@ -5758,11 +5758,11 @@ esp-idf/esp_https_ota/preinstall:
 # Target rules for target esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir
 
 # All Build rule for target.
+esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
+esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all
 esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
 esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
-esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
-esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all
 	$(MAKE) -f esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/build.make esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/depend
 	$(MAKE) -f esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/build.make esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num= "Built target __idf_esp_https_ota"
@@ -5890,11 +5890,11 @@ esp-idf/protocomm/preinstall:
 # Target rules for target esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir
 
 # All Build rule for target.
+esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
+esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
-esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
-esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 	$(MAKE) -f esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build.make esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/depend
 	$(MAKE) -f esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build.make esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=64 "Built target __idf_protocomm"
@@ -6005,14 +6005,14 @@ esp-idf/esp_local_ctrl/preinstall:
 # Target rules for target esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir
 
 # All Build rule for target.
-esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
-esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
-esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
-esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
+esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
+esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
+esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
 	$(MAKE) -f esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build.make esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/depend
 	$(MAKE) -f esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build.make esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num= "Built target __idf_esp_local_ctrl"
@@ -6067,10 +6067,10 @@ esp-idf/esp_websocket_client/preinstall:
 # Target rules for target esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir
 
 # All Build rule for target.
+esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
 esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
 esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
-esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
 	$(MAKE) -f esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/build.make esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/depend
 	$(MAKE) -f esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/build.make esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num= "Built target __idf_esp_websocket_client"
@@ -6308,9 +6308,9 @@ esp-idf/fatfs/preinstall:
 # Target rules for target esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir
 
 # All Build rule for target.
-esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
-esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
+esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
+esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
 	$(MAKE) -f esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/build.make esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/depend
 	$(MAKE) -f esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/build.make esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=24 "Built target __idf_fatfs"
@@ -6603,10 +6603,10 @@ esp-idf/mqtt/preinstall:
 # Target rules for target esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir
 
 # All Build rule for target.
+esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
 esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
 esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
-esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
 	$(MAKE) -f esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/build.make esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/depend
 	$(MAKE) -f esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/build.make esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=56 "Built target __idf_mqtt"
@@ -6881,13 +6881,13 @@ esp-idf/wifi_provisioning/preinstall:
 # Target rules for target esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir
 
 # All Build rule for target.
-esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
-esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
-esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
+esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
+esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/json/CMakeFiles/__idf_json.dir/all
 	$(MAKE) -f esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/build.make esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/depend
 	$(MAKE) -f esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/build.make esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/build
@@ -6943,17 +6943,14 @@ esp-idf/main/preinstall:
 # Target rules for target esp-idf/main/CMakeFiles/__idf_main.dir
 
 # All Build rule for target.
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/freemodbus/CMakeFiles/__idf_freemodbus.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/expat/CMakeFiles/__idf_expat.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/asio/CMakeFiles/__idf_asio.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/coap/CMakeFiles/__idf_coap.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/ulp/CMakeFiles/__idf_ulp.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_adc_cal/CMakeFiles/__idf_esp_adc_cal.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
@@ -6963,19 +6960,22 @@ esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_https_ota/CMakeFiles/__i
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/asio/CMakeFiles/__idf_asio.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/coap/CMakeFiles/__idf_coap.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/expat/CMakeFiles/__idf_expat.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/freemodbus/CMakeFiles/__idf_freemodbus.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/jsmn/CMakeFiles/__idf_jsmn.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/json/CMakeFiles/__idf_json.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/libsodium/CMakeFiles/__idf_libsodium.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/ulp/CMakeFiles/__idf_ulp.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/all
 	$(MAKE) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/depend
 	$(MAKE) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=55 "Built target __idf_main"
@@ -7007,79 +7007,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/clean:
 clean: esp-idf/main/CMakeFiles/__idf_main.dir/clean
 
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory esp-idf/epaper
-
-# Convenience name for "all" pass in the directory.
-esp-idf/epaper/all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
-
-.PHONY : esp-idf/epaper/all
-
-# Convenience name for "clean" pass in the directory.
-esp-idf/epaper/clean: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean
-
-.PHONY : esp-idf/epaper/clean
-
-# Convenience name for "preinstall" pass in the directory.
-esp-idf/epaper/preinstall:
-
-.PHONY : esp-idf/epaper/preinstall
-
-#=============================================================================
-# Target rules for target esp-idf/epaper/CMakeFiles/__idf_epaper.dir
-
-# All Build rule for target.
-esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
-	$(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/depend
-	$(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=10,11 "Built target __idf_epaper"
-.PHONY : esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
-
-# Include target in all.
-all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-esp-idf/epaper/CMakeFiles/__idf_epaper.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles 60
-	$(MAKE) -f CMakeFiles/Makefile2 esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles 0
-.PHONY : esp-idf/epaper/CMakeFiles/__idf_epaper.dir/rule
-
-# Convenience name for target.
-__idf_epaper: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/rule
-
-.PHONY : __idf_epaper
-
-# clean rule for target.
-esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean:
-	$(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean
-.PHONY : esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean
-
-# clean rule for target.
-clean: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory esp-idf/mkspiffs
-
-# Convenience name for "all" pass in the directory.
-esp-idf/mkspiffs/all:
-
-.PHONY : esp-idf/mkspiffs/all
-
-# Convenience name for "clean" pass in the directory.
-esp-idf/mkspiffs/clean:
-
-.PHONY : esp-idf/mkspiffs/clean
-
-# Convenience name for "preinstall" pass in the directory.
-esp-idf/mkspiffs/preinstall:
-
-.PHONY : esp-idf/mkspiffs/preinstall
 
 #=============================================================================
 # Directory level rules for directory esp-idf/spidriver
@@ -7135,6 +7062,80 @@ esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/clean:
 clean: esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory esp-idf/epaper
+
+# Convenience name for "all" pass in the directory.
+esp-idf/epaper/all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
+
+.PHONY : esp-idf/epaper/all
+
+# Convenience name for "clean" pass in the directory.
+esp-idf/epaper/clean: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean
+
+.PHONY : esp-idf/epaper/clean
+
+# Convenience name for "preinstall" pass in the directory.
+esp-idf/epaper/preinstall:
+
+.PHONY : esp-idf/epaper/preinstall
+
+#=============================================================================
+# Target rules for target esp-idf/epaper/CMakeFiles/__idf_epaper.dir
+
+# All Build rule for target.
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all: esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/all
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
+	$(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/depend
+	$(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=10,11 "Built target __idf_epaper"
+.PHONY : esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
+
+# Include target in all.
+all: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles 60
+	$(MAKE) -f CMakeFiles/Makefile2 esp-idf/epaper/CMakeFiles/__idf_epaper.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles 0
+.PHONY : esp-idf/epaper/CMakeFiles/__idf_epaper.dir/rule
+
+# Convenience name for target.
+__idf_epaper: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/rule
+
+.PHONY : __idf_epaper
+
+# clean rule for target.
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean:
+	$(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean
+.PHONY : esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean
+
+# clean rule for target.
+clean: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory esp-idf/mkspiffs
+
+# Convenience name for "all" pass in the directory.
+esp-idf/mkspiffs/all:
+
+.PHONY : esp-idf/mkspiffs/all
+
+# Convenience name for "clean" pass in the directory.
+esp-idf/mkspiffs/clean:
+
+.PHONY : esp-idf/mkspiffs/clean
+
+# Convenience name for "preinstall" pass in the directory.
+esp-idf/mkspiffs/preinstall:
+
+.PHONY : esp-idf/mkspiffs/preinstall
 
 #=============================================================================
 # Directory level rules for directory esp-idf/spiffs_image

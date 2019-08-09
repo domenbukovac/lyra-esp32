@@ -121,6 +121,7 @@ mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/es
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/nconf.gui.c
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/symbol.c
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/util.c
+mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/zconf.tab.c
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/Makefile
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/cmake/idf.cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'mconf-idf'"

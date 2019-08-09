@@ -107,9 +107,9 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/unity/include"
   "/Users/domenbukovac/esp/esp-idf/components/unity/unity/src"
   "/Users/domenbukovac/esp/esp-idf/components/wifi_provisioning/include"
+  "../components/spidriver/."
   "../components/epaper/."
   "../components/mkspiffs/include"
-  "../components/spidriver/."
   "../components/spiffs_image/include"
   )
 
@@ -173,8 +173,8 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/ulp/CMakeFiles/__idf_ulp.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/unity/CMakeFiles/__idf_unity.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/DependInfo.cmake"
-  "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/DependInfo.cmake"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/DependInfo.cmake"

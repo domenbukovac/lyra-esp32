@@ -142,8 +142,8 @@ Lyra.elf: esp-idf/ulp/libulp.a
 Lyra.elf: esp-idf/unity/libunity.a
 Lyra.elf: esp-idf/wifi_provisioning/libwifi_provisioning.a
 Lyra.elf: esp-idf/main/libmain.a
-Lyra.elf: esp-idf/epaper/libepaper.a
 Lyra.elf: esp-idf/spidriver/libspidriver.a
+Lyra.elf: esp-idf/epaper/libepaper.a
 Lyra.elf: esp-idf/asio/libasio.a
 Lyra.elf: esp-idf/coap/libcoap.a
 Lyra.elf: esp-idf/esp_adc_cal/libesp_adc_cal.a
@@ -174,6 +174,7 @@ Lyra.elf: esp-idf/protobuf-c/libprotobuf-c.a
 Lyra.elf: esp-idf/mdns/libmdns.a
 Lyra.elf: esp-idf/console/libconsole.a
 Lyra.elf: esp-idf/json/libjson.a
+Lyra.elf: esp-idf/spidriver/libspidriver.a
 Lyra.elf: esp-idf/esp_ringbuf/libesp_ringbuf.a
 Lyra.elf: esp-idf/driver/libdriver.a
 Lyra.elf: esp-idf/wpa_supplicant/libwpa_supplicant.a

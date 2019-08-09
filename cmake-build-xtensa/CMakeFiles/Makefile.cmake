@@ -363,9 +363,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "esp-idf/unity/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/wifi_provisioning/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/main/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "esp-idf/spidriver/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/epaper/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/mkspiffs/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "esp-idf/spidriver/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/spiffs_image/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -527,6 +527,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "esp-idf/unity/CMakeFiles/__idf_unity.dir/DependInfo.cmake"
   "esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/DependInfo.cmake"
   "esp-idf/main/CMakeFiles/__idf_main.dir/DependInfo.cmake"
-  "esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DependInfo.cmake"
   "esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/DependInfo.cmake"
+  "esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DependInfo.cmake"
   )

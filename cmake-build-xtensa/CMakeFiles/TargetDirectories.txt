@@ -580,6 +580,13 @@
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/main/CMakeFiles/install/strip.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/main/CMakeFiles/install.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/main/CMakeFiles/list_install_components.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/install/local.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/install/strip.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/install.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/list_install_components.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/rebuild_cache.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/edit_cache.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/install/local.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/install/strip.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/install.dir
@@ -593,13 +600,6 @@
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mkspiffs/CMakeFiles/install/strip.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mkspiffs/CMakeFiles/install.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mkspiffs/CMakeFiles/list_install_components.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/install/local.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/install/strip.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/install.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/list_install_components.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/rebuild_cache.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/edit_cache.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spiffs_image/CMakeFiles/install/local.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spiffs_image/CMakeFiles/install/strip.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spiffs_image/CMakeFiles/install.dir

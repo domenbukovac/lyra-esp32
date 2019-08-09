@@ -47,6 +47,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/efuse/include"
   "/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"
   "/Users/domenbukovac/esp/esp-idf/components/app_trace/include"
+  "/Users/domenbukovac/esp/esp-idf/components/spi_flash/include"
   )
 
 # Targets to which this target links.
@@ -61,6 +62,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp32/CMakeFiles/__idf_esp32.dir/DependInfo.cmake"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/vfs/CMakeFiles/__idf_vfs.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/app_trace/CMakeFiles/__idf_app_trace.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/driver/CMakeFiles/__idf_driver.dir/DependInfo.cmake"
@@ -70,7 +72,6 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/pthread/CMakeFiles/__idf_pthread.dir/DependInfo.cmake"
-  "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/DependInfo.cmake"

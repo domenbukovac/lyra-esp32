@@ -2185,19 +2185,6 @@ __idf_main/fast:
 .PHONY : __idf_main/fast
 
 #=============================================================================
-# Target rules for targets named __idf_epaper
-
-# Build rule for target.
-__idf_epaper: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 __idf_epaper
-.PHONY : __idf_epaper
-
-# fast build rule for target.
-__idf_epaper/fast:
-	$(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build
-.PHONY : __idf_epaper/fast
-
-#=============================================================================
 # Target rules for targets named __idf_spidriver
 
 # Build rule for target.
@@ -2209,6 +2196,19 @@ __idf_spidriver: cmake_check_build_system
 __idf_spidriver/fast:
 	$(MAKE) -f esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/build.make esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/build
 .PHONY : __idf_spidriver/fast
+
+#=============================================================================
+# Target rules for targets named __idf_epaper
+
+# Build rule for target.
+__idf_epaper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 __idf_epaper
+.PHONY : __idf_epaper
+
+# fast build rule for target.
+__idf_epaper/fast:
+	$(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build
+.PHONY : __idf_epaper/fast
 
 project_elf_src.obj: project_elf_src.c.obj
 
@@ -2405,8 +2405,8 @@ help:
 	@echo "... __idf_unity"
 	@echo "... __idf_wifi_provisioning"
 	@echo "... __idf_main"
-	@echo "... __idf_epaper"
 	@echo "... __idf_spidriver"
+	@echo "... __idf_epaper"
 	@echo "... project_elf_src.obj"
 	@echo "... project_elf_src.i"
 	@echo "... project_elf_src.s"
