@@ -618,18 +618,6 @@ netif/dhcp_state.h
 
 /Users/domenbukovac/esp/esp-idf/components/lwip/port/esp32/include/netif/dhcp_state.h
 
-/Users/domenbukovac/esp/esp-idf/components/newlib/heap.c
-string.h
--
-stdlib.h
--
-sys/reent.h
--
-malloc.h
--
-esp_heap_caps.h
-/Users/domenbukovac/esp/esp-idf/components/newlib/esp_heap_caps.h
-
 /Users/domenbukovac/esp/esp-idf/components/newlib/locks.c
 sys/lock.h
 -
@@ -797,22 +785,6 @@ esp_newlib.h
 /Users/domenbukovac/esp/esp-idf/components/newlib/esp_newlib.h
 sdkconfig.h
 /Users/domenbukovac/esp/esp-idf/components/newlib/sdkconfig.h
-
-/Users/domenbukovac/esp/esp-idf/components/newlib/syscalls.c
-string.h
--
-stdbool.h
--
-stdlib.h
--
-sys/types.h
--
-unistd.h
--
-errno.h
--
-sys/reent.h
--
 
 /Users/domenbukovac/esp/esp-idf/components/newlib/termios.c
 sdkconfig.h

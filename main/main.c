@@ -51,6 +51,7 @@
 #define PORT "5000"
 
 #define WAKEUP_PIN 0
+#define MAX_HTTP_SIZE 4096
 
 Configuration configuration;
 
@@ -75,7 +76,6 @@ static const char *file_fonts[3] = {"/spiffs/fonts/DotMatrix_M.fon", "/spiffs/fo
 
 char battery_percent[8];
 
-int socket_fail_count = 0;
 
 RTC_DATA_ATTR static char old_line0_data[50];
 RTC_DATA_ATTR static char old_line1_data[50];
@@ -92,14 +92,14 @@ RTC_DATA_ATTR static char wifi_password[50];
 RTC_DATA_ATTR static uint8_t wifi_channel;
 RTC_DATA_ATTR static wifi_second_chan_t wifi_channel_second;
 
-static void smartconfig_example_task(void *parm);
+static void smart_config_task(void *parm);
 
 static void initialise_wifi(wifi_config_t wifi_config);
 
 static void smart_config_event_handler(void *arg, esp_event_base_t event_base,
                                        int32_t event_id, void *event_data) {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
-        xTaskCreate(smartconfig_example_task, "smartconfig_example_task", 4096, NULL, 4, NULL);
+        xTaskCreate(smart_config_task, "smartconfig_example_task", 4096, NULL, 4, NULL);
     } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
         esp_wifi_connect();
         xEventGroupClearBits(main_event_group, CONNECTED_BIT);
@@ -184,7 +184,7 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
 static void http_rest_with_url(char *path) {
 
     printf("HTTP REST WITH URL START! \n");
-    char *buffer = malloc(512 + 1);
+    char *buffer = malloc(MAX_HTTP_SIZE + 1);
 
 
     esp_http_client_config_t config = {
@@ -193,6 +193,7 @@ static void http_rest_with_url(char *path) {
             .path = path,
 //            .transport_type = HTTP_TRANSPORT_OVER_SSL,
             .event_handler = _http_event_handler,
+            .method = HTTP_METHOD_GET
     };
 
     esp_http_client_handle_t client = esp_http_client_init(&config);
@@ -205,7 +206,7 @@ static void http_rest_with_url(char *path) {
     }
     int content_length = esp_http_client_fetch_headers(client);
     int total_read_len = 0, read_len;
-    if (total_read_len < content_length && content_length <= 512) {
+    if (total_read_len < content_length && content_length <= MAX_HTTP_SIZE) {
         read_len = esp_http_client_read(client, buffer, content_length);
         if (read_len <= 0) {
             ESP_LOGE(TAG, "Error read data");
@@ -219,15 +220,17 @@ static void http_rest_with_url(char *path) {
 
     if (esp_http_client_get_status_code(client) == 200) {
         if (json_extract(buffer, &configuration, lines) == 0) {
-
+            xEventGroupSetBits(main_event_group, RECEIVED_DATA_BIT);
+            xEventGroupClearBits(main_event_group, LOADING_DATA_BIT);
+        } else {
+            xEventGroupSetBits(main_event_group, RECEIVED_DATA_BIT);
+            xEventGroupClearBits(main_event_group, LOADING_DATA_BIT);
         }
     }
 
-    xEventGroupSetBits(main_event_group, RECEIVED_DATA_BIT);
-    xEventGroupClearBits(main_event_group, LOADING_DATA_BIT);
+
     esp_http_client_close(client);
     esp_http_client_cleanup(client);
-    xEventGroupSetBits(main_event_group, HTTP_DONE_BIT);
     free(buffer);
 }
 
@@ -284,7 +287,7 @@ static void initialize_smart_config(void) {
     ESP_ERROR_CHECK(esp_wifi_start());
 }
 
-static void smartconfig_example_task(void *parm) {
+static void smart_config_task(void *parm) {
     EventBits_t uxBits;
     ESP_ERROR_CHECK(esp_smartconfig_set_type(SC_TYPE_ESPTOUCH));
     smartconfig_start_config_t cfg = SMARTCONFIG_START_CONFIG_DEFAULT();
@@ -297,7 +300,6 @@ static void smartconfig_example_task(void *parm) {
         if (uxBits & ESPTOUCH_DONE_BIT) {
             ESP_LOGI(TAG, "smartconfig over");
             esp_smartconfig_stop();
-//            initialise_wifi(wifi_config);
             vTaskDelete(NULL);
         }
     }
@@ -323,7 +325,7 @@ static void sleep_monitor(void *ptr) {
             go_to_sleep(configuration.sleep_seconds_int);
 
         } else if ((uxBits & (ESPTOUCH_DONE_BIT | STEP_1)) == (ESPTOUCH_DONE_BIT | STEP_1)) {
-            go_to_sleep(1);
+            go_to_sleep(0);
         }
     }
 }
@@ -393,7 +395,7 @@ static void initialize_display() {
 static void updateScreen(void *ptr) {
     while (1) {
 
-        xEventGroupWaitBits(main_event_group, DATA_CHANGE_BIT, false, false, portMAX_DELAY);
+        xEventGroupWaitBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT, false, false, portMAX_DELAY);
         initialize_display();
         vfs_spiffs_register();
 
@@ -423,7 +425,7 @@ static void updateScreen(void *ptr) {
         EPD_UpdateScreen();
         EPD_PowerOff();
 
-        xEventGroupClearBits(main_event_group, DATA_CHANGE_BIT);
+        xEventGroupClearBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
         xEventGroupSetBits(main_event_group, DISPLAY_UPDATED_BIT);
     }
 }
@@ -435,54 +437,33 @@ static void http_get_data(void *ptr) {
 
     while (1) {
 
-        uxBits = xEventGroupWaitBits(main_event_group, CONNECTED_BIT | INITIALIZING_BIT | INITIALIZED_BIT, false, false,
-                                     portMAX_DELAY);
+        uxBits = xEventGroupWaitBits(main_event_group, CONNECTED_BIT, false, false, portMAX_DELAY);
 
-        if ((uxBits & LOADING_DATA_BIT) > 0) {
+        if ((uxBits & (DISPLAY_TEXT_CHANGE_BIT | RECEIVED_DATA_BIT | LOADING_DATA_BIT)) > 0 ||
+            (uxBits & CONNECTED_BIT) == 0) {
             continue;
         }
 
+        strcpy(path, "/api/lyra/v1");
 
-        if (((uxBits & CONNECTED_BIT) > 0) & ((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) ==
-                                              0)) { /* Device is connected to wifi, but was not set yet */
-            strcpy(path, "/api/lyra/v1/register");
+        if ((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) == 0) { /* Not initialized yet */
+            strcat(path, "/register");
 
-        }
-
-            /* Device made a request but was not paired yet, waiting for pairing */
-        else if ((uxBits & (CONNECTED_BIT | INITIALIZING_BIT)) == (CONNECTED_BIT | INITIALIZING_BIT) &&
-                 (uxBits & (DATA_CHANGE_BIT | RECEIVED_DATA_BIT)) == 0) {
-            //send request for registration with new id, delay task for 30 seconds
-
-            strcpy(path, "/api/lyra/v1/register/");
+        } else if (uxBits & INITIALIZING_BIT) { /* waiting for pairing */
+            strcat(path, "/register/");
             strcat(path, data_config->device_id);
-
             vTaskDelay(10000 / portTICK_PERIOD_MS);
-        } else if ((uxBits & (CONNECTED_BIT | INITIALIZED_BIT)) == (CONNECTED_BIT | INITIALIZED_BIT) &&
-                   (uxBits & (DATA_CHANGE_BIT | RECEIVED_DATA_BIT)) == 0) {
 
-            // vTaskDelay( 200 /  portTICK_PERIOD_MS );
-            /* Device is paired. */
-            // send request with device id and battery status.
-
-            char battery_percent[5];
-            get_battery_level(&battery_percent);
-
-            strcpy(path, "/api/lyra/v1/");
+        } else if (uxBits & INITIALIZED_BIT) {  /* Normal request */
+            strcat(path, "/");
             strcat(path, data_config->device_id);
             strcat(path, "/");
             strcat(path, battery_percent);
 
         }
 
-        if ((uxBits & CONNECTED_BIT) > 0 && (uxBits & (DATA_CHANGE_BIT | RECEIVED_DATA_BIT | LOADING_DATA_BIT)) == 0) {
-            xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
-
-
-            http_rest_with_url(&path);
-        }
-
-        vTaskDelay(50 / portTICK_PERIOD_MS);
+        xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
+        http_rest_with_url(path);
     }
 }
 
@@ -493,14 +474,14 @@ static void data_processing(void *ptr) {
     while (1) {
         uxBits = xEventGroupWaitBits(main_event_group, RECEIVED_DATA_BIT, true, true, portMAX_DELAY);
         if (((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) == 0) &&
-            (uxBits & DATA_CHANGE_BIT) == 0) {
+            (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
 
             xEventGroupSetBits(main_event_group, INITIALIZING_BIT);
             view_connected_to_wifi(lines, data_config->verification_code);
-            xEventGroupSetBits(main_event_group, DATA_CHANGE_BIT);
+            xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
 
             // print on display verification code
-        } else if ((uxBits & INITIALIZING_BIT) && (uxBits & DATA_CHANGE_BIT) == 0) {
+        } else if ((uxBits & INITIALIZING_BIT) && (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
             //send request for registration with new id, delay task for 30 seconds
 
             //if response is "paired: 1", change initializing bit to 0 and initialized bit to 1
@@ -515,10 +496,10 @@ static void data_processing(void *ptr) {
 
                 view_pairing_success(lines);
 
-                xEventGroupSetBits(main_event_group, DATA_CHANGE_BIT);
+                xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
             }
         } else if ((uxBits & INITIALIZED_BIT) == INITIALIZED_BIT &&
-                   (uxBits & DATA_CHANGE_BIT) == 0) {
+                   (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
             // vTaskDelay( 100 /  portTICK_PERIOD_MS );
 
             if (
@@ -540,7 +521,7 @@ static void data_processing(void *ptr) {
                 strcpy(old_line5_data, lines[5].text);
                 strcpy(old_line6_data, lines[6].text);
                 strcpy(old_line7_data, lines[7].text);
-                xEventGroupSetBits(main_event_group, DATA_CHANGE_BIT);
+                xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
             }
         }
 
@@ -618,13 +599,13 @@ void app_main() {
     }
 
     xTaskCreate(&sleep_monitor, "sleep_monitor", 1024, &configuration, 1, NULL);
-    xTaskCreate(&updateScreen, "update screen", 8192, &configuration, 5, NULL);
+    xTaskCreate(&updateScreen, "update screen", 16384, &configuration, 5, NULL);
 
 
     /* if device is configured */
     if (get_configuration_from_nvs(&configuration)) {
-        xTaskCreate(&http_get_data, "http_get_data", 4095, &configuration, 2, NULL);
-        xTaskCreate(&data_processing, "data_processing", 4095, &configuration, 3, NULL);
+        xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
+        xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
 
         xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
         xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
@@ -633,10 +614,10 @@ void app_main() {
         memcpy(wifi_config.sta.password, configuration.password, strlen(configuration.password) + 1);
         initialise_wifi(wifi_config);
 
-    /* if device has wifi and pass but is not set yet  */
+        /* if device has wifi and pass but is not set yet  */
     } else if (strlen(wifi_ssid) > 0) {
-        xTaskCreate(&http_get_data, "http_get_data", 4095, &configuration, 2, NULL);
-        xTaskCreate(&data_processing, "data_processing", 4095, &configuration, 3, NULL);
+        xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
+        xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
 
         xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
 
@@ -644,11 +625,11 @@ void app_main() {
         memcpy(wifi_config.sta.password, wifi_password, strlen(wifi_password) + 1);
         initialise_wifi(wifi_config);
     }
-    /* Device was not set yet */
+        /* Device was not set yet */
     else {
         view_display_initial(lines);
         xEventGroupSetBits(main_event_group, STEP_1);
-        xEventGroupSetBits(main_event_group, DATA_CHANGE_BIT);
+        xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
         initialize_smart_config();
     }
 }

@@ -44,6 +44,7 @@ int json_extract(char *json_raw, Configuration *conf, line_struct *line_structur
         }
     }
     json_breakless[j] = '\0';
+//    printf("%s", json_breakless);
 
 
     int i = 0;
@@ -213,6 +214,12 @@ int json_extract(char *json_raw, Configuration *conf, line_struct *line_structur
 
             strcpy(conf->paired, value_buffer);
             i = i + 2;
+        } else {
+            free(nested_key_buffer);
+            free(value_buffer);
+            free(json_breakless);
+            free(key_buffer);
+            return 1;
         }
     }
     free(nested_key_buffer);
