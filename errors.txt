@@ -4,167 +4,153 @@ Python requirements from /Users/domenbukovac/esp/esp-idf/requirements.txt are sa
 ninja: no work to do.
 [2/6] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
 FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj 
-/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -DHAVE_CONFIG_H -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DUNITY_INCLUDE_CONFIG_H -DWITH_POSIX -Iconfig -I../main/. -I/Users/domenbukovac/esp/esp-idf/components/newlib/platform_include -I/Users/domenbukovac/esp/esp-idf/components/freertos/include -I/Users/domenbukovac/esp/esp-idf/components/heap/include -I/Users/domenbukovac/esp/esp-idf/components/log/include -I/Users/domenbukovac/esp/esp-idf/components/soc/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/soc/include -I/Users/domenbukovac/esp/esp-idf/components/esp_rom/include -I/Users/domenbukovac/esp/esp-idf/components/esp_common/include -I/Users/domenbukovac/esp/esp-idf/components/xtensa/include -I/Users/domenbukovac/esp/esp-idf/components/xtensa/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/driver/include -I/Users/domenbukovac/esp/esp-idf/components/esp_ringbuf/include -I/Users/domenbukovac/esp/esp-idf/components/esp_event/include -I/Users/domenbukovac/esp/esp-idf/components/tcpip_adapter/include -I/Users/domenbukovac/esp/esp-idf/components/lwip/include/apps -I/Users/domenbukovac/esp/esp-idf/components/lwip/include/apps/sntp -I/Users/domenbukovac/esp/esp-idf/components/lwip/lwip/src/include -I/Users/domenbukovac/esp/esp-idf/components/lwip/port/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/lwip/port/esp32/include/arch -I/Users/domenbukovac/esp/esp-idf/components/vfs/include -I/Users/domenbukovac/esp/esp-idf/components/esp_wifi/include -I/Users/domenbukovac/esp/esp-idf/components/esp_wifi/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/esp_eth/include -I/Users/domenbukovac/esp/esp-idf/components/efuse/include -I/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/app_trace/include -I/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/include -I/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include -I/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/include -I/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/port/include -I/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/include/esp_supplicant -I/Users/domenbukovac/esp/esp-idf/components/bootloader_support/include -I/Users/domenbukovac/esp/esp-idf/components/app_update/include -I/Users/domenbukovac/esp/esp-idf/components/spi_flash/include -I/Users/domenbukovac/esp/esp-idf/components/nvs_flash/include -I/Users/domenbukovac/esp/esp-idf/components/smartconfig_ack/include -I/Users/domenbukovac/esp/esp-idf/components/pthread/include -I/Users/domenbukovac/esp/esp-idf/components/espcoredump/include -I/Users/domenbukovac/esp/esp-idf/components/asio/asio/asio/include -I/Users/domenbukovac/esp/esp-idf/components/asio/port/include -I/Users/domenbukovac/esp/esp-idf/components/coap/port/include -I/Users/domenbukovac/esp/esp-idf/components/coap/port/include/coap -I/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/include -I/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/include/coap2 -I/Users/domenbukovac/esp/esp-idf/components/console/. -I/Users/domenbukovac/esp/esp-idf/components/nghttp/port/include -I/Users/domenbukovac/esp/esp-idf/components/nghttp/nghttp2/lib/includes -I/Users/domenbukovac/esp/esp-idf/components/esp-tls/. -I/Users/domenbukovac/esp/esp-idf/components/esp-tls/PRIVATE_INCLUDE_DIRS -I/Users/domenbukovac/esp/esp-idf/components/esp-tls/private_include -I/Users/domenbukovac/esp/esp-idf/components/esp_adc_cal/include -I/Users/domenbukovac/esp/esp-idf/components/esp_gdbstub/include -I/Users/domenbukovac/esp/esp-idf/components/tcp_transport/include -I/Users/domenbukovac/esp/esp-idf/components/tcp_transport/PRIVATE_INCLUDE_DIRS -I/Users/domenbukovac/esp/esp-idf/components/tcp_transport/private_include -I/Users/domenbukovac/esp/esp-idf/components/esp_http_client/include -I/Users/domenbukovac/esp/esp-idf/components/esp_http_server/include -I/Users/domenbukovac/esp/esp-idf/components/esp_https_ota/include -I/Users/domenbukovac/esp/esp-idf/components/protobuf-c/protobuf-c -I/Users/domenbukovac/esp/esp-idf/components/protocomm/include/common -I/Users/domenbukovac/esp/esp-idf/components/protocomm/include/security -I/Users/domenbukovac/esp/esp-idf/components/protocomm/include/transports -I/Users/domenbukovac/esp/esp-idf/components/mdns/include -I/Users/domenbukovac/esp/esp-idf/components/esp_local_ctrl/include -I/Users/domenbukovac/esp/esp-idf/components/esp_websocket_client/include -I/Users/domenbukovac/esp/esp-idf/components/expat/expat/expat/lib -I/Users/domenbukovac/esp/esp-idf/components/expat/port/include -I/Users/domenbukovac/esp/esp-idf/components/wear_levelling/include -I/Users/domenbukovac/esp/esp-idf/components/sdmmc/include -I/Users/domenbukovac/esp/esp-idf/components/fatfs/diskio -I/Users/domenbukovac/esp/esp-idf/components/fatfs/vfs -I/Users/domenbukovac/esp/esp-idf/components/fatfs/src -I/Users/domenbukovac/esp/esp-idf/components/freemodbus/common/include -I/Users/domenbukovac/esp/esp-idf/components/idf_test/include -I/Users/domenbukovac/esp/esp-idf/components/jsmn/include -I/Users/domenbukovac/esp/esp-idf/components/json/cJSON -I/Users/domenbukovac/esp/esp-idf/components/libsodium/libsodium/src/libsodium/include -I/Users/domenbukovac/esp/esp-idf/components/libsodium/port_include -I/Users/domenbukovac/esp/esp-idf/components/mqtt/esp-mqtt/include -I/Users/domenbukovac/esp/esp-idf/components/openssl/include -I../components/spiffs/. -I/Users/domenbukovac/esp/esp-idf/components/ulp/include -I/Users/domenbukovac/esp/esp-idf/components/unity/include -I/Users/domenbukovac/esp/esp-idf/components/unity/unity/src -I/Users/domenbukovac/esp/esp-idf/components/wifi_provisioning/include -I../components/spidriver/. -I../components/epaper/. -I../components/mkspiffs/include -I../components/spiffs_image/include -mlongcalls -Wno-frame-address   -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -nostdlib -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -ggdb -Og -std=gnu99 -Wno-old-style-declaration -D_GNU_SOURCE -DIDF_VER=\"v4.0-dev-1443-g39f090a4f-dirty\" -DGCC_NOT_5_2_0 -DESP_PLATFORM -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj   -c ../main/main.c
-In file included from ../main/main.c:24:
+/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -DHAVE_CONFIG_H -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DUNITY_INCLUDE_CONFIG_H -DWITH_POSIX -Iconfig -I../main/. -I/Users/domenbukovac/esp/esp-idf/components/newlib/platform_include -I/Users/domenbukovac/esp/esp-idf/components/freertos/include -I/Users/domenbukovac/esp/esp-idf/components/heap/include -I/Users/domenbukovac/esp/esp-idf/components/log/include -I/Users/domenbukovac/esp/esp-idf/components/soc/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/soc/include -I/Users/domenbukovac/esp/esp-idf/components/esp_rom/include -I/Users/domenbukovac/esp/esp-idf/components/esp_common/include -I/Users/domenbukovac/esp/esp-idf/components/xtensa/include -I/Users/domenbukovac/esp/esp-idf/components/xtensa/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/driver/include -I/Users/domenbukovac/esp/esp-idf/components/esp_ringbuf/include -I/Users/domenbukovac/esp/esp-idf/components/esp_event/include -I/Users/domenbukovac/esp/esp-idf/components/tcpip_adapter/include -I/Users/domenbukovac/esp/esp-idf/components/lwip/include/apps -I/Users/domenbukovac/esp/esp-idf/components/lwip/include/apps/sntp -I/Users/domenbukovac/esp/esp-idf/components/lwip/lwip/src/include -I/Users/domenbukovac/esp/esp-idf/components/lwip/port/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/lwip/port/esp32/include/arch -I/Users/domenbukovac/esp/esp-idf/components/vfs/include -I/Users/domenbukovac/esp/esp-idf/components/esp_wifi/include -I/Users/domenbukovac/esp/esp-idf/components/esp_wifi/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/esp_eth/include -I/Users/domenbukovac/esp/esp-idf/components/efuse/include -I/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include -I/Users/domenbukovac/esp/esp-idf/components/app_trace/include -I/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/include -I/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include -I/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/include -I/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/port/include -I/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/include/esp_supplicant -I/Users/domenbukovac/esp/esp-idf/components/bootloader_support/include -I/Users/domenbukovac/esp/esp-idf/components/app_update/include -I/Users/domenbukovac/esp/esp-idf/components/spi_flash/include -I/Users/domenbukovac/esp/esp-idf/components/nvs_flash/include -I/Users/domenbukovac/esp/esp-idf/components/smartconfig_ack/include -I/Users/domenbukovac/esp/esp-idf/components/pthread/include -I/Users/domenbukovac/esp/esp-idf/components/espcoredump/include -I/Users/domenbukovac/esp/esp-idf/components/asio/asio/asio/include -I/Users/domenbukovac/esp/esp-idf/components/asio/port/include -I/Users/domenbukovac/esp/esp-idf/components/coap/port/include -I/Users/domenbukovac/esp/esp-idf/components/coap/port/include/coap -I/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/include -I/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/include/coap2 -I/Users/domenbukovac/esp/esp-idf/components/console/. -I/Users/domenbukovac/esp/esp-idf/components/nghttp/port/include -I/Users/domenbukovac/esp/esp-idf/components/nghttp/nghttp2/lib/includes -I/Users/domenbukovac/esp/esp-idf/components/esp-tls/. -I/Users/domenbukovac/esp/esp-idf/components/esp-tls/PRIVATE_INCLUDE_DIRS -I/Users/domenbukovac/esp/esp-idf/components/esp-tls/private_include -I/Users/domenbukovac/esp/esp-idf/components/esp_adc_cal/include -I/Users/domenbukovac/esp/esp-idf/components/esp_gdbstub/include -I/Users/domenbukovac/esp/esp-idf/components/tcp_transport/include -I/Users/domenbukovac/esp/esp-idf/components/tcp_transport/PRIVATE_INCLUDE_DIRS -I/Users/domenbukovac/esp/esp-idf/components/tcp_transport/private_include -I/Users/domenbukovac/esp/esp-idf/components/esp_http_client/include -I/Users/domenbukovac/esp/esp-idf/components/esp_http_server/include -I/Users/domenbukovac/esp/esp-idf/components/esp_https_ota/include -I/Users/domenbukovac/esp/esp-idf/components/protobuf-c/protobuf-c -I/Users/domenbukovac/esp/esp-idf/components/protocomm/include/common -I/Users/domenbukovac/esp/esp-idf/components/protocomm/include/security -I/Users/domenbukovac/esp/esp-idf/components/protocomm/include/transports -I/Users/domenbukovac/esp/esp-idf/components/mdns/include -I/Users/domenbukovac/esp/esp-idf/components/esp_local_ctrl/include -I/Users/domenbukovac/esp/esp-idf/components/esp_websocket_client/include -I/Users/domenbukovac/esp/esp-idf/components/expat/expat/expat/lib -I/Users/domenbukovac/esp/esp-idf/components/expat/port/include -I/Users/domenbukovac/esp/esp-idf/components/wear_levelling/include -I/Users/domenbukovac/esp/esp-idf/components/sdmmc/include -I/Users/domenbukovac/esp/esp-idf/components/fatfs/diskio -I/Users/domenbukovac/esp/esp-idf/components/fatfs/vfs -I/Users/domenbukovac/esp/esp-idf/components/fatfs/src -I/Users/domenbukovac/esp/esp-idf/components/freemodbus/common/include -I/Users/domenbukovac/esp/esp-idf/components/idf_test/include -I/Users/domenbukovac/esp/esp-idf/components/jsmn/include -I/Users/domenbukovac/esp/esp-idf/components/json/cJSON -I/Users/domenbukovac/esp/esp-idf/components/libsodium/libsodium/src/libsodium/include -I/Users/domenbukovac/esp/esp-idf/components/libsodium/port_include -I/Users/domenbukovac/esp/esp-idf/components/mqtt/esp-mqtt/include -I/Users/domenbukovac/esp/esp-idf/components/openssl/include -I../components/spiffs/. -I/Users/domenbukovac/esp/esp-idf/components/ulp/include -I/Users/domenbukovac/esp/esp-idf/components/unity/include -I/Users/domenbukovac/esp/esp-idf/components/unity/unity/src -I/Users/domenbukovac/esp/esp-idf/components/wifi_provisioning/include -I../components/spidriver/. -I../components/epaper/. -I../components/mkspiffs/include -I../components/spiffs_image/include -I/Users/domenbukovac/esp/esp-idf/examples/common_components/protocol_examples_common/include -mlongcalls -Wno-frame-address   -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -nostdlib -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -ggdb -Og -std=gnu99 -Wno-old-style-declaration -D_GNU_SOURCE -DIDF_VER=\"v4.0-dev-1443-g39f090a4f-dirty\" -DGCC_NOT_5_2_0 -DESP_PLATFORM -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj   -c ../main/main.c
+In file included from ../main/main.c:25:
 ../main/main.h:1:40: warning: 'struct Configuration' declared inside parameter list will not be visible outside of this definition or declaration
  bool get_configuration_from_nvs(struct Configuration *configuration);
                                         ^~~~~~~~~~~~~
 ../main/main.h:3:39: warning: 'struct Configuration' declared inside parameter list will not be visible outside of this definition or declaration
  void save_configuration_to_nvs(struct Configuration *configuration);
                                        ^~~~~~~~~~~~~
-In file included from ../main/main.c:26:
+In file included from ../main/main.c:27:
 ../main/json.h: In function 'json_extract':
-../main/json.h:15:9: warning: unused variable 'json_last_char' [-Wunused-variable]
+../main/json.h:16:9: warning: unused variable 'json_last_char' [-Wunused-variable]
      int json_last_char = strlen(json_raw) - 0;
          ^~~~~~~~~~~~~~
-In file included from ../main/main.c:34:
+In file included from ../main/main.c:35:
 /Users/domenbukovac/esp/esp-idf/components/heap/include/esp_heap_alloc_caps.h: At top level:
 /Users/domenbukovac/esp/esp-idf/components/heap/include/esp_heap_alloc_caps.h:15:2: warning: #warning "This header is deprecated, please use functions defined in esp_heap_caps.h instead." [-Wcpp]
  #warning "This header is deprecated, please use functions defined in esp_heap_caps.h instead."
   ^~~~~~~
 In file included from ../components/spidriver/./spi_master_lobo.h:24,
-                 from ../main/main.c:37:
+                 from ../main/main.c:38:
 /Users/domenbukovac/esp/esp-idf/components/esp32/include/esp_intr.h:16:2: warning: #warning esp_intr.h is deprecated, please include esp_intr_alloc.h instead [-Wcpp]
  #warning esp_intr.h is deprecated, please include esp_intr_alloc.h instead
   ^~~~~~~
 In file included from ../components/spidriver/./spi_master_lobo.h:26,
-                 from ../main/main.c:37:
+                 from ../main/main.c:38:
 /Users/domenbukovac/esp/esp-idf/components/esp32/include/rom/lldesc.h:1:2: warning: #warning rom/lldesc.h is deprecated, please use esp32/rom/lldesc.h instead [-Wcpp]
  #warning rom/lldesc.h is deprecated, please use esp32/rom/lldesc.h instead
   ^~~~~~~
-../main/main.c:52:5: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
-     {"line0"},
-     ^
-In file included from ../main/json.h:6,
-                 from ../main/main.c:26:
+../main/main.c:58:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line0"},
+         ^
+In file included from ../main/json.h:7,
+                 from ../main/main.c:27:
 ../main/struct.h:21:10: note: 'text' declared here
      char text[50];
           ^~~~
-../main/main.c:53:5: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
-     {"line1"},
-     ^
-In file included from ../main/json.h:6,
-                 from ../main/main.c:26:
+../main/main.c:59:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line1"},
+         ^
+In file included from ../main/json.h:7,
+                 from ../main/main.c:27:
 ../main/struct.h:21:10: note: 'text' declared here
      char text[50];
           ^~~~
-../main/main.c:54:5: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
-     {"line2"},
-     ^
-In file included from ../main/json.h:6,
-                 from ../main/main.c:26:
+../main/main.c:60:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line2"},
+         ^
+In file included from ../main/json.h:7,
+                 from ../main/main.c:27:
 ../main/struct.h:21:10: note: 'text' declared here
      char text[50];
           ^~~~
-../main/main.c:55:5: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
-     {"line3"},
-     ^
-In file included from ../main/json.h:6,
-                 from ../main/main.c:26:
+../main/main.c:61:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line3"},
+         ^
+In file included from ../main/json.h:7,
+                 from ../main/main.c:27:
 ../main/struct.h:21:10: note: 'text' declared here
      char text[50];
           ^~~~
-../main/main.c:56:5: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
-     {"line4"},
-     ^
-In file included from ../main/json.h:6,
-                 from ../main/main.c:26:
+../main/main.c:62:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line4"},
+         ^
+In file included from ../main/json.h:7,
+                 from ../main/main.c:27:
 ../main/struct.h:21:10: note: 'text' declared here
      char text[50];
           ^~~~
-../main/main.c:57:5: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
-     {"line5"},
-     ^
-In file included from ../main/json.h:6,
-                 from ../main/main.c:26:
+../main/main.c:63:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line5"},
+         ^
+In file included from ../main/json.h:7,
+                 from ../main/main.c:27:
 ../main/struct.h:21:10: note: 'text' declared here
      char text[50];
           ^~~~
-../main/main.c:58:5: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
-     {"line6"},
-     ^
-In file included from ../main/json.h:6,
-                 from ../main/main.c:26:
+../main/main.c:64:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line6"},
+         ^
+In file included from ../main/json.h:7,
+                 from ../main/main.c:27:
 ../main/struct.h:21:10: note: 'text' declared here
      char text[50];
           ^~~~
-../main/main.c:59:5: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
-     {"line7"}};
-     ^
-In file included from ../main/json.h:6,
-                 from ../main/main.c:26:
+../main/main.c:65:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line7"}};
+         ^
+In file included from ../main/json.h:7,
+                 from ../main/main.c:27:
 ../main/struct.h:21:10: note: 'text' declared here
      char text[50];
           ^~~~
 ../main/main.c: In function 'initialize_display':
-../main/main.c:117:5: warning: 'pvPortMallocCaps' is deprecated [-Wdeprecated-declarations]
+../main/main.c:335:5: warning: 'pvPortMallocCaps' is deprecated [-Wdeprecated-declarations]
      disp_buffer = pvPortMallocCaps(EPD_DISPLAY_WIDTH * (EPD_DISPLAY_HEIGHT / 8), MALLOC_CAP_DMA);
      ^~~~~~~~~~~
-In file included from ../main/main.c:34:
+In file included from ../main/main.c:35:
 /Users/domenbukovac/esp/esp-idf/components/heap/include/esp_heap_alloc_caps.h:25:7: note: declared here
  void *pvPortMallocCaps(size_t xWantedSize, uint32_t caps) asm("heap_caps_malloc") __attribute__((deprecated));
        ^~~~~~~~~~~~~~~~
-../main/main.c:121:5: warning: 'pvPortMallocCaps' is deprecated [-Wdeprecated-declarations]
+../main/main.c:339:5: warning: 'pvPortMallocCaps' is deprecated [-Wdeprecated-declarations]
      gs_disp_buffer = pvPortMallocCaps(EPD_DISPLAY_WIDTH * EPD_DISPLAY_HEIGHT, MALLOC_CAP_DMA);
      ^~~~~~~~~~~~~~
-In file included from ../main/main.c:34:
+In file included from ../main/main.c:35:
 /Users/domenbukovac/esp/esp-idf/components/heap/include/esp_heap_alloc_caps.h:25:7: note: declared here
  void *pvPortMallocCaps(size_t xWantedSize, uint32_t caps) asm("heap_caps_malloc") __attribute__((deprecated));
        ^~~~~~~~~~~~~~~~
-../main/main.c: At top level:
-../main/main.c:216:25: error: unknown type name 'smartconfig_status_t'; did you mean 'smartconfig_type_t'?
- static void sc_callback(smartconfig_status_t status, void *pdata)
-                         ^~~~~~~~~~~~~~~~~~~~
-                         smartconfig_type_t
-In file included from /Users/domenbukovac/esp/esp-idf/components/esp_common/include/esp_timer.h:44,
-                 from /Users/domenbukovac/esp/esp-idf/components/freertos/include/freertos/portmacro.h:84,
-                 from /Users/domenbukovac/esp/esp-idf/components/freertos/include/freertos/portable.h:94,
-                 from /Users/domenbukovac/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h:105,
-                 from ../main/main.c:4:
-../main/main.c: In function 'smartconfig_task':
-../main/main.c:237:43: error: 'sc_callback' undeclared (first use in this function)
-     ESP_ERROR_CHECK(esp_smartconfig_start(sc_callback));
-                                           ^~~~~~~~~~~
-/Users/domenbukovac/esp/esp-idf/components/esp_common/include/esp_err.h:118:31: note: in definition of macro 'ESP_ERROR_CHECK'
-         esp_err_t __err_rc = (x);                                       \
-                               ^
-../main/main.c:237:43: note: each undeclared identifier is reported only once for each function it appears in
-     ESP_ERROR_CHECK(esp_smartconfig_start(sc_callback));
-                                           ^~~~~~~~~~~
-/Users/domenbukovac/esp/esp-idf/components/esp_common/include/esp_err.h:118:31: note: in definition of macro 'ESP_ERROR_CHECK'
-         esp_err_t __err_rc = (x);                                       \
-                               ^
 ../main/main.c: In function 'http_get_data':
-../main/main.c:363:31: warning: passing argument 1 of 'get_battery_level' from incompatible pointer type [-Wincompatible-pointer-types]
+../main/main.c:469:31: warning: passing argument 1 of 'get_battery_level' from incompatible pointer type [-Wincompatible-pointer-types]
              get_battery_level(&battery_percent);
                                ^~~~~~~~~~~~~~~~
-In file included from ../main/main.c:27:
+In file included from ../main/main.c:28:
 ../main/battery.h:63:34: note: expected 'char *' but argument is of type 'char (*)[5]'
  uint32_t get_battery_level(char *battery_level)
                             ~~~~~~^~~~~~~~~~~~~
-../main/main.c:454:25: warning: unused variable 'k' [-Wunused-variable]
-                     int k = 0;
-                         ^
+../main/main.c:482:32: warning: passing argument 1 of 'http_rest_with_url' from incompatible pointer type [-Wincompatible-pointer-types]
+             http_rest_with_url(&path);
+                                ^~~~~
+../main/main.c:184:38: note: expected 'char *' but argument is of type 'char (*)[128]'
+ static void http_rest_with_url(char *path) {
+                                ~~~~~~^~~~
 ../main/main.c: In function 'data_processing':
-../main/main.c:525:43: warning: passing argument 1 of 'save_configuration_to_nvs' from incompatible pointer type [-Wincompatible-pointer-types]
+../main/main.c:499:70: error: expected ';' before 'xEventGroupSetBits'
+             view_connected_to_wifi(lines, data_config->verification_code )
+                                                                      ^
+                                                                      ;
+             xEventGroupSetBits(main_event_group, DATA_CHANGE_BIT);
+             ~~~~~~~~~~~~~~~~~~                                        
+../main/main.c:514:43: warning: passing argument 1 of 'save_configuration_to_nvs' from incompatible pointer type [-Wincompatible-pointer-types]
                  save_configuration_to_nvs(data_config);
                                            ^~~~~~~~~~~
-In file included from ../main/main.c:24:
+In file included from ../main/main.c:25:
 ../main/main.h:3:54: note: expected 'struct Configuration *' but argument is of type 'Configuration *' {aka 'struct <anonymous> *'}
  void save_configuration_to_nvs(struct Configuration *configuration);
                                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
 ../main/main.c: In function 'app_main':
-../main/main.c:585:49: warning: passing argument 1 of 'get_battery_level' from incompatible pointer type [-Wincompatible-pointer-types]
+../main/main.c:569:49: warning: passing argument 1 of 'get_battery_level' from incompatible pointer type [-Wincompatible-pointer-types]
      int start_battery_level = get_battery_level(&battery_percent);
                                                  ^~~~~~~~~~~~~~~~
-In file included from ../main/main.c:27:
+In file included from ../main/main.c:28:
 ../main/battery.h:63:34: note: expected 'char *' but argument is of type 'char (*)[8]'
  uint32_t get_battery_level(char *battery_level)
                             ~~~~~~^~~~~~~~~~~~~
-../main/main.c:633:36: warning: passing argument 1 of 'get_configuration_from_nvs' from incompatible pointer type [-Wincompatible-pointer-types]
-     if (get_configuration_from_nvs(&configuration))
+../main/main.c:624:36: warning: passing argument 1 of 'get_configuration_from_nvs' from incompatible pointer type [-Wincompatible-pointer-types]
+     if (get_configuration_from_nvs(&configuration)) {
                                     ^~~~~~~~~~~~~~
-In file included from ../main/main.c:24:
+In file included from ../main/main.c:25:
 ../main/main.h:1:55: note: expected 'struct Configuration *' but argument is of type 'Configuration *' {aka 'struct <anonymous> *'}
  bool get_configuration_from_nvs(struct Configuration *configuration);
                                  ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~

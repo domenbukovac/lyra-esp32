@@ -37,6 +37,14 @@
 
 #include "spi_master_lobo.h"
 #include "EPD.h"
+#include "display_print.h"
+
+// http client
+#include "protocol_examples_common.h"
+#include "esp_tls.h"
+#include "esp_system.h"
+
+#include "esp_http_client.h"
 
 #define API_URL "192.168.1.53:5000/api/lyra/v1"
 #define URL "192.168.1.53"
@@ -64,7 +72,6 @@ static const char *TAG = "Event_tag";
 
 static const char *file_fonts[3] = {"/spiffs/fonts/DotMatrix_M.fon", "/spiffs/fonts/Ubuntu.fon",
                                     "/spiffs/fonts/Grotesk24x48.fon"};
-// static const char tag[] = "status";
 
 char battery_percent[8];
 
@@ -79,6 +86,9 @@ RTC_DATA_ATTR static char old_line5_data[50];
 RTC_DATA_ATTR static char old_line6_data[50];
 RTC_DATA_ATTR static char old_line7_data[50];
 
+RTC_DATA_ATTR static char wifi_ssid[50];
+RTC_DATA_ATTR static char wifi_password[50];
+
 RTC_DATA_ATTR static uint8_t wifi_channel;
 RTC_DATA_ATTR static wifi_second_chan_t wifi_channel_second;
 
@@ -86,10 +96,10 @@ static void smartconfig_example_task(void *parm);
 
 static void initialise_wifi(wifi_config_t wifi_config);
 
-static void event_handler(void *arg, esp_event_base_t event_base,
-                          int32_t event_id, void *event_data) {
+static void smart_config_event_handler(void *arg, esp_event_base_t event_base,
+                                       int32_t event_id, void *event_data) {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
-        xTaskCreate(smartconfig_example_task, "smartconfig_example_task", 4096, NULL, 3, NULL);
+        xTaskCreate(smartconfig_example_task, "smartconfig_example_task", 4096, NULL, 4, NULL);
     } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
         esp_wifi_connect();
         xEventGroupClearBits(main_event_group, CONNECTED_BIT);
@@ -103,7 +113,7 @@ static void event_handler(void *arg, esp_event_base_t event_base,
         ESP_LOGI(TAG, "Got SSID and password");
 
         smartconfig_event_got_ssid_pswd_t *evt = (smartconfig_event_got_ssid_pswd_t *) event_data;
-//        wifi_config_t wifi_config;
+        wifi_config_t wifi_config;
         uint8_t ssid[33] = {0};
         uint8_t password[65] = {0};
 
@@ -115,19 +125,110 @@ static void event_handler(void *arg, esp_event_base_t event_base,
             memcpy(wifi_config.sta.bssid, evt->bssid, sizeof(wifi_config.sta.bssid));
         }
 
+        strcpy(wifi_ssid, (const char *) wifi_config.sta.ssid);
+        strcpy(wifi_password, (const char *) wifi_config.sta.password);
+
         memcpy(ssid, evt->ssid, sizeof(evt->ssid));
         memcpy(password, evt->password, sizeof(evt->password));
         ESP_LOGI(TAG, "SSID:%s", ssid);
         ESP_LOGI(TAG, "PASSWORD:%s", password);
 
         ESP_ERROR_CHECK(esp_wifi_disconnect());
-//        initialise_wifi(wifi_config);
         ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
         ESP_ERROR_CHECK(esp_wifi_connect());
     } else if (event_base == SC_EVENT && event_id == SC_EVENT_SEND_ACK_DONE) {
         esp_smartconfig_stop();
         xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
     }
+}
+
+esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
+    switch (evt->event_id) {
+        case HTTP_EVENT_ERROR:
+            ESP_LOGD(TAG, "HTTP_EVENT_ERROR");
+            break;
+        case HTTP_EVENT_ON_CONNECTED:
+            ESP_LOGD(TAG, "HTTP_EVENT_ON_CONNECTED");
+            break;
+        case HTTP_EVENT_HEADER_SENT:
+            ESP_LOGD(TAG, "HTTP_EVENT_HEADER_SENT");
+            break;
+        case HTTP_EVENT_ON_HEADER:
+            ESP_LOGD(TAG, "HTTP_EVENT_ON_HEADER, key=%s, value=%s", evt->header_key, evt->header_value);
+            break;
+        case HTTP_EVENT_ON_DATA:
+            ESP_LOGD(TAG, "HTTP_EVENT_ON_DATA, len=%d", evt->data_len);
+            if (!esp_http_client_is_chunked_response(evt->client)) {
+//                 Write out data
+//                printf("%.*s", evt->data_len, (char *) evt->data);
+            } else {
+                printf("CHUNKED/n");
+            }
+            break;
+        case HTTP_EVENT_ON_FINISH:
+            ESP_LOGD(TAG, "HTTP_EVENT_ON_FINISH");
+            break;
+        case HTTP_EVENT_DISCONNECTED:
+            ESP_LOGI(TAG, "HTTP_EVENT_DISCONNECTED");
+            int mbedtls_err = 0;
+            esp_err_t err = esp_tls_get_and_clear_last_error(evt->data, &mbedtls_err, NULL);
+            if (err != 0) {
+                ESP_LOGI(TAG, "Last esp error code: 0x%x", err);
+                ESP_LOGI(TAG, "Last mbedtls failure: 0x%x", mbedtls_err);
+            }
+            break;
+    }
+    return ESP_OK;
+}
+
+static void http_rest_with_url(char *path) {
+
+    printf("HTTP REST WITH URL START! \n");
+    char *buffer = malloc(512 + 1);
+
+
+    esp_http_client_config_t config = {
+            .host = "192.168.1.53",
+            .port= 5000,
+            .path = path,
+//            .transport_type = HTTP_TRANSPORT_OVER_SSL,
+            .event_handler = _http_event_handler,
+    };
+
+    esp_http_client_handle_t client = esp_http_client_init(&config);
+
+    esp_err_t err;
+    if ((err = esp_http_client_open(client, 0)) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to open HTTP connection: %s", esp_err_to_name(err));
+        free(buffer);
+        return;
+    }
+    int content_length = esp_http_client_fetch_headers(client);
+    int total_read_len = 0, read_len;
+    if (total_read_len < content_length && content_length <= 512) {
+        read_len = esp_http_client_read(client, buffer, content_length);
+        if (read_len <= 0) {
+            ESP_LOGE(TAG, "Error read data");
+        }
+        buffer[read_len] = 0;
+        ESP_LOGD(TAG, "read_len = %d", read_len);
+    }
+    ESP_LOGI(TAG, "HTTP Stream reader Status = %d, content_length = %d",
+             esp_http_client_get_status_code(client),
+             esp_http_client_get_content_length(client));
+
+    if (esp_http_client_get_status_code(client) == 200) {
+        if (json_extract(buffer, &configuration, lines) == 0) {
+
+        }
+    }
+
+    xEventGroupSetBits(main_event_group, RECEIVED_DATA_BIT);
+    xEventGroupClearBits(main_event_group, LOADING_DATA_BIT);
+    esp_http_client_close(client);
+    esp_http_client_cleanup(client);
+    xEventGroupSetBits(main_event_group, HTTP_DONE_BIT);
+    free(buffer);
 }
 
 static int s_retry_num = 0;
@@ -175,9 +276,9 @@ static void initialize_smart_config(void) {
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));
 
-    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL));
-    ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &event_handler, NULL));
-    ESP_ERROR_CHECK(esp_event_handler_register(SC_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL));
+    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &smart_config_event_handler, NULL));
+    ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &smart_config_event_handler, NULL));
+    ESP_ERROR_CHECK(esp_event_handler_register(SC_EVENT, ESP_EVENT_ANY_ID, &smart_config_event_handler, NULL));
 
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
     ESP_ERROR_CHECK(esp_wifi_start());
@@ -202,25 +303,27 @@ static void smartconfig_example_task(void *parm) {
     }
 }
 
-
 static void go_to_sleep(int seconds) {
 
-    printf("Enabling EXT1 wakeup on pins GPIO0\n");
-    //esp_wifi_stop();
+    printf("Enabling EXT1 wakeup on pins GPIO4\n");
     vTaskDelay(50 / portTICK_PERIOD_MS);
     esp_sleep_enable_ext0_wakeup(WAKEUP_PIN, 0);
-    //rtc_gpio_isolate(GPIO_NUM_12);
     esp_deep_sleep(1000000LL * seconds);
 }
 
 static void sleep_monitor(void *ptr) {
     EventBits_t uxBits;
     while (1) {
-        uxBits = xEventGroupWaitBits(main_event_group, DISPLAY_UPDATED_BIT, true, true, portMAX_DELAY);
+        uxBits = xEventGroupWaitBits(main_event_group, DISPLAY_UPDATED_BIT | ESPTOUCH_DONE_BIT, true, false,
+                                     portMAX_DELAY);
 
-        if ((uxBits & (DISPLAY_UPDATED_BIT | INITIALIZED_BIT)) == (DISPLAY_UPDATED_BIT | INITIALIZED_BIT)) {
+        if ((uxBits & (DISPLAY_UPDATED_BIT | INITIALIZED_BIT)) ==
+            (DISPLAY_UPDATED_BIT | INITIALIZED_BIT)) {
             esp_wifi_get_channel(&wifi_channel, &wifi_channel_second);
             go_to_sleep(configuration.sleep_seconds_int);
+
+        } else if ((uxBits & (ESPTOUCH_DONE_BIT | STEP_1)) == (ESPTOUCH_DONE_BIT | STEP_1)) {
+            go_to_sleep(1);
         }
     }
 }
@@ -326,17 +429,8 @@ static void updateScreen(void *ptr) {
 }
 
 static void http_get_data(void *ptr) {
-    const struct addrinfo hints = {
-            .ai_family = AF_INET,
-            .ai_socktype = SOCK_STREAM,
-    };
-    struct addrinfo *res;
-    struct in_addr *addr;
-    int s, r;
-    char recv_buf[1300];
     EventBits_t uxBits;
-
-    char request[400];
+    char path[128];
     Configuration *data_config = ((Configuration *) ptr);
 
     while (1) {
@@ -344,13 +438,15 @@ static void http_get_data(void *ptr) {
         uxBits = xEventGroupWaitBits(main_event_group, CONNECTED_BIT | INITIALIZING_BIT | INITIALIZED_BIT, false, false,
                                      portMAX_DELAY);
 
+        if ((uxBits & LOADING_DATA_BIT) > 0) {
+            continue;
+        }
+
+
         if (((uxBits & CONNECTED_BIT) > 0) & ((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) ==
                                               0)) { /* Device is connected to wifi, but was not set yet */
-            strcpy(request,
-                   "GET http://" API_URL "/register HTTP/1.1\r\n"
-                   "Host: " API_URL "\r\n"
-                   "User-Agent: esp-idf/1.0 esp32\r\n"
-                   "\r\n");
+            strcpy(path, "/api/lyra/v1/register");
+
         }
 
             /* Device made a request but was not paired yet, waiting for pairing */
@@ -358,15 +454,9 @@ static void http_get_data(void *ptr) {
                  (uxBits & (DATA_CHANGE_BIT | RECEIVED_DATA_BIT)) == 0) {
             //send request for registration with new id, delay task for 30 seconds
 
-            strcpy(request,
-                   "GET http://" API_URL "/register/");
+            strcpy(path, "/api/lyra/v1/register/");
+            strcat(path, data_config->device_id);
 
-            strcat(request, data_config->device_id);
-
-            strcat(request, " HTTP/1.1\r\n"
-                            "Host: " API_URL "\r\n"
-                            "User-Agent: esp-idf/1.0 esp32\r\n"
-                            "\r\n");
             vTaskDelay(10000 / portTICK_PERIOD_MS);
         } else if ((uxBits & (CONNECTED_BIT | INITIALIZED_BIT)) == (CONNECTED_BIT | INITIALIZED_BIT) &&
                    (uxBits & (DATA_CHANGE_BIT | RECEIVED_DATA_BIT)) == 0) {
@@ -375,115 +465,21 @@ static void http_get_data(void *ptr) {
             /* Device is paired. */
             // send request with device id and battery status.
 
-            strcpy(request,
-                   "GET http://" API_URL "/");
-
-            strcat(request, data_config->device_id);
-            strcat(request, "/");
-
-
             char battery_percent[5];
             get_battery_level(&battery_percent);
 
-            strcat(request, battery_percent);
+            strcpy(path, "/api/lyra/v1/");
+            strcat(path, data_config->device_id);
+            strcat(path, "/");
+            strcat(path, battery_percent);
 
-            strcat(request, " HTTP/1.1\r\n"
-                            "Host: " API_URL "\r\n"
-                            "User-Agent: esp-idf/1.0 esp32\r\n"
-                            "\r\n");
         }
 
-        if ((uxBits & CONNECTED_BIT) > 0 && (uxBits & (DATA_CHANGE_BIT | RECEIVED_DATA_BIT)) == 0) {
+        if ((uxBits & CONNECTED_BIT) > 0 && (uxBits & (DATA_CHANGE_BIT | RECEIVED_DATA_BIT | LOADING_DATA_BIT)) == 0) {
+            xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
 
-            if (socket_fail_count > 2) {
-                go_to_sleep(120);
-            }
 
-            ESP_LOGI(TAG, "Connected to AP");
-            int err = getaddrinfo(URL, ""
-                    PORT
-                    "", &hints, &res);
-
-            if (err != 0 || res == NULL) {
-                ESP_LOGE(TAG, "DNS lookup failed err=%d res=%p", err, res);
-                socket_fail_count++;
-                vTaskDelay(1000 / portTICK_PERIOD_MS);
-                continue;
-            }
-
-            /* Code to print the resolved IP.
-
-            Note: inet_ntoa is non-reentrant, look at ipaddr_ntoa_r for "real" code */
-            addr = &((struct sockaddr_in *) res->ai_addr)->sin_addr;
-            ESP_LOGI(TAG, "DNS lookup succeeded. IP=%s", inet_ntoa(*addr));
-
-            s = socket(res->ai_family, res->ai_socktype, 0);
-            if (s < 0) {
-                ESP_LOGE(TAG, "... Failed to allocate socket.");
-                freeaddrinfo(res);
-                vTaskDelay(1000 / portTICK_PERIOD_MS);
-                continue;
-            }
-            ESP_LOGI(TAG, "... allocated socket");
-
-            if (connect(s, res->ai_addr, res->ai_addrlen) != 0) {
-                ESP_LOGE(TAG, "... socket connect failed errno=%d", errno);
-                close(s);
-                freeaddrinfo(res);
-                socket_fail_count++;
-                vTaskDelay(2000 / portTICK_PERIOD_MS);
-                continue;
-            }
-
-            ESP_LOGI(TAG, "... connected");
-            freeaddrinfo(res);
-
-            if (write(s, request, strlen(request)) < 0) {
-                ESP_LOGE(TAG, "... socket send failed");
-                close(s);
-                socket_fail_count++;
-                vTaskDelay(4000 / portTICK_PERIOD_MS);
-                continue;
-            }
-            ESP_LOGI(TAG, "... socket send success");
-
-            struct timeval receiving_timeout;
-            receiving_timeout.tv_sec = 5;
-            receiving_timeout.tv_usec = 0;
-            if (setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, &receiving_timeout, sizeof(receiving_timeout)) < 0) {
-                ESP_LOGE(TAG, "... failed to set socket receiving timeout");
-                socket_fail_count++;
-                close(s);
-                vTaskDelay(2000 / portTICK_PERIOD_MS);
-                continue;
-            }
-            ESP_LOGI(TAG, "... set socket receiving timeout success");
-
-            char *api_response = NULL;
-
-            /* Read HTTP response */
-            do {
-                bzero(recv_buf, sizeof(recv_buf));
-                r = read(s, recv_buf, sizeof(recv_buf) - 1);
-                for (int i = 0; i < r; i++) {
-                    printf("%c", (recv_buf[i]));
-                    int k = 0;
-                    if ((recv_buf[i]) == '{') {
-                        api_response = &recv_buf[i];
-                        r = 0;
-                    }
-                }
-            } while (r > 0);
-
-            if (api_response != NULL) {
-                if (json_extract(api_response, &configuration, lines) == 0) {
-                    xEventGroupSetBits(main_event_group, RECEIVED_DATA_BIT);
-                    printf("horray! \n");
-                }
-            }
-
-            ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d\r\n", r, errno);
-            close(s);
+            http_rest_with_url(&path);
         }
 
         vTaskDelay(50 / portTICK_PERIOD_MS);
@@ -496,35 +492,15 @@ static void data_processing(void *ptr) {
 
     while (1) {
         uxBits = xEventGroupWaitBits(main_event_group, RECEIVED_DATA_BIT, true, true, portMAX_DELAY);
-        printf("pa smo, 34543254235rhhfgdh, %d\n\n\n\n", (int) uxBits);
         if (((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) == 0) &&
             (uxBits & DATA_CHANGE_BIT) == 0) {
 
-            printf(";usuahdfo\n");
-
             xEventGroupSetBits(main_event_group, INITIALIZING_BIT);
-
-            strcpy(lines[0].text, "Device is now connected to wifi.");
-            strcpy(lines[1].text, data_config->verification_code);
-            strcpy(lines[2].text, "VERIFICATION CODE:");
-
-            lines[0].font = 1;
-            lines[1].font = 2;
-            lines[2].font = 1;
-
-            lines[0].left_margin = CENTER;
-            lines[1].left_margin = CENTER;
-            lines[2].left_margin = CENTER;
-
-            lines[0].top_margin = 25;
-            lines[1].top_margin = 74;
-            lines[2].top_margin = 51;
-
+            view_connected_to_wifi(lines, data_config->verification_code);
             xEventGroupSetBits(main_event_group, DATA_CHANGE_BIT);
 
             // print on display verification code
-        } else if ((uxBits & INITIALIZING_BIT) == (CONNECTED_BIT | INITIALIZING_BIT) &&
-                   (uxBits & DATA_CHANGE_BIT) == 0) {
+        } else if ((uxBits & INITIALIZING_BIT) && (uxBits & DATA_CHANGE_BIT) == 0) {
             //send request for registration with new id, delay task for 30 seconds
 
             //if response is "paired: 1", change initializing bit to 0 and initialized bit to 1
@@ -532,28 +508,15 @@ static void data_processing(void *ptr) {
                 xEventGroupClearBits(main_event_group, INITIALIZING_BIT);
                 xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
 
-                printf("ssid: %s\n", configuration.ssid);
+                strcpy(data_config->ssid, wifi_ssid);
+                strcpy(data_config->password, wifi_password);
+
                 save_configuration_to_nvs(data_config);
 
-                strcpy(lines[0].text, "");
-                strcpy(lines[1].text, "SUCCESS");
-                strcpy(lines[2].text, "Pairing was successful!");
-
-                lines[0].font = 1;
-                lines[1].font = 2;
-                lines[2].font = 1;
-
-                lines[0].left_margin = CENTER;
-                lines[1].left_margin = CENTER;
-                lines[2].left_margin = CENTER;
-
-                lines[0].top_margin = 20;
-                lines[1].top_margin = 55;
-                lines[2].top_margin = 105;
+                view_pairing_success(lines);
 
                 xEventGroupSetBits(main_event_group, DATA_CHANGE_BIT);
             }
-            printf("paired: %s \n", data_config->paired);
         } else if ((uxBits & INITIALIZED_BIT) == INITIALIZED_BIT &&
                    (uxBits & DATA_CHANGE_BIT) == 0) {
             // vTaskDelay( 100 /  portTICK_PERIOD_MS );
@@ -597,6 +560,7 @@ static void gpio_task_interrupt(void *arg) {
     for (;;) {
         if (xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)) {
             printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level(io_num));
+            go_to_sleep(1);
         }
     }
 }
@@ -605,10 +569,11 @@ void app_main() {
     int start_battery_level = get_battery_level(&battery_percent);
     printf("battery level: %d\n", start_battery_level);
     if (start_battery_level < 10) {
-        go_to_sleep(5 * 60); // sleep for 5 minutes
+//        go_to_sleep(5 * 60); // sleep for 5 minutes
     }
     main_event_group = xEventGroupCreate();
     ESP_ERROR_CHECK(nvs_flash_init());
+
 
     /* GPIO INTERRUPT */
     gpio_config_t io_conf;
@@ -625,10 +590,7 @@ void app_main() {
     gpio_isr_handler_add(WAKEUP_PIN, gpio_isr_handler, (void *) WAKEUP_PIN);
     /* END GPIO INTERRUPT */
 
-    xTaskCreate(&http_get_data, "http_get_data", 8192, &configuration, 2, NULL);
-    xTaskCreate(&sleep_monitor, "sleep_monitor", 1024, &configuration, 1, NULL);
-    xTaskCreate(&data_processing, "data_processing", 4095, &configuration, 3, NULL);
-    xTaskCreate(&updateScreen, "update screen", 8192, &configuration, 5, NULL);
+
 
     switch (esp_sleep_get_wakeup_cause()) {
         case ESP_SLEEP_WAKEUP_EXT0: {
@@ -655,33 +617,37 @@ void app_main() {
             printf("Not a deep sleep reset\n");
     }
 
-    /* get wifi configuration and device id from nvs */
+    xTaskCreate(&sleep_monitor, "sleep_monitor", 1024, &configuration, 1, NULL);
+    xTaskCreate(&updateScreen, "update screen", 8192, &configuration, 5, NULL);
+
+
+    /* if device is configured */
     if (get_configuration_from_nvs(&configuration)) {
+        xTaskCreate(&http_get_data, "http_get_data", 4095, &configuration, 2, NULL);
+        xTaskCreate(&data_processing, "data_processing", 4095, &configuration, 3, NULL);
+
         xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
         xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
 
         memcpy(wifi_config.sta.ssid, configuration.ssid, strlen(configuration.ssid) + 1);
         memcpy(wifi_config.sta.password, configuration.password, strlen(configuration.password) + 1);
         initialise_wifi(wifi_config);
+
+    /* if device has wifi and pass but is not set yet  */
+    } else if (strlen(wifi_ssid) > 0) {
+        xTaskCreate(&http_get_data, "http_get_data", 4095, &configuration, 2, NULL);
+        xTaskCreate(&data_processing, "data_processing", 4095, &configuration, 3, NULL);
+
+        xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
+
+        memcpy(wifi_config.sta.ssid, wifi_ssid, strlen(wifi_ssid) + 1);
+        memcpy(wifi_config.sta.password, wifi_password, strlen(wifi_password) + 1);
+        initialise_wifi(wifi_config);
     }
-        // if device was not set yet
+    /* Device was not set yet */
     else {
-        strcpy(lines[0].text, "To learn how to pair a device,");
-        strcpy(lines[1].text, "read the manual or visit");
-        strcpy(lines[2].text, "www.reetab.com/device_register");
-
-        lines[0].font = 1;
-        lines[1].font = 1;
-        lines[2].font = 0;
-
-        lines[0].left_margin = CENTER;
-        lines[1].left_margin = CENTER;
-        lines[2].left_margin = CENTER;
-
-        lines[0].top_margin = 40;
-        lines[1].top_margin = 54;
-        lines[2].top_margin = 80;
-
+        view_display_initial(lines);
+        xEventGroupSetBits(main_event_group, STEP_1);
         xEventGroupSetBits(main_event_group, DATA_CHANGE_BIT);
         initialize_smart_config();
     }

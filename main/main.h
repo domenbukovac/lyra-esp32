@@ -10,3 +10,9 @@ static const int INITIALIZED_BIT = BIT3;
 static const int RECEIVED_DATA_BIT = BIT4;
 static const int DATA_CHANGE_BIT = BIT5;
 static const int DISPLAY_UPDATED_BIT = BIT6;
+
+static const int LOADING_DATA_BIT = BIT7;
+static const int HTTP_DONE_BIT = BIT8;
+static const int STEP_1 = BIT9;
+static const int STEP_2 = BIT10;
+static const int STEP_3 = BIT11;

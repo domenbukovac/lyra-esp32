@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../.git/HEAD"
-  "../.git/refs/heads/migrate-to-CMake"
+  "../.git/refs/heads/master"
   "../CMakeLists.txt"
   "CMakeFiles/3.14.5/CMakeASMCompiler.cmake"
   "CMakeFiles/3.14.5/CMakeCCompiler.cmake"
@@ -248,6 +248,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/CMakeLists.txt"
   "/Users/domenbukovac/esp/esp-idf/components/xtensa/CMakeLists.txt"
   "/Users/domenbukovac/esp/esp-idf/examples/build_system/cmake/import_lib/main/lib/tinyxml2/.git"
+  "/Users/domenbukovac/esp/esp-idf/examples/common_components/protocol_examples_common/CMakeLists.txt"
   "/Users/domenbukovac/esp/esp-idf/tools/cmake/build.cmake"
   "/Users/domenbukovac/esp/esp-idf/tools/cmake/component.cmake"
   "/Users/domenbukovac/esp/esp-idf/tools/cmake/crosstool_version_check.cmake"
@@ -367,6 +368,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "esp-idf/epaper/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/mkspiffs/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/spiffs_image/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "esp-idf/protocol_examples_common/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -375,6 +377,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/size.dir/DependInfo.cmake"
   "CMakeFiles/Lyra.elf.dir/DependInfo.cmake"
   "CMakeFiles/bootloader.dir/DependInfo.cmake"
+  "CMakeFiles/___idf_protocol_examples_common.dir/DependInfo.cmake"
   "CMakeFiles/___idf_main.dir/DependInfo.cmake"
   "CMakeFiles/___idf_xtensa.dir/DependInfo.cmake"
   "CMakeFiles/___idf_wpa_supplicant.dir/DependInfo.cmake"
@@ -529,4 +532,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "esp-idf/main/CMakeFiles/__idf_main.dir/DependInfo.cmake"
   "esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/DependInfo.cmake"
   "esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DependInfo.cmake"
+  "esp-idf/protocol_examples_common/CMakeFiles/__idf_protocol_examples_common.dir/DependInfo.cmake"
   )
