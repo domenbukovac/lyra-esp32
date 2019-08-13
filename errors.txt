@@ -1,44 +1,163 @@
- while (1) {
-
-        uxBits = xEventGroupWaitBits(main_event_group, CONNECTED_BIT | INITIALIZING_BIT | INITIALIZED_BIT, false, false,
-                                     portMAX_DELAY);
-
-        if ((uxBits & LOADING_DATA_BIT) > 0) {
-            continue;
-        }
-
-        if ((uxBits & CONNECTED_BIT) == 0) {
-            continue;
-            printf("NOT READY\n");
-        }
-
-            /* Device is connected to wifi, but was not set yet */
-        else if ((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) == 0) {
-            printf("REGISTER\n");
-
-            strcpy(path, "/api/lyra/v1/register");
-        }
-
-            /* Device made a request but was not paired yet, waiting for pairing */
-        else if (uxBits & INITIALIZING_BIT) {
-
-            strcpy(path, "/api/lyra/v1/register/");
-            strcat(path, data_config->device_id);
-
-            vTaskDelay(10000 / portTICK_PERIOD_MS);
-
-        } else if (uxBits & INITIALIZED_BIT) {
-            printf("CLASSIC\n");
-
-            strcpy(path, "/api/lyra/v1/");
-            strcat(path, data_config->device_id);
-            strcat(path, "/");
-            strcat(path, battery_percent);
-        }
-
-        printf("lets go READY\n");
-        xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
-        http_rest_with_url(&path);
-
-        vTaskDelay(50 / portTICK_PERIOD_MS);
-    }
+('lala', '/Users/domenbukovac/esp/esp-idf/requirements.txt')
+Python requirements from /Users/domenbukovac/esp/esp-idf/requirements.txt are satisfied.
+[1/9] Performing build step for 'bootloader'
+ninja: no work to do.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from ../main/main.c:25:
+../main/main.h:1:40: warning: 'struct Configuration' declared inside parameter list will not be visible outside of this definition or declaration
+ bool get_configuration_from_nvs(struct Configuration *configuration);
+                                        ^~~~~~~~~~~~~
+../main/main.h:2:36: warning: 'struct Configuration' declared inside parameter list will not be visible outside of this definition or declaration
+ bool get_wifi_conf_from_nvs(struct Configuration *configuration);
+                                    ^~~~~~~~~~~~~
+../main/main.h:4:39: warning: 'struct Configuration' declared inside parameter list will not be visible outside of this definition or declaration
+ void save_configuration_to_nvs(struct Configuration *configuration);
+                                       ^~~~~~~~~~~~~
+In file included from ../main/main.c:35:
+/Users/domenbukovac/esp/esp-idf/components/heap/include/esp_heap_alloc_caps.h:15:2: warning: #warning "This header is deprecated, please use functions defined in esp_heap_caps.h instead." [-Wcpp]
+ #warning "This header is deprecated, please use functions defined in esp_heap_caps.h instead."
+  ^~~~~~~
+In file included from ../components/spidriver/./spi_master_lobo.h:24,
+                 from ../main/main.c:39:
+/Users/domenbukovac/esp/esp-idf/components/esp32/include/esp_intr.h:16:2: warning: #warning esp_intr.h is deprecated, please include esp_intr_alloc.h instead [-Wcpp]
+ #warning esp_intr.h is deprecated, please include esp_intr_alloc.h instead
+  ^~~~~~~
+In file included from ../components/spidriver/./spi_master_lobo.h:26,
+                 from ../main/main.c:39:
+/Users/domenbukovac/esp/esp-idf/components/esp32/include/rom/lldesc.h:1:2: warning: #warning rom/lldesc.h is deprecated, please use esp32/rom/lldesc.h instead [-Wcpp]
+ #warning rom/lldesc.h is deprecated, please use esp32/rom/lldesc.h instead
+  ^~~~~~~
+../main/main.c:63:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line0"},
+         ^
+In file included from ../main/json_read.h:7,
+                 from ../main/main.c:27:
+../main/struct.h:21:10: note: 'text' declared here
+     char text[50];
+          ^~~~
+../main/main.c:64:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line1"},
+         ^
+In file included from ../main/json_read.h:7,
+                 from ../main/main.c:27:
+../main/struct.h:21:10: note: 'text' declared here
+     char text[50];
+          ^~~~
+../main/main.c:65:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line2"},
+         ^
+In file included from ../main/json_read.h:7,
+                 from ../main/main.c:27:
+../main/struct.h:21:10: note: 'text' declared here
+     char text[50];
+          ^~~~
+../main/main.c:66:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line3"},
+         ^
+In file included from ../main/json_read.h:7,
+                 from ../main/main.c:27:
+../main/struct.h:21:10: note: 'text' declared here
+     char text[50];
+          ^~~~
+../main/main.c:67:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line4"},
+         ^
+In file included from ../main/json_read.h:7,
+                 from ../main/main.c:27:
+../main/struct.h:21:10: note: 'text' declared here
+     char text[50];
+          ^~~~
+../main/main.c:68:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line5"},
+         ^
+In file included from ../main/json_read.h:7,
+                 from ../main/main.c:27:
+../main/struct.h:21:10: note: 'text' declared here
+     char text[50];
+          ^~~~
+../main/main.c:69:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line6"},
+         ^
+In file included from ../main/json_read.h:7,
+                 from ../main/main.c:27:
+../main/struct.h:21:10: note: 'text' declared here
+     char text[50];
+          ^~~~
+../main/main.c:70:9: warning: missing initializer for field 'text' of 'line_struct' {aka 'struct <anonymous>'} [-Wmissing-field-initializers]
+         {"line7"}};
+         ^
+In file included from ../main/json_read.h:7,
+                 from ../main/main.c:27:
+../main/struct.h:21:10: note: 'text' declared here
+     char text[50];
+          ^~~~
+../main/main.c: In function 'initialize_display':
+../main/main.c:362:5: warning: 'pvPortMallocCaps' is deprecated [-Wdeprecated-declarations]
+     disp_buffer = pvPortMallocCaps(EPD_DISPLAY_WIDTH * (EPD_DISPLAY_HEIGHT / 8), MALLOC_CAP_DMA);
+     ^~~~~~~~~~~
+In file included from ../main/main.c:35:
+/Users/domenbukovac/esp/esp-idf/components/heap/include/esp_heap_alloc_caps.h:25:7: note: declared here
+ void *pvPortMallocCaps(size_t xWantedSize, uint32_t caps) asm("heap_caps_malloc") __attribute__((deprecated));
+       ^~~~~~~~~~~~~~~~
+../main/main.c:366:5: warning: 'pvPortMallocCaps' is deprecated [-Wdeprecated-declarations]
+     gs_disp_buffer = pvPortMallocCaps(EPD_DISPLAY_WIDTH * EPD_DISPLAY_HEIGHT, MALLOC_CAP_DMA);
+     ^~~~~~~~~~~~~~
+In file included from ../main/main.c:35:
+/Users/domenbukovac/esp/esp-idf/components/heap/include/esp_heap_alloc_caps.h:25:7: note: declared here
+ void *pvPortMallocCaps(size_t xWantedSize, uint32_t caps) asm("heap_caps_malloc") __attribute__((deprecated));
+       ^~~~~~~~~~~~~~~~
+../main/main.c: In function 'data_processing':
+../main/main.c:520:43: warning: passing argument 1 of 'save_configuration_to_nvs' from incompatible pointer type [-Wincompatible-pointer-types]
+                 save_configuration_to_nvs(data_config);
+                                           ^~~~~~~~~~~
+In file included from ../main/main.c:25:
+../main/main.h:4:54: note: expected 'struct Configuration *' but argument is of type 'Configuration *' {aka 'struct <anonymous> *'}
+ void save_configuration_to_nvs(struct Configuration *configuration);
+                                ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+../main/main.c: In function 'app_main':
+../main/main.c:575:49: warning: passing argument 1 of 'get_battery_level' from incompatible pointer type [-Wincompatible-pointer-types]
+     int start_battery_level = get_battery_level(&battery_percent);
+                                                 ^~~~~~~~~~~~~~~~
+In file included from ../main/main.c:28:
+../main/battery.h:63:34: note: expected 'char *' but argument is of type 'char (*)[8]'
+ uint32_t get_battery_level(char *battery_level)
+                            ~~~~~~^~~~~~~~~~~~~
+../main/main.c:631:36: warning: passing argument 1 of 'get_configuration_from_nvs' from incompatible pointer type [-Wincompatible-pointer-types]
+     if (get_configuration_from_nvs(&configuration)) {
+                                    ^~~~~~~~~~~~~~
+In file included from ../main/main.c:25:
+../main/main.h:1:55: note: expected 'struct Configuration *' but argument is of type 'Configuration *' {aka 'struct <anonymous> *'}
+ bool get_configuration_from_nvs(struct Configuration *configuration);
+                                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+../main/main.c:654:39: warning: passing argument 1 of 'get_wifi_conf_from_nvs' from incompatible pointer type [-Wincompatible-pointer-types]
+     } else if (get_wifi_conf_from_nvs(&configuration)) {
+                                       ^~~~~~~~~~~~~~
+In file included from ../main/main.c:25:
+../main/main.h:2:51: note: expected 'struct Configuration *' but argument is of type 'Configuration *' {aka 'struct <anonymous> *'}
+ bool get_wifi_conf_from_nvs(struct Configuration *configuration);
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+[3/7] Linking CXX static library esp-idf/main/libmain.a
+[4/7] Generating ld/esp32.project.ld
+[5/7] Building C object CMakeFiles/Lyra.elf.dir/project_elf_src.c.obj
+[6/7] Linking CXX executable Lyra.elf
+[7/7] Generating binary image from built executable
+esptool.py v2.7-dev
+Generated /Users/domenbukovac/LepusLabs/lyra-esp32/build/Lyra.bin
+esptool.py -p /dev/cu.usbserial-141120 -b 460800 --after no_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB 0x8000 partition_table/partition-table.bin 0x1000 bootloader/bootloader.bin 0x10000 Lyra.bin
+esptool.py v2.7-dev
+Serial port /dev/cu.usbserial-141120
+Connecting......
+Detecting chip type... ESP32
+Chip is ESP32D0WDQ6 (revision 1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+MAC: c4:4f:33:0c:c1:0d
+Uploading stub...
+Checking Python dependencies...
+Adding flash's dependency "all" to list of actions
+Executing action: all (aliases: build)
+Running ninja in directory /Users/domenbukovac/LepusLabs/lyra-esp32/build
+Executing "ninja all"...
+Executing action: flash
+Choosing default port /dev/cu.usbserial-141120 (use '-p PORT' option to set a specific serial port)
+Running esptool.py in directory /Users/domenbukovac/LepusLabs/lyra-esp32/build
+Executing "/Users/domenbukovac/.espressif/python_env/idf4.0_py2.7_env/bin/python /Users/domenbukovac/esp/esp-idf/components/esptool_py/esptool/esptool.py -p /dev/cu.usbserial-141120 -b 460800 --after no_reset write_flash @flash_project_args"...

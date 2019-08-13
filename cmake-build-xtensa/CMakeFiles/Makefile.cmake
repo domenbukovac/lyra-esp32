@@ -32,6 +32,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../components/spidriver/CMakeLists.txt"
   "../components/spiffs/CMakeLists.txt"
   "../components/spiffs_image/CMakeLists.txt"
+  "../components/wifi_manager/CMakeLists.txt"
   "../main/CMakeLists.txt"
   "../partitions_example.csv"
   "../sdkconfig"
@@ -368,6 +369,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "esp-idf/epaper/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/mkspiffs/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/spiffs_image/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "esp-idf/wifi_manager/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/protocol_examples_common/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -424,6 +426,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/___idf_esp_rom.dir/DependInfo.cmake"
   "CMakeFiles/___idf_heap.dir/DependInfo.cmake"
   "CMakeFiles/app-flash.dir/DependInfo.cmake"
+  "CMakeFiles/___idf_wifi_manager.dir/DependInfo.cmake"
   "CMakeFiles/___idf_expat.dir/DependInfo.cmake"
   "CMakeFiles/menuconfig.dir/DependInfo.cmake"
   "CMakeFiles/___idf_esp_common.dir/DependInfo.cmake"
@@ -532,5 +535,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "esp-idf/main/CMakeFiles/__idf_main.dir/DependInfo.cmake"
   "esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/DependInfo.cmake"
   "esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DependInfo.cmake"
+  "esp-idf/wifi_manager/CMakeFiles/__idf_wifi_manager.dir/DependInfo.cmake"
   "esp-idf/protocol_examples_common/CMakeFiles/__idf_protocol_examples_common.dir/DependInfo.cmake"
   )

@@ -68,6 +68,7 @@ ffb48f0b14fd205767723fc8828525f4 CMakeFiles/___idf_ulp
 ffb48f0b14fd205767723fc8828525f4 CMakeFiles/___idf_unity
 ffb48f0b14fd205767723fc8828525f4 CMakeFiles/___idf_vfs
 ffb48f0b14fd205767723fc8828525f4 CMakeFiles/___idf_wear_levelling
+ffb48f0b14fd205767723fc8828525f4 CMakeFiles/___idf_wifi_manager
 ffb48f0b14fd205767723fc8828525f4 CMakeFiles/___idf_wifi_provisioning
 ffb48f0b14fd205767723fc8828525f4 CMakeFiles/___idf_wpa_supplicant
 ffb48f0b14fd205767723fc8828525f4 CMakeFiles/___idf_xtensa
@@ -81,7 +82,7 @@ a1e778b9fc5c153e1dea8764bf4573c9 CMakeFiles/app-flash
 642002e8f5065a265dfad71622fac308 CMakeFiles/gen_project_binary
 642002e8f5065a265dfad71622fac308 CMakeFiles/mconf-idf
 d3cb7fe45b3a9584086b5f1b61fbe45f CMakeFiles/mconf-idf-complete
-719c0f7e6ae4e262f1a149cdc93a5ec8 CMakeFiles/menuconfig
+d57acdc38bc04bfe69384f67f10fe28d CMakeFiles/menuconfig
 6a2529e2384f0c5fba0b4090d7042bb7 CMakeFiles/size
 ae4b74606c342ada1d08c6aac2878cc9 CMakeFiles/size-components
 9d33ef3a69e24a1a8b6ba99d01d697e3 CMakeFiles/size-files
@@ -92,6 +93,7 @@ fe889fc0b1b82a160376159fcc78afdb bootloader-prefix/src/bootloader-stamp/bootload
 a9e9afec8ec81b2e6753c82463c508c3 bootloader-prefix/src/bootloader-stamp/bootloader-mkdir
 f19ec7b038ac3e8ee40d3aaa9f73f3b7 bootloader-prefix/src/bootloader-stamp/bootloader-patch
 dbdd0ca71e1036bb513c297022f0c5b5 bootloader-prefix/src/bootloader-stamp/bootloader-update
+55d173e161a3f6889dd61510e4ba5e56 code.js.S
 518ed5117e199120e13e0ae4a5953c85 esp-idf/bootloader/CMakeFiles/bootloader-flash
 24f957a7b8eb088fd775238a05ecd193 esp-idf/efuse/CMakeFiles/efuse_common_table
 7c8b291d1f4be80d212ab7f540757a99 esp-idf/efuse/CMakeFiles/efuse_test_table
@@ -103,6 +105,8 @@ a96321afca932e551c123d1f57043767 esp-idf/esp32/esp32_out.ld
 a598a2f32b26072fc8a5af9aaaf31bd2 esp-idf/mbedtls/mbedtls/CMakeFiles/apidoc
 f13906c42df4a4cd68ead010d15828ba esp-idf/mbedtls/mbedtls/library/CMakeFiles/lib
 31c85d8a85c849fe32fcf9d39fdd0b9b esp-idf/partition_table/CMakeFiles/partition_table
+a998564c9a7f5a83a06d3c6d7302731f index.html.S
+e46044d9be3bd149b8bdd47b468c2e99 jquery.gz.S
 11ecab80ca0d77f94e27a4bf7859211a mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build
 ffafeb6f2ffb17fe01c20a9ddec8eace mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure
 71d47f9a849606836d2272ddeb6abfaa mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download
@@ -112,3 +116,4 @@ b7c38bbb394b12acf298e62e85ab8d02 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-
 728cbe060f00a55425e4078c38316abc mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-update
 ab79900af18c0cb6d7e2e05498e388de partition_table/partition-table.bin
 0fddc4d0206e6765225e00f882e754f3 project_elf_src.c
+70797b61d8e5181d13a36253b4925f03 style.css.S

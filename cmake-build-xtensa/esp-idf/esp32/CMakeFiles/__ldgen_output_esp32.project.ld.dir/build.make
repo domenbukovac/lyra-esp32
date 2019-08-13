@@ -134,6 +134,7 @@ esp-idf/esp32/ld/esp32.project.ld: esp-idf/wifi_provisioning/libwifi_provisionin
 esp-idf/esp32/ld/esp32.project.ld: esp-idf/main/libmain.a
 esp-idf/esp32/ld/esp32.project.ld: esp-idf/spidriver/libspidriver.a
 esp-idf/esp32/ld/esp32.project.ld: esp-idf/epaper/libepaper.a
+esp-idf/esp32/ld/esp32.project.ld: esp-idf/wifi_manager/libwifi_manager.a
 esp-idf/esp32/ld/esp32.project.ld: esp-idf/protocol_examples_common/libprotocol_examples_common.a
 esp-idf/esp32/ld/esp32.project.ld: /Users/domenbukovac/LepusLabs/lyra-esp32/sdkconfig
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ld/esp32.project.ld"

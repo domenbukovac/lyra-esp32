@@ -1,4 +1,5 @@
 bool get_configuration_from_nvs(struct Configuration *configuration);
+bool get_wifi_conf_from_nvs(struct Configuration *configuration);
 
 void save_configuration_to_nvs(struct Configuration *configuration);
 void remove_configuration_from_nvs();

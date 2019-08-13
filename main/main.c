@@ -24,7 +24,7 @@
 #include "lwip/dns.h"
 #include "main.h"
 
-#include "json.h"
+#include "json_read.h"
 #include "battery.h"
 
 //display includes
@@ -33,6 +33,7 @@
 #include <sys/fcntl.h>
 #include <stdio.h>
 #include "esp_heap_alloc_caps.h"
+//#include "esp_heap_caps.h"
 #include "spiffs_vfs.h"
 
 #include "spi_master_lobo.h"
@@ -52,6 +53,9 @@
 
 #define WAKEUP_PIN 0
 #define MAX_HTTP_SIZE 4096
+
+#include "wifi_manager.h"
+
 
 Configuration configuration;
 
@@ -92,55 +96,78 @@ RTC_DATA_ATTR static char wifi_password[50];
 RTC_DATA_ATTR static uint8_t wifi_channel;
 RTC_DATA_ATTR static wifi_second_chan_t wifi_channel_second;
 
-static void smart_config_task(void *parm);
+
+static void go_to_sleep(int seconds) {
+
+    printf("Enabling EXT1 wakeup on pins GPIO4\n");
+    vTaskDelay(50 / portTICK_PERIOD_MS);
+    esp_sleep_enable_ext0_wakeup(WAKEUP_PIN, 0);
+    esp_deep_sleep(1000000LL * seconds);
+}
+
+void monitoring_task(void *pvParameter) {
+    for (;;) {
+        ESP_LOGI(TAG, "free heap: %d", esp_get_free_heap_size());
+        vTaskDelay(pdMS_TO_TICKS(10000));
+    }
+}
+
+
+/* brief this is an exemple of a callback that you can setup in your own app to get notified of wifi manager event */
+void cb_connection_ok(void *pvParameter) {
+    ESP_LOGI(TAG, "I have a connection!");
+    go_to_sleep(0);
+}
+
+//static void smart_config_task(void *parm);
 
 static void initialise_wifi(wifi_config_t wifi_config);
 
-static void smart_config_event_handler(void *arg, esp_event_base_t event_base,
-                                       int32_t event_id, void *event_data) {
-    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
-        xTaskCreate(smart_config_task, "smartconfig_example_task", 4096, NULL, 4, NULL);
-    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
-        esp_wifi_connect();
-        xEventGroupClearBits(main_event_group, CONNECTED_BIT);
-    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
-        xEventGroupSetBits(main_event_group, CONNECTED_BIT);
-    } else if (event_base == SC_EVENT && event_id == SC_EVENT_SCAN_DONE) {
-        ESP_LOGI(TAG, "Scan done");
-    } else if (event_base == SC_EVENT && event_id == SC_EVENT_FOUND_CHANNEL) {
-        ESP_LOGI(TAG, "Found channel");
-    } else if (event_base == SC_EVENT && event_id == SC_EVENT_GOT_SSID_PSWD) {
-        ESP_LOGI(TAG, "Got SSID and password");
-
-        smartconfig_event_got_ssid_pswd_t *evt = (smartconfig_event_got_ssid_pswd_t *) event_data;
-        wifi_config_t wifi_config;
-        uint8_t ssid[33] = {0};
-        uint8_t password[65] = {0};
-
-        bzero(&wifi_config, sizeof(wifi_config_t));
-        memcpy(wifi_config.sta.ssid, evt->ssid, sizeof(wifi_config.sta.ssid));
-        memcpy(wifi_config.sta.password, evt->password, sizeof(wifi_config.sta.password));
-        wifi_config.sta.bssid_set = evt->bssid_set;
-        if (wifi_config.sta.bssid_set == true) {
-            memcpy(wifi_config.sta.bssid, evt->bssid, sizeof(wifi_config.sta.bssid));
-        }
-
-        strcpy(wifi_ssid, (const char *) wifi_config.sta.ssid);
-        strcpy(wifi_password, (const char *) wifi_config.sta.password);
-
-        memcpy(ssid, evt->ssid, sizeof(evt->ssid));
-        memcpy(password, evt->password, sizeof(evt->password));
-        ESP_LOGI(TAG, "SSID:%s", ssid);
-        ESP_LOGI(TAG, "PASSWORD:%s", password);
-
-        ESP_ERROR_CHECK(esp_wifi_disconnect());
-        ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
-        ESP_ERROR_CHECK(esp_wifi_connect());
-    } else if (event_base == SC_EVENT && event_id == SC_EVENT_SEND_ACK_DONE) {
-        esp_smartconfig_stop();
-        xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
-    }
-}
+//static void smart_config_event_handler(void *arg, esp_event_base_t event_base,
+//                                       int32_t event_id, void *event_data) {
+//    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
+//        xTaskCreate(smart_config_task, "smartconfig_example_task", 4096, NULL, 4, NULL);
+//    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
+//        esp_wifi_connect();
+//        xEventGroupClearBits(main_event_group, CONNECTED_BIT);
+//    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
+//        xEventGroupSetBits(main_event_group, CONNECTED_BIT);
+//    } else if (event_base == SC_EVENT && event_id == SC_EVENT_SCAN_DONE) {
+//        ESP_LOGI(TAG, "Scan done");
+//    } else if (event_base == SC_EVENT && event_id == SC_EVENT_FOUND_CHANNEL) {
+//        ESP_LOGI(TAG, "Found channel");
+//    } else if (event_base == SC_EVENT && event_id == SC_EVENT_GOT_SSID_PSWD) {
+//        ESP_LOGI(TAG, "Got SSID and password");
+//
+//        smartconfig_event_got_ssid_pswd_t *evt = (smartconfig_event_got_ssid_pswd_t *) event_data;
+//        wifi_config_t wifi_config;
+//        uint8_t ssid[33] = {0};
+//        uint8_t password[65] = {0};
+//
+//        bzero(&wifi_config, sizeof(wifi_config_t));
+//        memcpy(wifi_config.sta.ssid, evt->ssid, sizeof(wifi_config.sta.ssid));
+//        memcpy(wifi_config.sta.password, evt->password, sizeof(wifi_config.sta.password));
+//        wifi_config.sta.bssid_set = evt->bssid_set;
+//        if (wifi_config.sta.bssid_set == true) {
+//            memcpy(wifi_config.sta.bssid, evt->bssid, sizeof(wifi_config.sta.bssid));
+//        }
+//
+//        strcpy(wifi_ssid, (const char *) wifi_config.sta.ssid);
+//        strcpy(wifi_password, (const char *) wifi_config.sta.password);
+//
+//        memcpy(ssid, evt->ssid, sizeof(evt->ssid));
+//        memcpy(password, evt->password, sizeof(evt->password));
+//        ESP_LOGI(TAG, "SSID:%s", ssid);
+//        ESP_LOGI(TAG, "PASSWORD:%s", password);
+//
+//        ESP_ERROR_CHECK(esp_wifi_disconnect());
+//        ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
+//        ESP_ERROR_CHECK(esp_wifi_connect());
+//    } else if (event_base == SC_EVENT && event_id == SC_EVENT_SEND_ACK_DONE) {
+//        esp_smartconfig_stop();
+//        xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
+//    }
+//}
 
 esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
     switch (evt->event_id) {
@@ -257,14 +284,19 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
     }
 }
 
-static void initialise_wifi(wifi_config_t wifi_config) {
+/* FreeRTOS event group to signal when we are connected*/
 
+static void initialise_wifi(wifi_config_t wifi_config) {
     tcpip_adapter_init();
     ESP_ERROR_CHECK(esp_event_loop_create_default());
+
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+
     ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &wifi_event_handler, NULL));
     ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &wifi_event_handler, NULL));
+
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
     ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
     ESP_ERROR_CHECK(esp_wifi_start());
@@ -272,46 +304,39 @@ static void initialise_wifi(wifi_config_t wifi_config) {
     ESP_LOGI(TAG, "wifi_init_sta finished.");
 }
 
-static void initialize_smart_config(void) {
-    tcpip_adapter_init();
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+//static void initialize_smart_config(void) {
+//    tcpip_adapter_init();
+//    ESP_ERROR_CHECK(esp_event_loop_create_default());
+//
+//    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+//    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+//
+//    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &smart_config_event_handler, NULL));
+//    ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &smart_config_event_handler, NULL));
+//    ESP_ERROR_CHECK(esp_event_handler_register(SC_EVENT, ESP_EVENT_ANY_ID, &smart_config_event_handler, NULL));
+//
+//    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+//    ESP_ERROR_CHECK(esp_wifi_start());
+//}
+//
+//static void smart_config_task(void *parm) {
+//    EventBits_t uxBits;
+//    ESP_ERROR_CHECK(esp_smartconfig_set_type(SC_TYPE_ESPTOUCH));
+//    smartconfig_start_config_t cfg = SMARTCONFIG_START_CONFIG_DEFAULT();
+//    ESP_ERROR_CHECK(esp_smartconfig_start(&cfg));
+//    while (1) {
+//        uxBits = xEventGroupWaitBits(main_event_group, CONNECTED_BIT | ESPTOUCH_DONE_BIT, true, false, portMAX_DELAY);
+//        if (uxBits & CONNECTED_BIT) {
+//            ESP_LOGI(TAG, "WiFi Connected to ap");
+//        }
+//        if (uxBits & ESPTOUCH_DONE_BIT) {
+//            ESP_LOGI(TAG, "smartconfig over");
+//            esp_smartconfig_stop();
+//            vTaskDelete(NULL);
+//        }
+//    }
+//}
 
-    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
-
-    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &smart_config_event_handler, NULL));
-    ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &smart_config_event_handler, NULL));
-    ESP_ERROR_CHECK(esp_event_handler_register(SC_EVENT, ESP_EVENT_ANY_ID, &smart_config_event_handler, NULL));
-
-    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
-    ESP_ERROR_CHECK(esp_wifi_start());
-}
-
-static void smart_config_task(void *parm) {
-    EventBits_t uxBits;
-    ESP_ERROR_CHECK(esp_smartconfig_set_type(SC_TYPE_ESPTOUCH));
-    smartconfig_start_config_t cfg = SMARTCONFIG_START_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK(esp_smartconfig_start(&cfg));
-    while (1) {
-        uxBits = xEventGroupWaitBits(main_event_group, CONNECTED_BIT | ESPTOUCH_DONE_BIT, true, false, portMAX_DELAY);
-        if (uxBits & CONNECTED_BIT) {
-            ESP_LOGI(TAG, "WiFi Connected to ap");
-        }
-        if (uxBits & ESPTOUCH_DONE_BIT) {
-            ESP_LOGI(TAG, "smartconfig over");
-            esp_smartconfig_stop();
-            vTaskDelete(NULL);
-        }
-    }
-}
-
-static void go_to_sleep(int seconds) {
-
-    printf("Enabling EXT1 wakeup on pins GPIO4\n");
-    vTaskDelay(50 / portTICK_PERIOD_MS);
-    esp_sleep_enable_ext0_wakeup(WAKEUP_PIN, 0);
-    esp_deep_sleep(1000000LL * seconds);
-}
 
 static void sleep_monitor(void *ptr) {
     EventBits_t uxBits;
@@ -489,8 +514,8 @@ static void data_processing(void *ptr) {
                 xEventGroupClearBits(main_event_group, INITIALIZING_BIT);
                 xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
 
-                strcpy(data_config->ssid, wifi_ssid);
-                strcpy(data_config->password, wifi_password);
+                strcpy(data_config->ssid, (const char *) wifi_config.sta.ssid);
+                strcpy(data_config->password, (const char *) wifi_config.sta.password);
 
                 save_configuration_to_nvs(data_config);
 
@@ -616,6 +641,8 @@ void app_main() {
 
         /* if device has wifi and pass but is not set yet  */
     } else if (strlen(wifi_ssid) > 0) {
+
+
         xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
         xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
 
@@ -624,12 +651,30 @@ void app_main() {
         memcpy(wifi_config.sta.ssid, wifi_ssid, strlen(wifi_ssid) + 1);
         memcpy(wifi_config.sta.password, wifi_password, strlen(wifi_password) + 1);
         initialise_wifi(wifi_config);
+    } else if (get_wifi_conf_from_nvs(&configuration)) {
+        xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
+        xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
+
+        memcpy(wifi_config.sta.ssid, configuration.ssid, strlen(configuration.ssid) + 1);
+        memcpy(wifi_config.sta.password, configuration.password, strlen(configuration.password) + 1);
+
+
+        xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
+        initialise_wifi(wifi_config);
     }
         /* Device was not set yet */
     else {
-        view_display_initial(lines);
-        xEventGroupSetBits(main_event_group, STEP_1);
-        xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
-        initialize_smart_config();
+//        view_display_initial(lines);
+//        xEventGroupSetBits(main_event_group, STEP_1);
+//        xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+//        initialize_smart_config();
+
+        wifi_manager_start();
+
+        /* register a callback as an example to how you can integrate your code with the wifi manager */
+        wifi_manager_set_callback(EVENT_STA_GOT_IP, &cb_connection_ok);
+
+        /* your code should go here. Here we simply create a task on core 2 that monitors free heap memory */
+        xTaskCreatePinnedToCore(&monitoring_task, "monitoring_task", 2048, NULL, 1, NULL, 1);
     }
 }

@@ -59,4 +59,5 @@ $<TARGET_FILE:__idf_wifi_provisioning>
 $<TARGET_FILE:__idf_main>
 $<TARGET_FILE:__idf_spidriver>
 $<TARGET_FILE:__idf_epaper>
+$<TARGET_FILE:__idf_wifi_manager>
 $<TARGET_FILE:__idf_protocol_examples_common>

@@ -111,6 +111,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../components/epaper/."
   "../components/mkspiffs/include"
   "../components/spiffs_image/include"
+  "../components/wifi_manager/."
   "/Users/domenbukovac/esp/esp-idf/examples/common_components/protocol_examples_common/include"
   )
 
@@ -176,6 +177,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DependInfo.cmake"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/__idf_wifi_manager.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/__idf_protocol_examples_common.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/DependInfo.cmake"

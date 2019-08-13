@@ -820,6 +820,19 @@ app-flash/fast:
 .PHONY : app-flash/fast
 
 #=============================================================================
+# Target rules for targets named ___idf_wifi_manager
+
+# Build rule for target.
+___idf_wifi_manager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ___idf_wifi_manager
+.PHONY : ___idf_wifi_manager
+
+# fast build rule for target.
+___idf_wifi_manager/fast:
+	$(MAKE) -f CMakeFiles/___idf_wifi_manager.dir/build.make CMakeFiles/___idf_wifi_manager.dir/build
+.PHONY : ___idf_wifi_manager/fast
+
+#=============================================================================
 # Target rules for targets named ___idf_expat
 
 # Build rule for target.
@@ -2224,6 +2237,19 @@ __idf_epaper/fast:
 .PHONY : __idf_epaper/fast
 
 #=============================================================================
+# Target rules for targets named __idf_wifi_manager
+
+# Build rule for target.
+__idf_wifi_manager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 __idf_wifi_manager
+.PHONY : __idf_wifi_manager
+
+# fast build rule for target.
+__idf_wifi_manager/fast:
+	$(MAKE) -f esp-idf/wifi_manager/CMakeFiles/__idf_wifi_manager.dir/build.make esp-idf/wifi_manager/CMakeFiles/__idf_wifi_manager.dir/build
+.PHONY : __idf_wifi_manager/fast
+
+#=============================================================================
 # Target rules for targets named __idf_protocol_examples_common
 
 # Build rule for target.
@@ -2326,6 +2352,7 @@ help:
 	@echo "... ___idf_esp_rom"
 	@echo "... ___idf_heap"
 	@echo "... app-flash"
+	@echo "... ___idf_wifi_manager"
 	@echo "... ___idf_expat"
 	@echo "... menuconfig"
 	@echo "... ___idf_esp_common"
@@ -2434,6 +2461,7 @@ help:
 	@echo "... __idf_main"
 	@echo "... __idf_spidriver"
 	@echo "... __idf_epaper"
+	@echo "... __idf_wifi_manager"
 	@echo "... __idf_protocol_examples_common"
 	@echo "... project_elf_src.obj"
 	@echo "... project_elf_src.i"

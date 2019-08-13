@@ -55,6 +55,7 @@
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/___idf_esp_rom.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/___idf_heap.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/app-flash.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/___idf_wifi_manager.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/___idf_expat.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/menuconfig.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/___idf_esp_common.dir
@@ -607,6 +608,13 @@
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spiffs_image/CMakeFiles/list_install_components.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spiffs_image/CMakeFiles/rebuild_cache.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spiffs_image/CMakeFiles/edit_cache.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/install/local.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/install/strip.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/install.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/list_install_components.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/rebuild_cache.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/edit_cache.dir
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/__idf_wifi_manager.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/rebuild_cache.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/edit_cache.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/install/strip.dir
