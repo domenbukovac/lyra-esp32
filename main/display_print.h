@@ -10,12 +10,12 @@
 
 int view_display_initial(line_struct *lines) {
     strcpy(lines[0].text, "To setup the device, connect to wifi");
-    strcpy(lines[1].text, "LYRA ONE");
+    strcpy(lines[1].text, "LYRA  M 0oO m");
     strcpy(lines[2].text, "using password 'setup4242'");
 
-    lines[0].font = 1;
-    lines[1].font = 2;
-    lines[2].font = 1;
+    lines[0].font = 12;
+    lines[1].font = 14;
+    lines[2].font = 11;
 
     lines[0].left_margin = CENTER;
     lines[1].left_margin = CENTER;

@@ -171,6 +171,33 @@ __idf_epaper/fast:
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build
 .PHONY : __idf_epaper/fast
 
+Calibri24x32GR.obj: Calibri24x32GR.c.obj
+
+.PHONY : Calibri24x32GR.obj
+
+# target to build an object file
+Calibri24x32GR.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.obj
+.PHONY : Calibri24x32GR.c.obj
+
+Calibri24x32GR.i: Calibri24x32GR.c.i
+
+.PHONY : Calibri24x32GR.i
+
+# target to preprocess a source file
+Calibri24x32GR.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.i
+.PHONY : Calibri24x32GR.c.i
+
+Calibri24x32GR.s: Calibri24x32GR.c.s
+
+.PHONY : Calibri24x32GR.s
+
+# target to generate assembly for a file
+Calibri24x32GR.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.s
+.PHONY : Calibri24x32GR.c.s
+
 DefaultFont.obj: DefaultFont.c.obj
 
 .PHONY : DefaultFont.obj
@@ -306,6 +333,87 @@ EPDspi.c.s:
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/EPDspi.c.s
 .PHONY : EPDspi.c.s
 
+Grotesk16x32.obj: Grotesk16x32.c.obj
+
+.PHONY : Grotesk16x32.obj
+
+# target to build an object file
+Grotesk16x32.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.obj
+.PHONY : Grotesk16x32.c.obj
+
+Grotesk16x32.i: Grotesk16x32.c.i
+
+.PHONY : Grotesk16x32.i
+
+# target to preprocess a source file
+Grotesk16x32.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.i
+.PHONY : Grotesk16x32.c.i
+
+Grotesk16x32.s: Grotesk16x32.c.s
+
+.PHONY : Grotesk16x32.s
+
+# target to generate assembly for a file
+Grotesk16x32.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.s
+.PHONY : Grotesk16x32.c.s
+
+GroteskBold16x32.obj: GroteskBold16x32.c.obj
+
+.PHONY : GroteskBold16x32.obj
+
+# target to build an object file
+GroteskBold16x32.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.obj
+.PHONY : GroteskBold16x32.c.obj
+
+GroteskBold16x32.i: GroteskBold16x32.c.i
+
+.PHONY : GroteskBold16x32.i
+
+# target to preprocess a source file
+GroteskBold16x32.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.i
+.PHONY : GroteskBold16x32.c.i
+
+GroteskBold16x32.s: GroteskBold16x32.c.s
+
+.PHONY : GroteskBold16x32.s
+
+# target to generate assembly for a file
+GroteskBold16x32.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.s
+.PHONY : GroteskBold16x32.c.s
+
+Inconsola.obj: Inconsola.c.obj
+
+.PHONY : Inconsola.obj
+
+# target to build an object file
+Inconsola.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.obj
+.PHONY : Inconsola.c.obj
+
+Inconsola.i: Inconsola.c.i
+
+.PHONY : Inconsola.i
+
+# target to preprocess a source file
+Inconsola.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.i
+.PHONY : Inconsola.c.i
+
+Inconsola.s: Inconsola.c.s
+
+.PHONY : Inconsola.s
+
+# target to generate assembly for a file
+Inconsola.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.s
+.PHONY : Inconsola.c.s
+
 SmallFont.obj: SmallFont.c.obj
 
 .PHONY : SmallFont.obj
@@ -360,6 +468,114 @@ Ubuntu16.c.s:
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntu16.c.s
 .PHONY : Ubuntu16.c.s
 
+Ubuntubold.obj: Ubuntubold.c.obj
+
+.PHONY : Ubuntubold.obj
+
+# target to build an object file
+Ubuntubold.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.obj
+.PHONY : Ubuntubold.c.obj
+
+Ubuntubold.i: Ubuntubold.c.i
+
+.PHONY : Ubuntubold.i
+
+# target to preprocess a source file
+Ubuntubold.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.i
+.PHONY : Ubuntubold.c.i
+
+Ubuntubold.s: Ubuntubold.c.s
+
+.PHONY : Ubuntubold.s
+
+# target to generate assembly for a file
+Ubuntubold.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.s
+.PHONY : Ubuntubold.c.s
+
+arial_bold.obj: arial_bold.c.obj
+
+.PHONY : arial_bold.obj
+
+# target to build an object file
+arial_bold.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.obj
+.PHONY : arial_bold.c.obj
+
+arial_bold.i: arial_bold.c.i
+
+.PHONY : arial_bold.i
+
+# target to preprocess a source file
+arial_bold.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.i
+.PHONY : arial_bold.c.i
+
+arial_bold.s: arial_bold.c.s
+
+.PHONY : arial_bold.s
+
+# target to generate assembly for a file
+arial_bold.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.s
+.PHONY : arial_bold.c.s
+
+arial_normal.obj: arial_normal.c.obj
+
+.PHONY : arial_normal.obj
+
+# target to build an object file
+arial_normal.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.obj
+.PHONY : arial_normal.c.obj
+
+arial_normal.i: arial_normal.c.i
+
+.PHONY : arial_normal.i
+
+# target to preprocess a source file
+arial_normal.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.i
+.PHONY : arial_normal.c.i
+
+arial_normal.s: arial_normal.c.s
+
+.PHONY : arial_normal.s
+
+# target to generate assembly for a file
+arial_normal.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.s
+.PHONY : arial_normal.c.s
+
+arial_round.obj: arial_round.c.obj
+
+.PHONY : arial_round.obj
+
+# target to build an object file
+arial_round.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.obj
+.PHONY : arial_round.c.obj
+
+arial_round.i: arial_round.c.i
+
+.PHONY : arial_round.i
+
+# target to preprocess a source file
+arial_round.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.i
+.PHONY : arial_round.c.i
+
+arial_round.s: arial_round.c.s
+
+.PHONY : arial_round.s
+
+# target to generate assembly for a file
+arial_round.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.s
+.PHONY : arial_round.c.s
+
 comic24.obj: comic24.c.obj
 
 .PHONY : comic24.obj
@@ -413,6 +629,33 @@ dejavuX.s: dejavuX.c.s
 dejavuX.c.s:
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/dejavuX.c.s
 .PHONY : dejavuX.c.s
+
+hallfetica_normal.obj: hallfetica_normal.c.obj
+
+.PHONY : hallfetica_normal.obj
+
+# target to build an object file
+hallfetica_normal.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.obj
+.PHONY : hallfetica_normal.c.obj
+
+hallfetica_normal.i: hallfetica_normal.c.i
+
+.PHONY : hallfetica_normal.i
+
+# target to preprocess a source file
+hallfetica_normal.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.i
+.PHONY : hallfetica_normal.c.i
+
+hallfetica_normal.s: hallfetica_normal.c.s
+
+.PHONY : hallfetica_normal.s
+
+# target to generate assembly for a file
+hallfetica_normal.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.s
+.PHONY : hallfetica_normal.c.s
 
 minya24.obj: minya24.c.obj
 
@@ -481,6 +724,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... __idf_epaper"
+	@echo "... Calibri24x32GR.obj"
+	@echo "... Calibri24x32GR.i"
+	@echo "... Calibri24x32GR.s"
 	@echo "... DefaultFont.obj"
 	@echo "... DefaultFont.i"
 	@echo "... DefaultFont.s"
@@ -496,18 +742,42 @@ help:
 	@echo "... EPDspi.obj"
 	@echo "... EPDspi.i"
 	@echo "... EPDspi.s"
+	@echo "... Grotesk16x32.obj"
+	@echo "... Grotesk16x32.i"
+	@echo "... Grotesk16x32.s"
+	@echo "... GroteskBold16x32.obj"
+	@echo "... GroteskBold16x32.i"
+	@echo "... GroteskBold16x32.s"
+	@echo "... Inconsola.obj"
+	@echo "... Inconsola.i"
+	@echo "... Inconsola.s"
 	@echo "... SmallFont.obj"
 	@echo "... SmallFont.i"
 	@echo "... SmallFont.s"
 	@echo "... Ubuntu16.obj"
 	@echo "... Ubuntu16.i"
 	@echo "... Ubuntu16.s"
+	@echo "... Ubuntubold.obj"
+	@echo "... Ubuntubold.i"
+	@echo "... Ubuntubold.s"
+	@echo "... arial_bold.obj"
+	@echo "... arial_bold.i"
+	@echo "... arial_bold.s"
+	@echo "... arial_normal.obj"
+	@echo "... arial_normal.i"
+	@echo "... arial_normal.s"
+	@echo "... arial_round.obj"
+	@echo "... arial_round.i"
+	@echo "... arial_round.s"
 	@echo "... comic24.obj"
 	@echo "... comic24.i"
 	@echo "... comic24.s"
 	@echo "... dejavuX.obj"
 	@echo "... dejavuX.i"
 	@echo "... dejavuX.s"
+	@echo "... hallfetica_normal.obj"
+	@echo "... hallfetica_normal.i"
+	@echo "... hallfetica_normal.s"
 	@echo "... minya24.obj"
 	@echo "... minya24.i"
 	@echo "... minya24.s"

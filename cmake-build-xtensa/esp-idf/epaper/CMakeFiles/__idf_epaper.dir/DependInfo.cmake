@@ -4,15 +4,24 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Calibri24x32GR.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/DefaultFont.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DefaultFont.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/DejaVuSans18.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DejaVuSans18.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/DejaVuSans24.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/DejaVuSans24.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/EPD.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/EPD.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/EPDspi.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/EPDspi.c.obj"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Grotesk16x32.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.obj"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/GroteskBold16x32.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.obj"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Inconsola.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/SmallFont.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/SmallFont.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Ubuntu16.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntu16.c.obj"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Ubuntubold.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.obj"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_bold.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.obj"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_normal.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.obj"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_round.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/comic24.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/comic24.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/dejavuX.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/dejavuX.c.obj"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/hallfetica_normal.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/minya24.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/minya24.c.obj"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/tooney32.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper/CMakeFiles/__idf_epaper.dir/tooney32.c.obj"
   )

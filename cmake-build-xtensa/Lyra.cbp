@@ -8640,6 +8640,9 @@
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/style.css.S">
 			<Option target="__idf_wifi_manager"/>
 		</Unit>
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Calibri24x32GR.c">
+			<Option target="__idf_epaper"/>
+		</Unit>
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/DefaultFont.c">
 			<Option target="__idf_epaper"/>
 		</Unit>
@@ -8661,16 +8664,40 @@
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/EPDspi.h">
 			<Option target="__idf_epaper"/>
 		</Unit>
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Grotesk16x32.c">
+			<Option target="__idf_epaper"/>
+		</Unit>
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/GroteskBold16x32.c">
+			<Option target="__idf_epaper"/>
+		</Unit>
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Inconsola.c">
+			<Option target="__idf_epaper"/>
+		</Unit>
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/SmallFont.c">
 			<Option target="__idf_epaper"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Ubuntu16.c">
 			<Option target="__idf_epaper"/>
 		</Unit>
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Ubuntubold.c">
+			<Option target="__idf_epaper"/>
+		</Unit>
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_bold.c">
+			<Option target="__idf_epaper"/>
+		</Unit>
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_normal.c">
+			<Option target="__idf_epaper"/>
+		</Unit>
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_round.c">
+			<Option target="__idf_epaper"/>
+		</Unit>
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/comic24.c">
 			<Option target="__idf_epaper"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/dejavuX.c">
+			<Option target="__idf_epaper"/>
+		</Unit>
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/hallfetica_normal.c">
 			<Option target="__idf_epaper"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/minya24.c">

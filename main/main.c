@@ -66,8 +66,9 @@ wifi_config_t wifi_config;
 static EventGroupHandle_t main_event_group;
 static const char *TAG = "Event_tag";
 
-static const char *file_fonts[3] = {"/spiffs/fonts/DotMatrix_M.fon", "/spiffs/fonts/Ubuntu.fon",
-                                    "/spiffs/fonts/Grotesk24x48.fon"};
+static const char *file_fonts[] = {"/spiffs/fonts/DejaVuSans12.fon", "/spiffs/fonts/Ubuntu.fon",
+                                   "/spiffs/fonts/DotMatrix_M.fon", "/spiffs/fonts/Grotesk24x48.fon",
+                                   "/spiffs/fonts/KelveticaNobis.fon"};
 
 char battery_percent[8];
 RTC_DATA_ATTR static unsigned long rtc_text_hash;
@@ -164,7 +165,8 @@ static void http_rest_with_url(char *path) {
         }
         buffer[read_len] = 0;
         ESP_LOGD(TAG, "read_len = %d", read_len);
-    } if (content_length > MAX_HTTP_SIZE-1){
+    }
+    if (content_length > MAX_HTTP_SIZE - 1) {
         fail_count++;
         printf("HTTP REQUEST TOO LONG, FAIL COUNT: %d\n", fail_count);
         go_to_sleep(10);
@@ -344,6 +346,7 @@ static void updateScreen(void *ptr) {
         if (is_text_updated()) {
             printf("New text to display\n");
         } else {
+            printf("Same old text\n");
             xEventGroupClearBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
             xEventGroupSetBits(main_event_group, DISPLAY_UPDATED_BIT);
             continue;
@@ -366,11 +369,33 @@ static void updateScreen(void *ptr) {
 
         for (int i = 0; i < MAX_LINES; i++) {
             if (lines[i].font == 1)
-                EPD_setFont(USER_FONT, "/spiffs/fonts/DejaVuSans12.fon");
+                EPD_setFont(USER_FONT, file_fonts[0]);
             else if (lines[i].font == 2)
                 EPD_setFont(USER_FONT, file_fonts[1]);
             else if (lines[i].font == 3)
-                EPD_setFont(3, NULL);
+                EPD_setFont(UBUNTU16_FONT, NULL);
+            else if (lines[i].font == 4)
+                EPD_setFont(ARIAL_NORMAL, NULL);
+            else if (lines[i].font == 5)
+                EPD_setFont(ARIAL_BOLD, NULL);
+            else if (lines[i].font == 6)
+                EPD_setFont(ARIAL_ROUND, NULL);
+            else if (lines[i].font == 7)
+                EPD_setFont(HALLFETICA, NULL);
+            else if (lines[i].font == 8)
+                EPD_setFont(INCONSOLA, NULL);
+            else if (lines[i].font == 9)
+                EPD_setFont(UBNUTU_BOLD, NULL);
+            else if (lines[i].font == 10)
+                EPD_setFont(USER_FONT, file_fonts[3]);
+            else if (lines[i].font == 11)
+                EPD_setFont(USER_FONT, file_fonts[2]);
+            else if (lines[i].font == 12)
+                EPD_setFont(USER_FONT, file_fonts[4]);
+            else if (lines[i].font == 13)
+                EPD_setFont(GROTESK_16, NULL);
+            else if (lines[i].font == 14)
+                EPD_setFont(GROTESK_BOLD, NULL);
 
             EPD_print(lines[i].text, lines[i].left_margin, lines[i].top_margin);
         }

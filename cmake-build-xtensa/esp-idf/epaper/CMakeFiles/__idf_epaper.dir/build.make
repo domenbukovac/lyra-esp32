@@ -187,9 +187,22 @@ esp-idf/epaper/CMakeFiles/__idf_epaper.dir/minya24.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/minya24.c.s"
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/minya24.c -o CMakeFiles/__idf_epaper.dir/minya24.c.s
 
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.obj: ../components/epaper/Calibri24x32GR.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.obj"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Calibri24x32GR.c
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.i"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Calibri24x32GR.c > CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.i
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.s"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Calibri24x32GR.c -o CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.s
+
 esp-idf/epaper/CMakeFiles/__idf_epaper.dir/tooney32.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
 esp-idf/epaper/CMakeFiles/__idf_epaper.dir/tooney32.c.obj: ../components/epaper/tooney32.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/tooney32.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/tooney32.c.obj"
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/tooney32.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/tooney32.c
 
 esp-idf/epaper/CMakeFiles/__idf_epaper.dir/tooney32.c.i: cmake_force
@@ -199,6 +212,110 @@ esp-idf/epaper/CMakeFiles/__idf_epaper.dir/tooney32.c.i: cmake_force
 esp-idf/epaper/CMakeFiles/__idf_epaper.dir/tooney32.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/tooney32.c.s"
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/tooney32.c -o CMakeFiles/__idf_epaper.dir/tooney32.c.s
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.obj: ../components/epaper/arial_bold.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.obj"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/arial_bold.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_bold.c
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_epaper.dir/arial_bold.c.i"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_bold.c > CMakeFiles/__idf_epaper.dir/arial_bold.c.i
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/arial_bold.c.s"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_bold.c -o CMakeFiles/__idf_epaper.dir/arial_bold.c.s
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.obj: ../components/epaper/arial_normal.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.obj"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/arial_normal.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_normal.c
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_epaper.dir/arial_normal.c.i"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_normal.c > CMakeFiles/__idf_epaper.dir/arial_normal.c.i
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/arial_normal.c.s"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_normal.c -o CMakeFiles/__idf_epaper.dir/arial_normal.c.s
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.obj: ../components/epaper/arial_round.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.obj"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/arial_round.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_round.c
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_epaper.dir/arial_round.c.i"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_round.c > CMakeFiles/__idf_epaper.dir/arial_round.c.i
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/arial_round.c.s"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/arial_round.c -o CMakeFiles/__idf_epaper.dir/arial_round.c.s
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.obj: ../components/epaper/Ubuntubold.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.obj"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/Ubuntubold.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Ubuntubold.c
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_epaper.dir/Ubuntubold.c.i"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Ubuntubold.c > CMakeFiles/__idf_epaper.dir/Ubuntubold.c.i
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/Ubuntubold.c.s"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Ubuntubold.c -o CMakeFiles/__idf_epaper.dir/Ubuntubold.c.s
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.obj: ../components/epaper/Inconsola.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.obj"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/Inconsola.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Inconsola.c
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_epaper.dir/Inconsola.c.i"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Inconsola.c > CMakeFiles/__idf_epaper.dir/Inconsola.c.i
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/Inconsola.c.s"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Inconsola.c -o CMakeFiles/__idf_epaper.dir/Inconsola.c.s
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.obj: ../components/epaper/hallfetica_normal.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.obj"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/hallfetica_normal.c
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.i"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/hallfetica_normal.c > CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.i
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.s"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/hallfetica_normal.c -o CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.s
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.obj: ../components/epaper/Grotesk16x32.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.obj"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Grotesk16x32.c
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.i"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Grotesk16x32.c > CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.i
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.s"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/Grotesk16x32.c -o CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.s
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.obj: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/flags.make
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.obj: ../components/epaper/GroteskBold16x32.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.obj"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/GroteskBold16x32.c
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.i"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/GroteskBold16x32.c > CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.i
+
+esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.s"
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/epaper/GroteskBold16x32.c -o CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.s
 
 # Object files for target __idf_epaper
 __idf_epaper_OBJECTS = \
@@ -212,7 +329,16 @@ __idf_epaper_OBJECTS = \
 "CMakeFiles/__idf_epaper.dir/comic24.c.obj" \
 "CMakeFiles/__idf_epaper.dir/dejavuX.c.obj" \
 "CMakeFiles/__idf_epaper.dir/minya24.c.obj" \
-"CMakeFiles/__idf_epaper.dir/tooney32.c.obj"
+"CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.obj" \
+"CMakeFiles/__idf_epaper.dir/tooney32.c.obj" \
+"CMakeFiles/__idf_epaper.dir/arial_bold.c.obj" \
+"CMakeFiles/__idf_epaper.dir/arial_normal.c.obj" \
+"CMakeFiles/__idf_epaper.dir/arial_round.c.obj" \
+"CMakeFiles/__idf_epaper.dir/Ubuntubold.c.obj" \
+"CMakeFiles/__idf_epaper.dir/Inconsola.c.obj" \
+"CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.obj" \
+"CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.obj" \
+"CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.obj"
 
 # External object files for target __idf_epaper
 __idf_epaper_EXTERNAL_OBJECTS =
@@ -227,10 +353,19 @@ esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntu16.
 esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/comic24.c.obj
 esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/dejavuX.c.obj
 esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/minya24.c.obj
+esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Calibri24x32GR.c.obj
 esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/tooney32.c.obj
+esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_bold.c.obj
+esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_normal.c.obj
+esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/arial_round.c.obj
+esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Ubuntubold.c.obj
+esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Inconsola.c.obj
+esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/hallfetica_normal.c.obj
+esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/Grotesk16x32.c.obj
+esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/GroteskBold16x32.c.obj
 esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/build.make
 esp-idf/epaper/libepaper.a: esp-idf/epaper/CMakeFiles/__idf_epaper.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX static library libepaper.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX static library libepaper.a"
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && $(CMAKE_COMMAND) -P CMakeFiles/__idf_epaper.dir/cmake_clean_target.cmake
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/epaper && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_epaper.dir/link.txt --verbose=$(VERBOSE)
 

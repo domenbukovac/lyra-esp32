@@ -111,6 +111,16 @@ int	EPD_Y;					// Y position of the next character after EPD_print() function
 #define SMALL_FONT		7
 #define FONT_7SEG		8
 #define USER_FONT		9  // font will be read from file
+#define ARIAL_NORMAL    10  // font will be read from file
+#define ARIAL_BOLD		11  // font will be read from file
+#define ARIAL_ROUND		12  // font will be read from file
+
+#define HALLFETICA    13  // font will be read from file
+#define INCONSOLA		14  // font will be read from file
+#define UBNUTU_BOLD		15  // font will be read from file
+#define GROTESK_16		16  // font will be read from file
+#define GROTESK_BOLD		17  // font will be read from file
+
 
 
 

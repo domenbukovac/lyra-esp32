@@ -41,13 +41,21 @@
 
 // Embedded fonts
 extern uint8_t tft_SmallFont[];
+extern uint8_t Calibri24x32GR[];
 extern uint8_t tft_DefaultFont[];
 extern uint8_t tft_Dejavu18[];
 extern uint8_t tft_Dejavu24[];
 extern uint8_t tft_Ubuntu16[];
 extern uint8_t tft_Comic24[];
 extern uint8_t tft_minya24[];
-extern uint8_t tft_tooney32[];
+extern uint8_t arial_normal[];
+extern uint8_t arial_bold[];
+extern uint8_t arial_round[];
+extern uint8_t hallfetica[];
+extern uint8_t inconsola[];
+extern uint8_t ubuntu_bold[];
+extern uint8_t grotesk_16[];
+extern uint8_t grotesk_bold[];
 
 // ==============================================================
 // ==== Set default values of global variables ==================
@@ -1734,9 +1742,25 @@ void EPD_setFont(uint8_t font, const char *font_file)
 		else if (font == MINYA24_FONT)
 			cfont.font = tft_minya24;
 		else if (font == TOONEY32_FONT)
-			cfont.font = tft_tooney32;
+			cfont.font = Calibri24x32GR;
 		else if (font == SMALL_FONT)
-			cfont.font = tft_SmallFont;
+            cfont.font = tft_SmallFont;
+        else if (font == ARIAL_NORMAL)
+            cfont.font = arial_normal;
+        else if (font == ARIAL_BOLD)
+            cfont.font = arial_bold;
+        else if (font == ARIAL_ROUND)
+            cfont.font = arial_round;
+        else if (font == HALLFETICA)
+            cfont.font = hallfetica;
+        else if (font == INCONSOLA)
+            cfont.font = inconsola;
+        else if (font == UBNUTU_BOLD)
+            cfont.font = ubuntu_bold;
+        else if (font == GROTESK_16)
+            cfont.font = grotesk_16;
+        else if (font == GROTESK_BOLD)
+            cfont.font = grotesk_bold;
 		else
 			cfont.font = tft_DefaultFont;
 
