@@ -33,7 +33,6 @@
 #include <sys/fcntl.h>
 #include <stdio.h>
 #include "esp_heap_alloc_caps.h"
-//#include "esp_heap_caps.h"
 #include "spiffs_vfs.h"
 
 #include "spi_master_lobo.h"
@@ -52,21 +51,14 @@
 
 #define WAKEUP_PIN 0
 #define MAX_HTTP_SIZE 4096
+#define MAX_LINES 8
 
 #include "wifi_manager.h"
 
 
 static Configuration configuration;
 
-line_struct lines[8] = {
-        {"line0"},
-        {"line1"},
-        {"line2"},
-        {"line3"},
-        {"line4"},
-        {"line5"},
-        {"line6"},
-        {"line7"}};
+line_struct lines[MAX_LINES];
 
 wifi_config_t wifi_config;
 
@@ -81,6 +73,7 @@ char battery_percent[8];
 RTC_DATA_ATTR static unsigned long rtc_text_hash;
 
 RTC_DATA_ATTR static uint8_t wifi_channel;
+RTC_DATA_ATTR static int fail_count = 0;
 RTC_DATA_ATTR static wifi_second_chan_t wifi_channel_second;
 
 static void go_to_sleep(int seconds) {
@@ -157,6 +150,9 @@ static void http_rest_with_url(char *path) {
     if ((err = esp_http_client_open(client, 0)) != ESP_OK) {
         ESP_LOGE(TAG, "Failed to open HTTP connection: %s", esp_err_to_name(err));
         free(buffer);
+        fail_count++;
+        printf("HTTP REQUEST FAILED: %d\n", fail_count);
+        go_to_sleep(10);
         return;
     }
     int content_length = esp_http_client_fetch_headers(client);
@@ -168,6 +164,10 @@ static void http_rest_with_url(char *path) {
         }
         buffer[read_len] = 0;
         ESP_LOGD(TAG, "read_len = %d", read_len);
+    } if (content_length > MAX_HTTP_SIZE-1){
+        fail_count++;
+        printf("HTTP REQUEST TOO LONG, FAIL COUNT: %d\n", fail_count);
+        go_to_sleep(10);
     }
     ESP_LOGI(TAG, "HTTP Stream reader Status = %d, content_length = %d",
              esp_http_client_get_status_code(client),
@@ -181,6 +181,10 @@ static void http_rest_with_url(char *path) {
             xEventGroupSetBits(main_event_group, RECEIVED_DATA_BIT);
             xEventGroupClearBits(main_event_group, LOADING_DATA_BIT);
         }
+    } else {
+        fail_count++;
+        printf("HTTP REQUEST FAILED: %d\n", fail_count);
+        go_to_sleep(10);
     }
 
 
@@ -312,10 +316,39 @@ static void initialize_display() {
     // EPD_DisplayClearFull();
 }
 
+
+int is_text_updated() {
+    unsigned long hash = 5381;
+    int c;
+
+    for (int i = 0; i < 8; i++) {
+        char *str = lines[i].text;
+        while ((c = *str++))
+            hash = ((hash << 5) + hash) + c;
+        hash = ((hash << 5) + hash) + c;
+    }
+
+    if (hash != rtc_text_hash) {
+        rtc_text_hash = hash;
+        return 1;
+    }
+
+    return 0;
+}
+
 static void updateScreen(void *ptr) {
     while (1) {
 
         xEventGroupWaitBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT, false, false, portMAX_DELAY);
+
+        if (is_text_updated()) {
+            printf("New text to display\n");
+        } else {
+            xEventGroupClearBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+            xEventGroupSetBits(main_event_group, DISPLAY_UPDATED_BIT);
+            continue;
+        }
+
         initialize_display();
         vfs_spiffs_register();
 
@@ -331,7 +364,7 @@ static void updateScreen(void *ptr) {
 
         orientation = LANDSCAPE_180;
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < MAX_LINES; i++) {
             if (lines[i].font == 1)
                 EPD_setFont(USER_FONT, "/spiffs/fonts/DejaVuSans12.fon");
             else if (lines[i].font == 2)
@@ -388,25 +421,6 @@ static void http_get_data(void *ptr) {
 }
 
 
-int is_text_updated() {
-    unsigned long hash = 5381;
-    int c;
-
-    for (int i = 0; i < 8; i++) {
-        char *str = lines[i].text;
-        while ((c = *str++))
-            hash = ((hash << 5) + hash) + c;
-        hash = ((hash << 5) + hash) + c;
-    }
-
-    if (hash != rtc_text_hash) {
-        rtc_text_hash = hash;
-        return 1;
-    }
-
-    return 0;
-}
-
 static void data_processing(void *ptr) {
     EventBits_t uxBits;
     Configuration *data_config = ((Configuration *) ptr);
@@ -439,11 +453,8 @@ static void data_processing(void *ptr) {
         } else if ((uxBits & INITIALIZED_BIT) == INITIALIZED_BIT &&
                    (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
 
-            if (is_text_updated()) {
-                xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
-            } else {
-                xEventGroupSetBits(main_event_group, DISPLAY_UPDATED_BIT);
-            }
+            xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+
         }
 
         vTaskDelay(200 / portTICK_PERIOD_MS);
@@ -522,9 +533,19 @@ void app_main() {
             printf("Not a deep sleep reset\n");
     }
 
+    if (fail_count == 2) {
+        fail_count++;
+        view_something_went_wrong(lines);
+        xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+        configuration.sleep_seconds = 20;
+    } else if (fail_count > 2 && fail_count % 2) {
+        fail_count++;
+        configuration.sleep_seconds = 20;
+        go_to_sleep(fail_count * 10);
+    }
+
     xTaskCreate(&sleep_monitor, "sleep_monitor", 2048, &configuration, 1, NULL);
     xTaskCreate(&updateScreen, "update screen", 16384, &configuration, 5, NULL);
-
 
     /* if device is configured */
     if (get_configuration_from_nvs(&configuration)) {
@@ -550,6 +571,7 @@ void app_main() {
         xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
         initialise_wifi(wifi_config);
     } else {
+        fail_count = 0;
         view_display_initial(lines);
         xEventGroupSetBits(main_event_group, STEP_1);
         xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);

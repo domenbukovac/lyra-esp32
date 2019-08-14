@@ -35,31 +35,31 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Determining if the C compiler works passed with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_61507/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_61507.dir/build.make CMakeFiles/cmTC_61507.dir/build
-Building C object CMakeFiles/cmTC_61507.dir/testCCompiler.c.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -o CMakeFiles/cmTC_61507.dir/testCCompiler.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_61507
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_61507.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_61507.dir/testCCompiler.c.obj  -o cmTC_61507 
+Run Build Command(s):/usr/bin/make cmTC_2ab03/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_2ab03.dir/build.make CMakeFiles/cmTC_2ab03.dir/build
+Building C object CMakeFiles/cmTC_2ab03.dir/testCCompiler.c.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -o CMakeFiles/cmTC_2ab03.dir/testCCompiler.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_2ab03
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_2ab03.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_2ab03.dir/testCCompiler.c.obj  -o cmTC_2ab03 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_bf53a/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bf53a.dir/build.make CMakeFiles/cmTC_bf53a.dir/build
-Building C object CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -v -o CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj   -c "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCCompilerABI.c"
+Run Build Command(s):/usr/bin/make cmTC_728ed/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_728ed.dir/build.make CMakeFiles/cmTC_728ed.dir/build
+Building C object CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -v -o CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj   -c "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCCompilerABI.c"
 Using built-in specs.
 COLLECT_GCC=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
 Target: xtensa-esp32-elf
 Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_apple-darwin12 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp32-2019r1' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes
 Thread model: posix
 gcc version 8.2.0 (crosstool-NG esp32-2019r1) 
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj' '-c'
- /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/cc1 -quiet -v -iprefix /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/ /Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlongcalls -auxbase-strip CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj -Wno-frame-address -version -o /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccsEI9kf.s
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj' '-c'
+ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/cc1 -quiet -v -iprefix /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/ /Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlongcalls -auxbase-strip CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj -Wno-frame-address -version -o /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccnZQkzF.s
 GNU C17 (crosstool-NG esp32-2019r1) version 8.2.0 (xtensa-esp32-elf)
 	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
 
@@ -80,14 +80,14 @@ GNU C17 (crosstool-NG esp32-2019r1) version 8.2.0 (xtensa-esp32-elf)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: f970e3a2ba712ab4d0d8d30c68563808
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj' '-c'
- /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/as --traditional-format --longcalls -o CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccsEI9kf.s
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj' '-c'
+ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/as --traditional-format --longcalls -o CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccnZQkzF.s
 COMPILER_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj' '-c'
-Linking C executable cmTC_bf53a
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_bf53a.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib -v CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj  -o cmTC_bf53a 
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj' '-c'
+Linking C executable cmTC_728ed
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_728ed.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib -v CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj  -o cmTC_728ed 
 Using built-in specs.
 COLLECT_GCC=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
 COLLECT_LTO_WRAPPER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper
@@ -97,10 +97,10 @@ Thread model: posix
 gcc version 8.2.0 (crosstool-NG esp32-2019r1) 
 COMPILER_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_bf53a'
- /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2 -plugin /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so -plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccMbtt6s.res -o cmTC_bf53a -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_728ed'
+ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2 -plugin /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so -plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccvSu0ug.res -o cmTC_728ed -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_bf53a'
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_728ed'
 
 
 Parsed C implicit include dir info from above output: rv=done
@@ -122,18 +122,18 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(xtensa-esp32-elf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_bf53a/fast ]
-  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bf53a.dir/build.make CMakeFiles/cmTC_bf53a.dir/build]
-  ignore line: [Building C object CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -v -o CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj   -c "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCCompilerABI.c"]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_728ed/fast ]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_728ed.dir/build.make CMakeFiles/cmTC_728ed.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -v -o CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj   -c "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCCompilerABI.c"]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc]
   ignore line: [Target: xtensa-esp32-elf]
   ignore line: [Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_apple-darwin12 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp32-2019r1' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 8.2.0 (crosstool-NG esp32-2019r1) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj' '-c']
-  ignore line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/cc1 -quiet -v -iprefix /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/ /Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlongcalls -auxbase-strip CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj -Wno-frame-address -version -o /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccsEI9kf.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/cc1 -quiet -v -iprefix /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/ /Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlongcalls -auxbase-strip CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj -Wno-frame-address -version -o /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccnZQkzF.s]
   ignore line: [GNU C17 (crosstool-NG esp32-2019r1) version 8.2.0 (xtensa-esp32-elf)]
   ignore line: [	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP]
   ignore line: []
@@ -154,14 +154,14 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: f970e3a2ba712ab4d0d8d30c68563808]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj' '-c']
-  ignore line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/as --traditional-format --longcalls -o CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccsEI9kf.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/as --traditional-format --longcalls -o CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccnZQkzF.s]
   ignore line: [COMPILER_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/]
   ignore line: [LIBRARY_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj' '-c']
-  ignore line: [Linking C executable cmTC_bf53a]
-  ignore line: ["/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_bf53a.dir/link.txt --verbose=1]
-  ignore line: [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib -v CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj  -o cmTC_bf53a ]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [Linking C executable cmTC_728ed]
+  ignore line: ["/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_728ed.dir/link.txt --verbose=1]
+  ignore line: [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib -v CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj  -o cmTC_728ed ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc]
   ignore line: [COLLECT_LTO_WRAPPER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper]
@@ -171,19 +171,19 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 8.2.0 (crosstool-NG esp32-2019r1) ]
   ignore line: [COMPILER_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/]
   ignore line: [LIBRARY_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_bf53a']
-  link line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2 -plugin /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so -plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccMbtt6s.res -o cmTC_bf53a -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_728ed']
+  link line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2 -plugin /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so -plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccvSu0ug.res -o cmTC_728ed -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj]
     arg [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccMbtt6s.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccvSu0ug.res] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_bf53a] ==> ignore
+    arg [cmTC_728ed] ==> ignore
     arg [-L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0] ==> dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0]
     arg [-L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc] ==> dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc]
     arg [-L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib] ==> dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib]
-    arg [CMakeFiles/cmTC_bf53a.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [CMakeFiles/cmTC_728ed.dir/CMakeCCompilerABI.c.obj] ==> ignore
   collapse library dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0] ==> [/Users/domenbukovac/esp/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/8.2.0]
   collapse library dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc] ==> [/Users/domenbukovac/esp/xtensa-esp32-elf/lib/gcc]
   collapse library dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib] ==> [/Users/domenbukovac/esp/xtensa-esp32-elf/xtensa-esp32-elf/lib]
@@ -197,13 +197,13 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_a2bc4/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_a2bc4.dir/build.make CMakeFiles/cmTC_a2bc4.dir/build
-Building C object CMakeFiles/cmTC_a2bc4.dir/feature_tests.c.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -std=c11 -o CMakeFiles/cmTC_a2bc4.dir/feature_tests.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.c
-Linking C executable cmTC_a2bc4
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_a2bc4.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_a2bc4.dir/feature_tests.c.obj  -o cmTC_a2bc4 
+Run Build Command(s):/usr/bin/make cmTC_81b11/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_81b11.dir/build.make CMakeFiles/cmTC_81b11.dir/build
+Building C object CMakeFiles/cmTC_81b11.dir/feature_tests.c.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -std=c11 -o CMakeFiles/cmTC_81b11.dir/feature_tests.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.c
+Linking C executable cmTC_81b11
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_81b11.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_81b11.dir/feature_tests.c.obj  -o cmTC_81b11 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 
@@ -216,13 +216,13 @@ Linking C executable cmTC_a2bc4
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_4bb5d/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_4bb5d.dir/build.make CMakeFiles/cmTC_4bb5d.dir/build
-Building C object CMakeFiles/cmTC_4bb5d.dir/feature_tests.c.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -std=c99 -o CMakeFiles/cmTC_4bb5d.dir/feature_tests.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.c
-Linking C executable cmTC_4bb5d
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_4bb5d.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_4bb5d.dir/feature_tests.c.obj  -o cmTC_4bb5d 
+Run Build Command(s):/usr/bin/make cmTC_d1aa8/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d1aa8.dir/build.make CMakeFiles/cmTC_d1aa8.dir/build
+Building C object CMakeFiles/cmTC_d1aa8.dir/feature_tests.c.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -std=c99 -o CMakeFiles/cmTC_d1aa8.dir/feature_tests.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d1aa8
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_d1aa8.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_d1aa8.dir/feature_tests.c.obj  -o cmTC_d1aa8 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 
@@ -235,13 +235,13 @@ Linking C executable cmTC_4bb5d
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_58c38/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_58c38.dir/build.make CMakeFiles/cmTC_58c38.dir/build
-Building C object CMakeFiles/cmTC_58c38.dir/feature_tests.c.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -std=c90 -o CMakeFiles/cmTC_58c38.dir/feature_tests.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.c
-Linking C executable cmTC_58c38
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_58c38.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_58c38.dir/feature_tests.c.obj  -o cmTC_58c38 
+Run Build Command(s):/usr/bin/make cmTC_7912b/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_7912b.dir/build.make CMakeFiles/cmTC_7912b.dir/build
+Building C object CMakeFiles/cmTC_7912b.dir/feature_tests.c.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc   -mlongcalls -Wno-frame-address    -std=c90 -o CMakeFiles/cmTC_7912b.dir/feature_tests.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.c
+Linking C executable cmTC_7912b
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_7912b.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_7912b.dir/feature_tests.c.obj  -o cmTC_7912b 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 
@@ -252,31 +252,31 @@ Linking C executable cmTC_58c38
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_fbbbf/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_fbbbf.dir/build.make CMakeFiles/cmTC_fbbbf.dir/build
-Building CXX object CMakeFiles/cmTC_fbbbf.dir/testCXXCompiler.cxx.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -o CMakeFiles/cmTC_fbbbf.dir/testCXXCompiler.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_fbbbf
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_fbbbf.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_fbbbf.dir/testCXXCompiler.cxx.obj  -o cmTC_fbbbf 
+Run Build Command(s):/usr/bin/make cmTC_3dff1/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3dff1.dir/build.make CMakeFiles/cmTC_3dff1.dir/build
+Building CXX object CMakeFiles/cmTC_3dff1.dir/testCXXCompiler.cxx.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -o CMakeFiles/cmTC_3dff1.dir/testCXXCompiler.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_3dff1
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_3dff1.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_3dff1.dir/testCXXCompiler.cxx.obj  -o cmTC_3dff1 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_64eff/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_64eff.dir/build.make CMakeFiles/cmTC_64eff.dir/build
-Building CXX object CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -v -o CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj -c "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp"
+Run Build Command(s):/usr/bin/make cmTC_b82ef/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_b82ef.dir/build.make CMakeFiles/cmTC_b82ef.dir/build
+Building CXX object CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -v -o CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj -c "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp"
 Using built-in specs.
 COLLECT_GCC=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++
 Target: xtensa-esp32-elf
 Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_apple-darwin12 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp32-2019r1' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes
 Thread model: posix
 gcc version 8.2.0 (crosstool-NG esp32-2019r1) 
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
- /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/cc1plus -quiet -v -iprefix /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/ /Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlongcalls -auxbase-strip CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj -Wno-frame-address -version -o /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccQxEJkg.s
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
+ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/cc1plus -quiet -v -iprefix /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/ /Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlongcalls -auxbase-strip CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj -Wno-frame-address -version -o /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccmaY41u.s
 GNU C++14 (crosstool-NG esp32-2019r1) version 8.2.0 (xtensa-esp32-elf)
 	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
 
@@ -303,14 +303,14 @@ GNU C++14 (crosstool-NG esp32-2019r1) version 8.2.0 (xtensa-esp32-elf)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: fcf55c71227847053d202ddadac3286b
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
- /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/as --traditional-format --longcalls -o CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccQxEJkg.s
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
+ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/as --traditional-format --longcalls -o CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccmaY41u.s
 COMPILER_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
-Linking CXX executable cmTC_64eff
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_64eff.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib -v CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_64eff 
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
+Linking CXX executable cmTC_b82ef
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_b82ef.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib -v CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_b82ef 
 Using built-in specs.
 COLLECT_GCC=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++
 COLLECT_LTO_WRAPPER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper
@@ -320,10 +320,10 @@ Thread model: posix
 gcc version 8.2.0 (crosstool-NG esp32-2019r1) 
 COMPILER_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_64eff'
- /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2 -plugin /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so -plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//cc81lGGx.res -o cmTC_64eff -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_b82ef'
+ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2 -plugin /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so -plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccQRm1Bp.res -o cmTC_b82ef -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_64eff'
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_b82ef'
 
 
 Parsed CXX implicit include dir info from above output: rv=done
@@ -351,18 +351,18 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(xtensa-esp32-elf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_64eff/fast ]
-  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_64eff.dir/build.make CMakeFiles/cmTC_64eff.dir/build]
-  ignore line: [Building CXX object CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -v -o CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj -c "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp"]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_b82ef/fast ]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_b82ef.dir/build.make CMakeFiles/cmTC_b82ef.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -v -o CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj -c "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp"]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++]
   ignore line: [Target: xtensa-esp32-elf]
   ignore line: [Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_apple-darwin12 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp32-2019r1' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin12/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 8.2.0 (crosstool-NG esp32-2019r1) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
-  ignore line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/cc1plus -quiet -v -iprefix /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/ /Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlongcalls -auxbase-strip CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj -Wno-frame-address -version -o /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccQxEJkg.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/cc1plus -quiet -v -iprefix /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/ /Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlongcalls -auxbase-strip CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj -Wno-frame-address -version -o /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccmaY41u.s]
   ignore line: [GNU C++14 (crosstool-NG esp32-2019r1) version 8.2.0 (xtensa-esp32-elf)]
   ignore line: [	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP]
   ignore line: []
@@ -389,14 +389,14 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: fcf55c71227847053d202ddadac3286b]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
-  ignore line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/as --traditional-format --longcalls -o CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccQxEJkg.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/as --traditional-format --longcalls -o CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccmaY41u.s]
   ignore line: [COMPILER_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/]
   ignore line: [LIBRARY_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
-  ignore line: [Linking CXX executable cmTC_64eff]
-  ignore line: ["/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_64eff.dir/link.txt --verbose=1]
-  ignore line: [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib -v CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_64eff ]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [Linking CXX executable cmTC_b82ef]
+  ignore line: ["/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_b82ef.dir/link.txt --verbose=1]
+  ignore line: [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib -v CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_b82ef ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++]
   ignore line: [COLLECT_LTO_WRAPPER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper]
@@ -406,19 +406,19 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 8.2.0 (crosstool-NG esp32-2019r1) ]
   ignore line: [COMPILER_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/]
   ignore line: [LIBRARY_PATH=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/:/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_64eff']
-  link line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2 -plugin /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so -plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//cc81lGGx.res -o cmTC_64eff -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-nostdlib' '-v' '-o' 'cmTC_b82ef']
+  link line: [ /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2 -plugin /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so -plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccQRm1Bp.res -o cmTC_b82ef -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc -L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj]
     arg [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//cc81lGGx.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/var/folders/ky/65_b96s926dgz_vzxlp_whd40000gn/T//ccQRm1Bp.res] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_64eff] ==> ignore
+    arg [cmTC_b82ef] ==> ignore
     arg [-L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0] ==> dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0]
     arg [-L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc] ==> dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc]
     arg [-L/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib] ==> dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib]
-    arg [CMakeFiles/cmTC_64eff.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+    arg [CMakeFiles/cmTC_b82ef.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
   collapse library dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0] ==> [/Users/domenbukovac/esp/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/8.2.0]
   collapse library dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc] ==> [/Users/domenbukovac/esp/xtensa-esp32-elf/lib/gcc]
   collapse library dir [/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib] ==> [/Users/domenbukovac/esp/xtensa-esp32-elf/xtensa-esp32-elf/lib]
@@ -432,13 +432,13 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++2a] compiler features compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_47ed0/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_47ed0.dir/build.make CMakeFiles/cmTC_47ed0.dir/build
-Building CXX object CMakeFiles/cmTC_47ed0.dir/feature_tests.cxx.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++2a -o CMakeFiles/cmTC_47ed0.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_47ed0
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_47ed0.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_47ed0.dir/feature_tests.cxx.obj  -o cmTC_47ed0 
+Run Build Command(s):/usr/bin/make cmTC_0a705/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_0a705.dir/build.make CMakeFiles/cmTC_0a705.dir/build
+Building CXX object CMakeFiles/cmTC_0a705.dir/feature_tests.cxx.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++2a -o CMakeFiles/cmTC_0a705.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_0a705
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_0a705.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_0a705.dir/feature_tests.cxx.obj  -o cmTC_0a705 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 
@@ -504,13 +504,13 @@ Linking CXX executable cmTC_47ed0
 Detecting CXX [-std=c++17] compiler features compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_c44f4/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c44f4.dir/build.make CMakeFiles/cmTC_c44f4.dir/build
-Building CXX object CMakeFiles/cmTC_c44f4.dir/feature_tests.cxx.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++17 -o CMakeFiles/cmTC_c44f4.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_c44f4
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_c44f4.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_c44f4.dir/feature_tests.cxx.obj  -o cmTC_c44f4 
+Run Build Command(s):/usr/bin/make cmTC_ff7a2/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_ff7a2.dir/build.make CMakeFiles/cmTC_ff7a2.dir/build
+Building CXX object CMakeFiles/cmTC_ff7a2.dir/feature_tests.cxx.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++17 -o CMakeFiles/cmTC_ff7a2.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_ff7a2
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_ff7a2.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_ff7a2.dir/feature_tests.cxx.obj  -o cmTC_ff7a2 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 
@@ -576,13 +576,13 @@ Linking CXX executable cmTC_c44f4
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_5e714/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_5e714.dir/build.make CMakeFiles/cmTC_5e714.dir/build
-Building CXX object CMakeFiles/cmTC_5e714.dir/feature_tests.cxx.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++14 -o CMakeFiles/cmTC_5e714.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_5e714
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_5e714.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_5e714.dir/feature_tests.cxx.obj  -o cmTC_5e714 
+Run Build Command(s):/usr/bin/make cmTC_1f18d/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_1f18d.dir/build.make CMakeFiles/cmTC_1f18d.dir/build
+Building CXX object CMakeFiles/cmTC_1f18d.dir/feature_tests.cxx.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++14 -o CMakeFiles/cmTC_1f18d.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_1f18d
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_1f18d.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_1f18d.dir/feature_tests.cxx.obj  -o cmTC_1f18d 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 
@@ -648,13 +648,13 @@ Linking CXX executable cmTC_5e714
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_4a41c/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_4a41c.dir/build.make CMakeFiles/cmTC_4a41c.dir/build
-Building CXX object CMakeFiles/cmTC_4a41c.dir/feature_tests.cxx.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++11 -o CMakeFiles/cmTC_4a41c.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_4a41c
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_4a41c.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_4a41c.dir/feature_tests.cxx.obj  -o cmTC_4a41c 
+Run Build Command(s):/usr/bin/make cmTC_abfd6/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_abfd6.dir/build.make CMakeFiles/cmTC_abfd6.dir/build
+Building CXX object CMakeFiles/cmTC_abfd6.dir/feature_tests.cxx.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++11 -o CMakeFiles/cmTC_abfd6.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_abfd6
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_abfd6.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_abfd6.dir/feature_tests.cxx.obj  -o cmTC_abfd6 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 
@@ -720,13 +720,13 @@ Linking CXX executable cmTC_4a41c
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_b519a/fast 
-/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_b519a.dir/build.make CMakeFiles/cmTC_b519a.dir/build
-Building CXX object CMakeFiles/cmTC_b519a.dir/feature_tests.cxx.obj
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++98 -o CMakeFiles/cmTC_b519a.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_b519a
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_b519a.dir/link.txt --verbose=1
-/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_b519a.dir/feature_tests.cxx.obj  -o cmTC_b519a 
+Run Build Command(s):/usr/bin/make cmTC_3bb2e/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3bb2e.dir/build.make CMakeFiles/cmTC_3bb2e.dir/build
+Building CXX object CMakeFiles/cmTC_3bb2e.dir/feature_tests.cxx.obj
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++    -mlongcalls -Wno-frame-address    -std=c++98 -o CMakeFiles/cmTC_3bb2e.dir/feature_tests.cxx.obj -c /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_3bb2e
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_3bb2e.dir/link.txt --verbose=1
+/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++  -mlongcalls -Wno-frame-address   -nostdlib  CMakeFiles/cmTC_3bb2e.dir/feature_tests.cxx.obj  -o cmTC_3bb2e 
 /Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000400054
 
 

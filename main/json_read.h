@@ -9,13 +9,9 @@
 
 #endif
 int json_extract(char *json_raw, Configuration *conf, line_struct *line_structure) {
-    char *lines_names[8] = {"line_0", "line_1", "line_2", "line_3", "line_4", "line_5", "line_6", "line_7"};
-
     const cJSON *line = NULL;
-    const cJSON *font = NULL;
-    const cJSON *left_margin = NULL;
-    const cJSON *text = NULL;
-    const cJSON *top_margin = NULL;
+    const cJSON *lines = NULL;
+
     const cJSON *sleep_seconds = NULL;
     const cJSON *verification_code = NULL;
     const cJSON *device_id = NULL;
@@ -55,27 +51,31 @@ int json_extract(char *json_raw, Configuration *conf, line_struct *line_structur
         strcpy(conf->device_id, device_id->valuestring);
     }
 
+    int index = 0;
+    int max_lines = 8;
+    lines = cJSON_GetObjectItemCaseSensitive(data_json, "lines");
+    cJSON_ArrayForEach(line, lines)
+    {
+        cJSON *font = cJSON_GetObjectItemCaseSensitive(line, "font");
+        cJSON *left_margin = cJSON_GetObjectItemCaseSensitive(line, "left_margin");
+        cJSON *text = cJSON_GetObjectItemCaseSensitive(line, "text");
+        cJSON *top_margin = cJSON_GetObjectItemCaseSensitive(line, "top_margin");
 
-    for (int i = 0; i < 8; i++) {
-        line = cJSON_GetObjectItemCaseSensitive(data_json, lines_names[i]);
-        if (cJSON_IsObject(line)) {
-            font = cJSON_GetObjectItemCaseSensitive(line, "font");
-            text = cJSON_GetObjectItemCaseSensitive(line, "text");
-            top_margin = cJSON_GetObjectItemCaseSensitive(line, "top_margin");
-            left_margin = cJSON_GetObjectItemCaseSensitive(line, "left_margin");
-
-            if (cJSON_IsString(text) && (text->valuestring != NULL)) {
-                strcpy(line_structure[i].text, text->valuestring);
-            }
-            if (cJSON_IsNumber(font) && (font->valueint != NULL)) {
-                line_structure[i].font = font->valueint;
-            }
-            if (cJSON_IsNumber(top_margin) && (top_margin->valueint != NULL)) {
-                line_structure[i].top_margin = top_margin->valueint;
-            }
-            if (cJSON_IsNumber(left_margin) && (left_margin->valueint != NULL)) {
-                line_structure[i].left_margin = left_margin->valueint;
-            }
+        if (cJSON_IsString(text) && (text->valuestring != NULL) && (strlen(text->valuestring) < 50)) {
+            strcpy(line_structure[index].text, text->valuestring);
+        }
+        if (cJSON_IsNumber(font) && (font->valueint != NULL)) {
+            line_structure[index].font = font->valueint;
+        }
+        if (cJSON_IsNumber(top_margin) && (top_margin->valueint != NULL)) {
+            line_structure[index].top_margin = top_margin->valueint;
+        }
+        if (cJSON_IsNumber(left_margin) && (left_margin->valueint != NULL)) {
+            line_structure[index].left_margin = left_margin->valueint;
+        }
+        index++;
+        if (max_lines == index){
+            break;
         }
     }
 

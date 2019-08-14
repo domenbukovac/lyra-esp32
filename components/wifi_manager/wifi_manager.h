@@ -88,16 +88,16 @@ extern "C" {
 #define DEFAULT_AP_SSID_HIDDEN 				0
 
 /** @brief Defines access point's name. Default value: esp32. Run 'make menuconfig' to setup your own value or replace here by a string */
-#define DEFAULT_AP_SSID 					CONFIG_DEFAULT_AP_SSID
+#define DEFAULT_AP_SSID 					"LYRA ONE"
 
 /** @brief Defines access point's password.
  *	@warning In the case of an open access point, the password must be a null string "" or "\0" if you want to be verbose but waste one byte.
  *	In addition, the AP_AUTHMODE must be WIFI_AUTH_OPEN
  */
-#define DEFAULT_AP_PASSWORD 				CONFIG_DEFAULT_AP_PASSWORD
+#define DEFAULT_AP_PASSWORD 				"setup4242"
 
 /** @brief Defines the hostname broadcasted by mDNS */
-#define DEFAULT_HOSTNAME					"esp32"
+#define DEFAULT_HOSTNAME					"lyraOne"
 
 /** @brief Defines access point's bandwidth.
  *  Value: WIFI_BW_HT20 for 20 MHz  or  WIFI_BW_HT40 for 40 MHz
