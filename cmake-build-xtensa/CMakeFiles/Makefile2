@@ -132,17 +132,17 @@ clean: CMakeFiles/size.dir/clean
 # Target rules for target CMakeFiles/Lyra.elf.dir
 
 # All Build rule for target.
-CMakeFiles/Lyra.elf.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 CMakeFiles/Lyra.elf.dir/all: CMakeFiles/_project_elf_src.dir/all
 CMakeFiles/Lyra.elf.dir/all: CMakeFiles/__idf_build_target.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/asio/CMakeFiles/__idf_asio.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/coap/CMakeFiles/__idf_coap.dir/all
@@ -150,7 +150,7 @@ CMakeFiles/Lyra.elf.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_adc_cal/CMakeFiles/__idf_esp_adc_cal.dir/all
-CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/all
+CMakeFiles/Lyra.elf.dir/all: esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/expat/CMakeFiles/__idf_expat.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 CMakeFiles/Lyra.elf.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
@@ -4448,15 +4448,15 @@ esp-idf/esp32/preinstall:
 # Target rules for target esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir
 
 # All Build rule for target.
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/asio/CMakeFiles/__idf_asio.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/coap/CMakeFiles/__idf_coap.dir/all
@@ -4464,7 +4464,7 @@ esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/consol
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_adc_cal/CMakeFiles/__idf_esp_adc_cal.dir/all
-esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/all
+esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/expat/CMakeFiles/__idf_expat.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 esp-idf/esp32/CMakeFiles/__ldgen_output_esp32.project.ld.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
@@ -5964,8 +5964,8 @@ esp-idf/protocomm/preinstall:
 # Target rules for target esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir
 
 # All Build rule for target.
-esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
+esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
@@ -6079,10 +6079,10 @@ esp-idf/esp_local_ctrl/preinstall:
 # Target rules for target esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir
 
 # All Build rule for target.
-esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
-esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
+esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
@@ -6955,10 +6955,10 @@ esp-idf/wifi_provisioning/preinstall:
 # Target rules for target esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir
 
 # All Build rule for target.
-esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
-esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
+esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
@@ -7017,15 +7017,15 @@ esp-idf/main/preinstall:
 # Target rules for target esp-idf/main/CMakeFiles/__idf_main.dir
 
 # All Build rule for target.
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/mdns/CMakeFiles/__idf_mdns.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/asio/CMakeFiles/__idf_asio.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/coap/CMakeFiles/__idf_coap.dir/all
@@ -7033,7 +7033,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/console/CMakeFiles/__idf_con
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/nghttp/CMakeFiles/__idf_nghttp.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_adc_cal/CMakeFiles/__idf_esp_adc_cal.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_websocket_client/CMakeFiles/__idf_esp_websocket_client.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/expat/CMakeFiles/__idf_expat.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all

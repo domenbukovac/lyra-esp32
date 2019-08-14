@@ -14,7 +14,7 @@ config WIFI_MANAGER_MAX_RETRY
 	
 config DEFAULT_AP_SSID
     string "Access Point SSID"
-    default "esp32"
+    default "Lyra One"
     help
 	SSID (network name) the the esp32 will broadcast.
 

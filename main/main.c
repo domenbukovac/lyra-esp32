@@ -47,9 +47,8 @@
 
 #include "esp_http_client.h"
 
-#define API_URL "192.168.1.53:5000/api/lyra/v1"
-#define URL "192.168.1.53"
-#define PORT "5000"
+#define HOST "192.168.1.53"
+#define PORT 5000
 
 #define WAKEUP_PIN 0
 #define MAX_HTTP_SIZE 4096
@@ -57,7 +56,7 @@
 #include "wifi_manager.h"
 
 
-Configuration configuration;
+static Configuration configuration;
 
 line_struct lines[8] = {
         {"line0"},
@@ -79,27 +78,13 @@ static const char *file_fonts[3] = {"/spiffs/fonts/DotMatrix_M.fon", "/spiffs/fo
                                     "/spiffs/fonts/Grotesk24x48.fon"};
 
 char battery_percent[8];
-
-
-RTC_DATA_ATTR static char old_line0_data[50];
-RTC_DATA_ATTR static char old_line1_data[50];
-RTC_DATA_ATTR static char old_line2_data[50];
-RTC_DATA_ATTR static char old_line3_data[50];
-RTC_DATA_ATTR static char old_line4_data[50];
-RTC_DATA_ATTR static char old_line5_data[50];
-RTC_DATA_ATTR static char old_line6_data[50];
-RTC_DATA_ATTR static char old_line7_data[50];
-
-RTC_DATA_ATTR static char wifi_ssid[50];
-RTC_DATA_ATTR static char wifi_password[50];
+RTC_DATA_ATTR static unsigned long rtc_text_hash;
 
 RTC_DATA_ATTR static uint8_t wifi_channel;
 RTC_DATA_ATTR static wifi_second_chan_t wifi_channel_second;
 
-
 static void go_to_sleep(int seconds) {
-
-    printf("Enabling EXT1 wakeup on pins GPIO4\n");
+    printf("Going to sleep for %d seconds\n", seconds);
     vTaskDelay(50 / portTICK_PERIOD_MS);
     esp_sleep_enable_ext0_wakeup(WAKEUP_PIN, 0);
     esp_deep_sleep(1000000LL * seconds);
@@ -112,62 +97,11 @@ void monitoring_task(void *pvParameter) {
     }
 }
 
-
-/* brief this is an exemple of a callback that you can setup in your own app to get notified of wifi manager event */
 void cb_connection_ok(void *pvParameter) {
     ESP_LOGI(TAG, "I have a connection!");
     go_to_sleep(0);
 }
 
-//static void smart_config_task(void *parm);
-
-static void initialise_wifi(wifi_config_t wifi_config);
-
-//static void smart_config_event_handler(void *arg, esp_event_base_t event_base,
-//                                       int32_t event_id, void *event_data) {
-//    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
-//        xTaskCreate(smart_config_task, "smartconfig_example_task", 4096, NULL, 4, NULL);
-//    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
-//        esp_wifi_connect();
-//        xEventGroupClearBits(main_event_group, CONNECTED_BIT);
-//    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
-//        xEventGroupSetBits(main_event_group, CONNECTED_BIT);
-//    } else if (event_base == SC_EVENT && event_id == SC_EVENT_SCAN_DONE) {
-//        ESP_LOGI(TAG, "Scan done");
-//    } else if (event_base == SC_EVENT && event_id == SC_EVENT_FOUND_CHANNEL) {
-//        ESP_LOGI(TAG, "Found channel");
-//    } else if (event_base == SC_EVENT && event_id == SC_EVENT_GOT_SSID_PSWD) {
-//        ESP_LOGI(TAG, "Got SSID and password");
-//
-//        smartconfig_event_got_ssid_pswd_t *evt = (smartconfig_event_got_ssid_pswd_t *) event_data;
-//        wifi_config_t wifi_config;
-//        uint8_t ssid[33] = {0};
-//        uint8_t password[65] = {0};
-//
-//        bzero(&wifi_config, sizeof(wifi_config_t));
-//        memcpy(wifi_config.sta.ssid, evt->ssid, sizeof(wifi_config.sta.ssid));
-//        memcpy(wifi_config.sta.password, evt->password, sizeof(wifi_config.sta.password));
-//        wifi_config.sta.bssid_set = evt->bssid_set;
-//        if (wifi_config.sta.bssid_set == true) {
-//            memcpy(wifi_config.sta.bssid, evt->bssid, sizeof(wifi_config.sta.bssid));
-//        }
-//
-//        strcpy(wifi_ssid, (const char *) wifi_config.sta.ssid);
-//        strcpy(wifi_password, (const char *) wifi_config.sta.password);
-//
-//        memcpy(ssid, evt->ssid, sizeof(evt->ssid));
-//        memcpy(password, evt->password, sizeof(evt->password));
-//        ESP_LOGI(TAG, "SSID:%s", ssid);
-//        ESP_LOGI(TAG, "PASSWORD:%s", password);
-//
-//        ESP_ERROR_CHECK(esp_wifi_disconnect());
-//        ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
-//        ESP_ERROR_CHECK(esp_wifi_connect());
-//    } else if (event_base == SC_EVENT && event_id == SC_EVENT_SEND_ACK_DONE) {
-//        esp_smartconfig_stop();
-//        xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
-//    }
-//}
 
 esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
     switch (evt->event_id) {
@@ -185,12 +119,6 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
             break;
         case HTTP_EVENT_ON_DATA:
             ESP_LOGD(TAG, "HTTP_EVENT_ON_DATA, len=%d", evt->data_len);
-            if (!esp_http_client_is_chunked_response(evt->client)) {
-//                 Write out data
-//                printf("%.*s", evt->data_len, (char *) evt->data);
-            } else {
-                printf("CHUNKED/n");
-            }
             break;
         case HTTP_EVENT_ON_FINISH:
             ESP_LOGD(TAG, "HTTP_EVENT_ON_FINISH");
@@ -215,8 +143,8 @@ static void http_rest_with_url(char *path) {
 
 
     esp_http_client_config_t config = {
-            .host = "192.168.1.53",
-            .port= 5000,
+            .host = HOST,
+            .port= PORT,
             .path = path,
 //            .transport_type = HTTP_TRANSPORT_OVER_SSL,
             .event_handler = _http_event_handler,
@@ -304,39 +232,6 @@ static void initialise_wifi(wifi_config_t wifi_config) {
     ESP_LOGI(TAG, "wifi_init_sta finished.");
 }
 
-//static void initialize_smart_config(void) {
-//    tcpip_adapter_init();
-//    ESP_ERROR_CHECK(esp_event_loop_create_default());
-//
-//    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-//    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
-//
-//    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &smart_config_event_handler, NULL));
-//    ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &smart_config_event_handler, NULL));
-//    ESP_ERROR_CHECK(esp_event_handler_register(SC_EVENT, ESP_EVENT_ANY_ID, &smart_config_event_handler, NULL));
-//
-//    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
-//    ESP_ERROR_CHECK(esp_wifi_start());
-//}
-//
-//static void smart_config_task(void *parm) {
-//    EventBits_t uxBits;
-//    ESP_ERROR_CHECK(esp_smartconfig_set_type(SC_TYPE_ESPTOUCH));
-//    smartconfig_start_config_t cfg = SMARTCONFIG_START_CONFIG_DEFAULT();
-//    ESP_ERROR_CHECK(esp_smartconfig_start(&cfg));
-//    while (1) {
-//        uxBits = xEventGroupWaitBits(main_event_group, CONNECTED_BIT | ESPTOUCH_DONE_BIT, true, false, portMAX_DELAY);
-//        if (uxBits & CONNECTED_BIT) {
-//            ESP_LOGI(TAG, "WiFi Connected to ap");
-//        }
-//        if (uxBits & ESPTOUCH_DONE_BIT) {
-//            ESP_LOGI(TAG, "smartconfig over");
-//            esp_smartconfig_stop();
-//            vTaskDelete(NULL);
-//        }
-//    }
-//}
-
 
 static void sleep_monitor(void *ptr) {
     EventBits_t uxBits;
@@ -347,7 +242,7 @@ static void sleep_monitor(void *ptr) {
         if ((uxBits & (DISPLAY_UPDATED_BIT | INITIALIZED_BIT)) ==
             (DISPLAY_UPDATED_BIT | INITIALIZED_BIT)) {
             esp_wifi_get_channel(&wifi_channel, &wifi_channel_second);
-            go_to_sleep(configuration.sleep_seconds_int);
+            go_to_sleep(configuration.sleep_seconds);
 
         } else if ((uxBits & (ESPTOUCH_DONE_BIT | STEP_1)) == (ESPTOUCH_DONE_BIT | STEP_1)) {
             go_to_sleep(0);
@@ -486,15 +381,36 @@ static void http_get_data(void *ptr) {
             strcat(path, battery_percent);
 
         }
-
+        vTaskDelay(200 / portTICK_PERIOD_MS);
         xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
         http_rest_with_url(path);
     }
 }
 
+
+int is_text_updated() {
+    unsigned long hash = 5381;
+    int c;
+
+    for (int i = 0; i < 8; i++) {
+        char *str = lines[i].text;
+        while ((c = *str++))
+            hash = ((hash << 5) + hash) + c;
+        hash = ((hash << 5) + hash) + c;
+    }
+
+    if (hash != rtc_text_hash) {
+        rtc_text_hash = hash;
+        return 1;
+    }
+
+    return 0;
+}
+
 static void data_processing(void *ptr) {
     EventBits_t uxBits;
     Configuration *data_config = ((Configuration *) ptr);
+
 
     while (1) {
         uxBits = xEventGroupWaitBits(main_event_group, RECEIVED_DATA_BIT, true, true, portMAX_DELAY);
@@ -502,15 +418,12 @@ static void data_processing(void *ptr) {
             (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
 
             xEventGroupSetBits(main_event_group, INITIALIZING_BIT);
-            view_connected_to_wifi(lines, data_config->verification_code);
+            // print verification code on display
+            view_connected_to_wifi(lines, configuration.verification_code);
             xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
 
-            // print on display verification code
         } else if ((uxBits & INITIALIZING_BIT) && (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
-            //send request for registration with new id, delay task for 30 seconds
-
-            //if response is "paired: 1", change initializing bit to 0 and initialized bit to 1
-            if (data_config->paired[0] == '1') {
+            if (data_config->paired == 1) {
                 xEventGroupClearBits(main_event_group, INITIALIZING_BIT);
                 xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
 
@@ -525,32 +438,15 @@ static void data_processing(void *ptr) {
             }
         } else if ((uxBits & INITIALIZED_BIT) == INITIALIZED_BIT &&
                    (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
-            // vTaskDelay( 100 /  portTICK_PERIOD_MS );
 
-            if (
-                    (strcmp(lines[0].text, old_line0_data) == 0) &&
-                    (strcmp(lines[1].text, old_line1_data) == 0) &&
-                    (strcmp(lines[2].text, old_line2_data) == 0) &&
-                    (strcmp(lines[3].text, old_line3_data) == 0) &&
-                    (strcmp(lines[4].text, old_line4_data) == 0) &&
-                    (strcmp(lines[5].text, old_line5_data) == 0) &&
-                    (strcmp(lines[6].text, old_line6_data) == 0) &&
-                    (strcmp(lines[7].text, old_line7_data) == 0)) {
-                xEventGroupSetBits(main_event_group, DISPLAY_UPDATED_BIT);
-            } else {
-                strcpy(old_line0_data, lines[0].text);
-                strcpy(old_line1_data, lines[1].text);
-                strcpy(old_line2_data, lines[2].text);
-                strcpy(old_line3_data, lines[3].text);
-                strcpy(old_line4_data, lines[4].text);
-                strcpy(old_line5_data, lines[5].text);
-                strcpy(old_line6_data, lines[6].text);
-                strcpy(old_line7_data, lines[7].text);
+            if (is_text_updated()) {
                 xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+            } else {
+                xEventGroupSetBits(main_event_group, DISPLAY_UPDATED_BIT);
             }
         }
 
-        vTaskDelay(100 / portTICK_PERIOD_MS);
+        vTaskDelay(200 / portTICK_PERIOD_MS);
     }
 }
 
@@ -566,7 +462,10 @@ static void gpio_task_interrupt(void *arg) {
     for (;;) {
         if (xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)) {
             printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level(io_num));
-            go_to_sleep(1);
+            if (gpio_get_level(io_num) == 0) {
+                go_to_sleep(0);
+
+            }
         }
     }
 }
@@ -575,7 +474,7 @@ void app_main() {
     int start_battery_level = get_battery_level(&battery_percent);
     printf("battery level: %d\n", start_battery_level);
     if (start_battery_level < 10) {
-//        go_to_sleep(5 * 60); // sleep for 5 minutes
+        go_to_sleep(5 * 60); // sleep for 5 minutes
     }
     main_event_group = xEventGroupCreate();
     ESP_ERROR_CHECK(nvs_flash_init());
@@ -623,7 +522,7 @@ void app_main() {
             printf("Not a deep sleep reset\n");
     }
 
-    xTaskCreate(&sleep_monitor, "sleep_monitor", 1024, &configuration, 1, NULL);
+    xTaskCreate(&sleep_monitor, "sleep_monitor", 2048, &configuration, 1, NULL);
     xTaskCreate(&updateScreen, "update screen", 16384, &configuration, 5, NULL);
 
 
@@ -640,17 +539,6 @@ void app_main() {
         initialise_wifi(wifi_config);
 
         /* if device has wifi and pass but is not set yet  */
-    } else if (strlen(wifi_ssid) > 0) {
-
-
-        xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
-        xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
-
-        xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
-
-        memcpy(wifi_config.sta.ssid, wifi_ssid, strlen(wifi_ssid) + 1);
-        memcpy(wifi_config.sta.password, wifi_password, strlen(wifi_password) + 1);
-        initialise_wifi(wifi_config);
     } else if (get_wifi_conf_from_nvs(&configuration)) {
         xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
         xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
@@ -661,14 +549,10 @@ void app_main() {
 
         xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
         initialise_wifi(wifi_config);
-    }
-        /* Device was not set yet */
-    else {
-//        view_display_initial(lines);
-//        xEventGroupSetBits(main_event_group, STEP_1);
-//        xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
-//        initialize_smart_config();
-
+    } else {
+        view_display_initial(lines);
+        xEventGroupSetBits(main_event_group, STEP_1);
+        xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
         wifi_manager_start();
 
         /* register a callback as an example to how you can integrate your code with the wifi manager */

@@ -45,7 +45,7 @@ bool get_wifi_conf_from_nvs(Configuration *device_configuration) {
         if (err != ESP_ERR_NVS_NOT_FOUND) {
             char *value = malloc(required_size);
             nvs_get_str(my_handle, conf_keys[i], value, &required_size);
-            printf("get nvs value: %s\n", value);
+            printf("get nvs PRO value: %s\n", value);
             strcpy(pointers[i], value);
             free(value);
         } else {
@@ -75,6 +75,9 @@ void remove_configuration_from_nvs() {
 
     for (int i = 0; i < 3; i++) {
         nvs_erase_key(my_handle, keys[i]);
+    }
+    for (int i = 0; i < 2; i++) {
+        nvs_erase_key(my_handle, conf_keys[i]);
     }
     nvs_commit(my_handle);
     nvs_close(my_handle);

@@ -5,226 +5,80 @@
 #define STRUCT
 
 #include "struct.h"
+#include "cJSON.h"
 
 #endif
-
 int json_extract(char *json_raw, Configuration *conf, line_struct *line_structure) {
-    char *lines_names[8] = {"line0", "line1", "line2", "line3", "line4", "line5", "line6", "line7"};
-    char *key_buffer = malloc(sizeof(char) * 50);
-    char *nested_key_buffer = malloc(sizeof(char) * 50);
-    char *value_buffer = malloc(sizeof(char) * 200);
+    char *lines_names[8] = {"line_0", "line_1", "line_2", "line_3", "line_4", "line_5", "line_6", "line_7"};
 
-    char *json_breakless = calloc(sizeof(char), strlen(json_raw));
-    int j = 0;
+    const cJSON *line = NULL;
+    const cJSON *font = NULL;
+    const cJSON *left_margin = NULL;
+    const cJSON *text = NULL;
+    const cJSON *top_margin = NULL;
+    const cJSON *sleep_seconds = NULL;
+    const cJSON *verification_code = NULL;
+    const cJSON *device_id = NULL;
+    const cJSON *paired = NULL;
+    int status = 0;
 
-    int begin_quotation = 0;
-    printf("JSON RAW\n");
-//    printf("%s", json_raw);
+    cJSON *data_json = cJSON_Parse(json_raw);
+
+    if (data_json == NULL) {
+        const char *error_ptr = cJSON_GetErrorPtr();
+        if (error_ptr != NULL) {
+            fprintf(stderr, "Error before: %s\n", error_ptr);
+        }
+        status = 0;
+        cJSON_Delete(data_json);
+        return status;
+    }
+
+    sleep_seconds = cJSON_GetObjectItemCaseSensitive(data_json, "sleep_seconds");
+    if (cJSON_IsNumber(sleep_seconds) && (sleep_seconds->valueint != NULL)) {
+        conf->sleep_seconds = sleep_seconds->valueint;
+    }
+
+    paired = cJSON_GetObjectItemCaseSensitive(data_json, "paired");
+    if (cJSON_IsNumber(paired)) {
+        conf->paired = paired->valueint;
+    }
 
 
-    // remove new line and spaces that are not inside quotation marks
-    for (int i = 0; i < strlen(json_raw); i++) {
+    verification_code = cJSON_GetObjectItemCaseSensitive(data_json, "verification_code");
+    if (cJSON_IsString(verification_code) && (verification_code->valuestring != NULL)) {
+        strcpy(conf->verification_code, verification_code->valuestring);
+    }
 
-        if (json_raw[i] == '"' && begin_quotation == 0) {
-            begin_quotation = 1;
-            json_breakless[j] = json_raw[i];
-            j++;
-        } else if (json_raw[i] == '"' && begin_quotation == 1) {
-            begin_quotation = 0;
-            json_breakless[j] = json_raw[i];
-            j++;
-        } else if (json_raw[i] == ' ' && begin_quotation == 1) {
-            json_breakless[j] = json_raw[i];
-            j++;
-        } else if ((json_raw[i] == ' ' && begin_quotation == 0) || (json_raw[i] == '\n')) {
-        } else {
-            json_breakless[j] = json_raw[i];
-            j++;
+    device_id = cJSON_GetObjectItemCaseSensitive(data_json, "device_id");
+    if (cJSON_IsString(device_id) && (device_id->valuestring != NULL)) {
+        strcpy(conf->device_id, device_id->valuestring);
+    }
+
+
+    for (int i = 0; i < 8; i++) {
+        line = cJSON_GetObjectItemCaseSensitive(data_json, lines_names[i]);
+        if (cJSON_IsObject(line)) {
+            font = cJSON_GetObjectItemCaseSensitive(line, "font");
+            text = cJSON_GetObjectItemCaseSensitive(line, "text");
+            top_margin = cJSON_GetObjectItemCaseSensitive(line, "top_margin");
+            left_margin = cJSON_GetObjectItemCaseSensitive(line, "left_margin");
+
+            if (cJSON_IsString(text) && (text->valuestring != NULL)) {
+                strcpy(line_structure[i].text, text->valuestring);
+            }
+            if (cJSON_IsNumber(font) && (font->valueint != NULL)) {
+                line_structure[i].font = font->valueint;
+            }
+            if (cJSON_IsNumber(top_margin) && (top_margin->valueint != NULL)) {
+                line_structure[i].top_margin = top_margin->valueint;
+            }
+            if (cJSON_IsNumber(left_margin) && (left_margin->valueint != NULL)) {
+                line_structure[i].left_margin = left_margin->valueint;
+            }
         }
     }
-    json_breakless[j] = '\0';
-//    printf("%s", json_breakless);
 
-
-    int i = 0;
-    while (i < strlen(json_breakless))
-    {
-        if (json_breakless[i] == '}' && json_breakless[i + 1] == '}')
-        {
-            break;
-        }
-
-        while (json_breakless[i] != '"')
-        {
-            i++;
-        }
-        i++;
-
-        int key_position = 0;
-        while (json_breakless[i] != '"')
-        {
-            key_buffer[key_position] = json_breakless[i];
-            i++;
-            key_position++;
-        }
-        key_buffer[key_position] = '\0';
-
-        int line_num = 0;
-
-        while (line_num < 8)
-        {
-            if (strcmp(key_buffer, lines_names[line_num]) == 0)
-            {
-                break;
-            }
-            line_num++;
-        }
-
-        // i = i + 2; //replaced with the following:
-        while (json_breakless[i] == '"' || json_breakless[i] == '\n' || json_breakless[i] == ',' || json_breakless[i] == ':')
-        {
-            i++;
-        }
-//        printf("key buffer: %s \n", key_buffer);
-        if (json_breakless[i] == '{')
-        {
-            while (json_breakless[i] != '}')
-            {
-                while (json_breakless[i] == '"' || json_breakless[i] == '{' || json_breakless[i] == ',' || json_breakless[i] == ':')
-                {
-                    i++;
-                }
-                int nested_key_position = 0;
-                while (json_breakless[i] != '"')
-                {
-                    nested_key_buffer[nested_key_position] = json_breakless[i];
-                    i++;
-                    nested_key_position++;
-                }
-                nested_key_buffer[nested_key_position] = '\0';
-
-                while (json_breakless[i] == '"' || json_breakless[i] == '\n' || json_breakless[i] == ',' || json_breakless[i] == ':')
-                {
-                    i++;
-                }
-                int value_buffer_position = 0;
-
-                while (json_breakless[i] != '"')
-                {
-                    value_buffer[value_buffer_position] = json_breakless[i];
-                    i++;
-                    value_buffer_position++;
-                }
-
-                value_buffer[value_buffer_position] = '\0';
-                i = i + 1;
-
-                if (strcmp(nested_key_buffer, "text") == 0)
-                {
-                    strcpy(line_structure[line_num].text, value_buffer);
-                }
-                else if (strcmp(nested_key_buffer, "font") == 0)
-                {
-                    line_structure[line_num].font = atoi(value_buffer);
-                }
-                else if (strcmp(nested_key_buffer, "left_margin") == 0)
-                {
-                    line_structure[line_num].left_margin = atoi(value_buffer);
-                }
-                else if (strcmp(nested_key_buffer, "top_margin") == 0)
-                {
-                    line_structure[line_num].top_margin = atoi(value_buffer);
-                }
-            }
-        }
-
-        else if (strcmp(key_buffer, "sleep_seconds") == 0)
-        {
-            int value_buffer_position = 0;
-
-            while (json_breakless[i] != '"')
-            {
-                value_buffer[value_buffer_position] = json_breakless[i];
-                i++;
-                value_buffer_position++;
-            }
-
-            value_buffer[value_buffer_position] = '\0';
-
-//            printf("value buffer: %s \n", value_buffer);
-            conf->sleep_seconds_int = atoi(value_buffer);
-            i = i + 2;
-        }
-
-        else if (strcmp(key_buffer, "verification_code") == 0)
-        {
-            int value_buffer_position = 0;
-
-            while (json_breakless[i] != '"')
-            {
-                value_buffer[value_buffer_position] = json_breakless[i];
-                i++;
-                value_buffer_position++;
-            }
-
-            value_buffer[value_buffer_position] = '\0';
-            strcpy(conf->verification_code, value_buffer);
-            i = i + 2;
-        }
-        else if (strcmp(key_buffer, "device_id") == 0)
-        {
-            int value_buffer_position = 0;
-
-            while (json_breakless[i] != '"')
-            {
-                value_buffer[value_buffer_position] = json_breakless[i];
-                i++;
-                value_buffer_position++;
-            }
-
-            value_buffer[value_buffer_position] = '\0';
-            strcpy(conf->device_id, value_buffer);
-            i = i + 2;
-        }
-        else if (strcmp(key_buffer, "paired") == 0)
-        {
-            int value_buffer_position = 0;
-
-            while (json_breakless[i] != '"')
-            {
-                value_buffer[value_buffer_position] = json_breakless[i];
-                i++;
-                value_buffer_position++;
-            }
-            value_buffer[value_buffer_position] = '\0';
-
-//            printf("value_ buffer: %s\n", value_buffer);
-
-            if (strcmp(value_buffer, "True") == 0 || strcmp(value_buffer, "true") == 0)
-            {
-                value_buffer[0] = '1';
-                value_buffer[1] = '\0';
-            }
-            else if (strcmp(value_buffer, "False") == 0 || strcmp(value_buffer, "false") == 0)
-            {
-                value_buffer[0] = '0';
-                value_buffer[1] = '\0';
-            }
-
-            strcpy(conf->paired, value_buffer);
-            i = i + 2;
-        } else {
-            free(nested_key_buffer);
-            free(value_buffer);
-            free(json_breakless);
-            free(key_buffer);
-            return 1;
-        }
-    }
-    free(nested_key_buffer);
-    free(value_buffer);
-    free(json_breakless);
-    free(key_buffer);
-
-    return 0;
+    cJSON_Delete(data_json);
+    return status;
 }

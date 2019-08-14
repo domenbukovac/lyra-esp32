@@ -42,7 +42,7 @@ CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Choose the type of build: None Debug Release Coverage ASan ASanDbg
 // MemSan MemSanDbg Check CheckFull
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Id string of the compiler for the CodeBlocks IDE. Automatically
 // detected when left empty
@@ -251,6 +251,9 @@ GCC_NOT_5_2_0:STRING=1
 
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
+
+//No help, variable specified on the command line.
+IDF_PATH:UNINITIALIZED=~/esp/esp-idf
 
 //IDF Build Target
 IDF_TARGET:STRING=esp32
