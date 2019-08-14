@@ -13,5 +13,6 @@ static const unsigned int DISPLAY_TEXT_CHANGE_BIT = BIT5;
 static const unsigned int DISPLAY_UPDATED_BIT = BIT6;
 
 static const unsigned int LOADING_DATA_BIT = BIT7;
+static const unsigned int LOW_BATTERY_BIT = BIT8;
 
 static const unsigned int STEP_1 = BIT9;

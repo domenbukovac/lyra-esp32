@@ -250,6 +250,10 @@ static void sleep_monitor(void *ptr) {
             esp_wifi_get_channel(&wifi_channel, &wifi_channel_second);
             go_to_sleep(configuration.sleep_seconds);
 
+        } else if ((uxBits & (DISPLAY_UPDATED_BIT | LOW_BATTERY_BIT)) ==
+                   (DISPLAY_UPDATED_BIT | LOW_BATTERY_BIT)) {
+            go_to_sleep(configuration.sleep_seconds);
+
         } else if ((uxBits & (ESPTOUCH_DONE_BIT | STEP_1)) == (ESPTOUCH_DONE_BIT | STEP_1)) {
             go_to_sleep(0);
         }
@@ -358,15 +362,28 @@ static void updateScreen(void *ptr) {
         vTaskDelay(500 / portTICK_PERIOD_MS);
 
         EPD_DisplayClearPart();
-
+        EPD_Cls();
         EPD_fillScreen(0);
+        orientation = LANDSCAPE_180;
 
         _gs = 0;
         _fg = 1;
         _bg = 0;
 
-        orientation = LANDSCAPE_180;
 
+//         White on black
+//        _gs = 1;
+//        _fg = 0;
+//        _bg = 5;
+//        EPD_fillScreen(0);
+//        EPD_fillRect(0,0,400,200, 5);
+
+        if (lines[1].font == 100) {
+            _gs = 1;
+            _fg = 15;
+            _bg = 0;
+            EPD_jpg_image(CENTER, 15, 0, SPIFFS_BASE_PATH"/images/low_battery.jpg", NULL, 0);
+        }
         for (int i = 0; i < MAX_LINES; i++) {
             if (lines[i].font == 1)
                 EPD_setFont(USER_FONT, file_fonts[0]);
@@ -399,6 +416,9 @@ static void updateScreen(void *ptr) {
 
             EPD_print(lines[i].text, lines[i].left_margin, lines[i].top_margin);
         }
+
+
+
 
         EPD_UpdateScreen();
         EPD_PowerOff();
@@ -507,14 +527,11 @@ static void gpio_task_interrupt(void *arg) {
 }
 
 void app_main() {
-    int start_battery_level = get_battery_level(&battery_percent);
-    printf("battery level: %d\n", start_battery_level);
-    if (start_battery_level < 10) {
-        go_to_sleep(5 * 60); // sleep for 5 minutes
-    }
     main_event_group = xEventGroupCreate();
-    ESP_ERROR_CHECK(nvs_flash_init());
 
+    ESP_ERROR_CHECK(nvs_flash_init());
+    xTaskCreate(&sleep_monitor, "sleep_monitor", 2048, &configuration, 1, NULL);
+    xTaskCreate(&updateScreen, "update screen", 16384, &configuration, 5, NULL);
 
     /* GPIO INTERRUPT */
     gpio_config_t io_conf;
@@ -530,7 +547,6 @@ void app_main() {
     gpio_install_isr_service(0);
     gpio_isr_handler_add(WAKEUP_PIN, gpio_isr_handler, (void *) WAKEUP_PIN);
     /* END GPIO INTERRUPT */
-
 
 
     switch (esp_sleep_get_wakeup_cause()) {
@@ -565,47 +581,54 @@ void app_main() {
         configuration.sleep_seconds = 20;
     } else if (fail_count > 2 && fail_count % 2) {
         fail_count++;
-        configuration.sleep_seconds = 20;
-        go_to_sleep(fail_count * 10);
+        go_to_sleep(fail_count * 8);
     }
 
-    xTaskCreate(&sleep_monitor, "sleep_monitor", 2048, &configuration, 1, NULL);
-    xTaskCreate(&updateScreen, "update screen", 16384, &configuration, 5, NULL);
-
-    /* if device is configured */
-    if (get_configuration_from_nvs(&configuration)) {
-        xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
-        xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
-
-        xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
-        xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
-
-        memcpy(wifi_config.sta.ssid, configuration.ssid, strlen(configuration.ssid) + 1);
-        memcpy(wifi_config.sta.password, configuration.password, strlen(configuration.password) + 1);
-        initialise_wifi(wifi_config);
-
-        /* if device has wifi and pass but is not set yet  */
-    } else if (get_wifi_conf_from_nvs(&configuration)) {
-        xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
-        xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
-
-        memcpy(wifi_config.sta.ssid, configuration.ssid, strlen(configuration.ssid) + 1);
-        memcpy(wifi_config.sta.password, configuration.password, strlen(configuration.password) + 1);
-
-
-        xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
-        initialise_wifi(wifi_config);
-    } else {
-        fail_count = 0;
-        view_display_initial(lines);
-        xEventGroupSetBits(main_event_group, STEP_1);
+    int start_battery_level = get_battery_level(&battery_percent);
+    printf("battery level: %d\n", start_battery_level);
+    if (start_battery_level < 5) {
+        xEventGroupSetBits(main_event_group, LOW_BATTERY_BIT);
+        view_low_battery(lines);
         xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
-        wifi_manager_start();
+        configuration.sleep_seconds = 5 * 60;
+    } else {
 
-        /* register a callback as an example to how you can integrate your code with the wifi manager */
-        wifi_manager_set_callback(EVENT_STA_GOT_IP, &cb_connection_ok);
 
-        /* your code should go here. Here we simply create a task on core 2 that monitors free heap memory */
-        xTaskCreatePinnedToCore(&monitoring_task, "monitoring_task", 2048, NULL, 1, NULL, 1);
+        /* if device is configured */
+        if (get_configuration_from_nvs(&configuration)) {
+            xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
+            xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
+
+            xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
+            xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
+
+            memcpy(wifi_config.sta.ssid, configuration.ssid, strlen(configuration.ssid) + 1);
+            memcpy(wifi_config.sta.password, configuration.password, strlen(configuration.password) + 1);
+            initialise_wifi(wifi_config);
+
+            /* if device has wifi and pass but is not set yet  */
+        } else if (get_wifi_conf_from_nvs(&configuration)) {
+            xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
+            xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
+
+            memcpy(wifi_config.sta.ssid, configuration.ssid, strlen(configuration.ssid) + 1);
+            memcpy(wifi_config.sta.password, configuration.password, strlen(configuration.password) + 1);
+
+
+            xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
+            initialise_wifi(wifi_config);
+        } else {
+            fail_count = 0;
+            view_display_initial(lines);
+            xEventGroupSetBits(main_event_group, STEP_1);
+            xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+            wifi_manager_start();
+
+            /* register a callback as an example to how you can integrate your code with the wifi manager */
+            wifi_manager_set_callback(EVENT_STA_GOT_IP, &cb_connection_ok);
+
+            /* your code should go here. Here we simply create a task on core 2 that monitors free heap memory */
+            xTaskCreatePinnedToCore(&monitoring_task, "monitoring_task", 2048, NULL, 1, NULL, 1);
+        }
     }
 }

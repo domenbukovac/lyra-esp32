@@ -10,12 +10,12 @@
 
 int view_display_initial(line_struct *lines) {
     strcpy(lines[0].text, "To setup the device, connect to wifi");
-    strcpy(lines[1].text, "LYRA  M 0oO m");
+    strcpy(lines[1].text, "LYRA ONE");
     strcpy(lines[2].text, "using password 'setup4242'");
 
-    lines[0].font = 12;
-    lines[1].font = 14;
-    lines[2].font = 11;
+    lines[0].font = 1;
+    lines[1].font = 2;
+    lines[2].font = 1;
 
     lines[0].left_margin = CENTER;
     lines[1].left_margin = CENTER;
@@ -62,6 +62,18 @@ int view_pairing_success(line_struct *lines) {
     lines[0].top_margin = 20;
     lines[1].top_margin = 48;
     lines[2].top_margin = 95;
+    return 0;
+
+};
+
+int view_low_battery(line_struct *lines) {
+
+    strcpy(lines[0].text, "PLEASE RECHARGE");
+    lines[0].font = 5;
+    lines[0].left_margin = CENTER;
+    lines[0].top_margin = 98;
+
+    lines[1].font = 100;
     return 0;
 
 };
