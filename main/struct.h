@@ -11,8 +11,7 @@ typedef struct
 typedef struct
 {
     char name[10];
-    char text[50];
-    char old_text[50];
+    char text[100];
     int font;
     int left_margin;
     int top_margin;

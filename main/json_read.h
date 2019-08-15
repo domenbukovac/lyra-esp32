@@ -61,7 +61,7 @@ int json_extract(char *json_raw, Configuration *conf, line_struct *line_structur
         cJSON *text = cJSON_GetObjectItemCaseSensitive(line, "text");
         cJSON *top_margin = cJSON_GetObjectItemCaseSensitive(line, "top_margin");
 
-        if (cJSON_IsString(text) && (text->valuestring != NULL) && (strlen(text->valuestring) < 50)) {
+        if (cJSON_IsString(text) && (text->valuestring != NULL) && (strlen(text->valuestring) < 100)) {
             strcpy(line_structure[index].text, text->valuestring);
         }
         if (cJSON_IsNumber(font) && (font->valueint != NULL)) {

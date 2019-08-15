@@ -369,6 +369,10 @@ static void updateScreen(void *ptr) {
         _gs = 0;
         _fg = 1;
         _bg = 0;
+        text_wrap = 1;
+//        font_forceFixed = 1;
+//        #define EPD_DISPLAY_WIDTH	296
+//        #define EPD_DISPLAY_HEIGHT	128
 
 
 //         White on black
@@ -377,6 +381,7 @@ static void updateScreen(void *ptr) {
 //        _bg = 5;
 //        EPD_fillScreen(0);
 //        EPD_fillRect(0,0,400,200, 5);
+
 
         if (lines[1].font == 100) {
             _gs = 1;
