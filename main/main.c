@@ -5,16 +5,15 @@
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
 
+#include "esp_system.h"
+
 #include "esp_wifi.h"
-#include "esp_wpa2.h"
 #include "esp_event.h"
 
 #include "esp_log.h"
-#include "esp_system.h"
 #include "nvs_flash.h"
-#include "tcpip_adapter.h"
-#include "esp_smartconfig.h"
 
+#include "tcpip_adapter.h"
 #include "esp_sleep.h"
 
 #include "lwip/err.h"
@@ -24,36 +23,40 @@
 #include "lwip/dns.h"
 #include "main.h"
 
-#include "json_read.h"
-#include "battery.h"
-
 //display includes
 #include <time.h>
 #include <errno.h>
 #include <sys/fcntl.h>
 #include <stdio.h>
+#include <esp_task_wdt.h>
+
 #include "esp_heap_alloc_caps.h"
-#include "spiffs_vfs.h"
-
-#include "spi_master_lobo.h"
-#include "EPD.h"
-#include "display_print.h"
-
-// http client
-#include "protocol_examples_common.h"
 #include "esp_tls.h"
-#include "esp_system.h"
-
 #include "esp_http_client.h"
 
-#define HOST "192.168.1.53"
-#define PORT 5000
+#include "spiffs_vfs.h"
+#include "spi_master_lobo.h"
+#include "EPD.h"
+
+
+#include "json_read.h"
+#include "battery.h"
+#include "display_print.h"
+
+#include "wifi_manager.h"
+
+
+//#define HOST "192.168.1.53"
+#define HOST "dev.reetab.com"
+//#define PORT 5000
+#define PORT 443
 
 #define WAKEUP_PIN 0
 #define MAX_HTTP_SIZE 4096
 #define MAX_LINES 8
 
-#include "wifi_manager.h"
+#define TIMEOUT_SECONDS 30
+#define SETUP_TIMEOUT_SECONDS 60 * 5
 
 
 static Configuration configuration;
@@ -65,9 +68,12 @@ wifi_config_t wifi_config;
 /* FreeRTOS event group to signal when we are connected & ready to make a request & some other things*/
 static EventGroupHandle_t main_event_group;
 static const char *TAG = "Event_tag";
+static const char *SLEEP_TAG = "SLEEP TAG";
+static const char *HTTP_TAG = "HTTP TAG";
+static const char *WIFI_TAG = "WIFI TAG";
 
-static const char *file_fonts[] = {"/spiffs/fonts/DejaVuSans12.fon", "/spiffs/fonts/Ubuntu.fon",
-                                   "/spiffs/fonts/DotMatrix_M.fon", "/spiffs/fonts/Grotesk24x48.fon",
+static const char *file_fonts[] = {"/spiffs/fonts/DotMatrix_M.fon", "/spiffs/fonts/DejaVuSans12.fon",
+                                   "/spiffs/fonts/Ubuntu.fon", "/spiffs/fonts/Grotesk24x48.fon",
                                    "/spiffs/fonts/KelveticaNobis.fon"};
 
 char battery_percent[8];
@@ -78,52 +84,56 @@ RTC_DATA_ATTR static int fail_count = 0;
 RTC_DATA_ATTR static wifi_second_chan_t wifi_channel_second;
 
 static void go_to_sleep(int seconds) {
-    printf("Going to sleep for %d seconds\n", seconds);
-    vTaskDelay(50 / portTICK_PERIOD_MS);
+    ESP_LOGI(SLEEP_TAG, "Going to sleep for %d seconds", seconds);
     esp_sleep_enable_ext0_wakeup(WAKEUP_PIN, 0);
-    esp_deep_sleep(1000000LL * seconds);
+
+    if (seconds < 0)
+        esp_deep_sleep_start();
+    else
+        esp_deep_sleep(1000000LL * seconds);
+
 }
 
-void monitoring_task(void *pvParameter) {
-    for (;;) {
+void wifi_manager_monitoring_task(void *pvParameter) {
+    while (1) {
         ESP_LOGI(TAG, "free heap: %d", esp_get_free_heap_size());
+        esp_task_wdt_reset();
         vTaskDelay(pdMS_TO_TICKS(10000));
     }
 }
 
-void cb_connection_ok(void *pvParameter) {
-    ESP_LOGI(TAG, "I have a connection!");
+void wifi_manager_done_callback(void *pvParameter) {
+    ESP_LOGI("WIFI MANAGER", "I have a connection!");
     go_to_sleep(0);
 }
-
 
 esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
     switch (evt->event_id) {
         case HTTP_EVENT_ERROR:
-            ESP_LOGD(TAG, "HTTP_EVENT_ERROR");
+            ESP_LOGD(HTTP_TAG, "HTTP_EVENT_ERROR");
             break;
         case HTTP_EVENT_ON_CONNECTED:
-            ESP_LOGD(TAG, "HTTP_EVENT_ON_CONNECTED");
+            ESP_LOGD(HTTP_TAG, "HTTP_EVENT_ON_CONNECTED");
             break;
         case HTTP_EVENT_HEADER_SENT:
-            ESP_LOGD(TAG, "HTTP_EVENT_HEADER_SENT");
+            ESP_LOGD(HTTP_TAG, "HTTP_EVENT_HEADER_SENT");
             break;
         case HTTP_EVENT_ON_HEADER:
-            ESP_LOGD(TAG, "HTTP_EVENT_ON_HEADER, key=%s, value=%s", evt->header_key, evt->header_value);
+            ESP_LOGD(HTTP_TAG, "HTTP_EVENT_ON_HEADER, key=%s, value=%s", evt->header_key, evt->header_value);
             break;
         case HTTP_EVENT_ON_DATA:
-            ESP_LOGD(TAG, "HTTP_EVENT_ON_DATA, len=%d", evt->data_len);
+            ESP_LOGD(HTTP_TAG, "HTTP_EVENT_ON_DATA, len=%d", evt->data_len);
             break;
         case HTTP_EVENT_ON_FINISH:
-            ESP_LOGD(TAG, "HTTP_EVENT_ON_FINISH");
+            ESP_LOGD(HTTP_TAG, "HTTP_EVENT_ON_FINISH");
             break;
         case HTTP_EVENT_DISCONNECTED:
-            ESP_LOGI(TAG, "HTTP_EVENT_DISCONNECTED");
+            ESP_LOGI(HTTP_TAG, "HTTP_EVENT_DISCONNECTED");
             int mbedtls_err = 0;
             esp_err_t err = esp_tls_get_and_clear_last_error(evt->data, &mbedtls_err, NULL);
             if (err != 0) {
-                ESP_LOGI(TAG, "Last esp error code: 0x%x", err);
-                ESP_LOGI(TAG, "Last mbedtls failure: 0x%x", mbedtls_err);
+                ESP_LOGI(HTTP_TAG, "Last esp error code: 0x%x", err);
+                ESP_LOGI(HTTP_TAG, "Last mbedtls failure: 0x%x", mbedtls_err);
             }
             break;
     }
@@ -140,7 +150,7 @@ static void http_rest_with_url(char *path) {
             .host = HOST,
             .port= PORT,
             .path = path,
-//            .transport_type = HTTP_TRANSPORT_OVER_SSL,
+            .transport_type = HTTP_TRANSPORT_OVER_SSL,
             .event_handler = _http_event_handler,
             .method = HTTP_METHOD_GET
     };
@@ -149,7 +159,7 @@ static void http_rest_with_url(char *path) {
 
     esp_err_t err;
     if ((err = esp_http_client_open(client, 0)) != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to open HTTP connection: %s", esp_err_to_name(err));
+        ESP_LOGE(HTTP_TAG, "Failed to open HTTP connection: %s", esp_err_to_name(err));
         free(buffer);
         fail_count++;
         printf("HTTP REQUEST FAILED: %d\n", fail_count);
@@ -161,17 +171,17 @@ static void http_rest_with_url(char *path) {
     if (total_read_len < content_length && content_length <= MAX_HTTP_SIZE) {
         read_len = esp_http_client_read(client, buffer, content_length);
         if (read_len <= 0) {
-            ESP_LOGE(TAG, "Error read data");
+            ESP_LOGE(HTTP_TAG, "Error read data");
         }
         buffer[read_len] = 0;
-        ESP_LOGD(TAG, "read_len = %d", read_len);
+        ESP_LOGD(HTTP_TAG, "read_len = %d", read_len);
     }
     if (content_length > MAX_HTTP_SIZE - 1) {
         fail_count++;
         printf("HTTP REQUEST TOO LONG, FAIL COUNT: %d\n", fail_count);
         go_to_sleep(10);
     }
-    ESP_LOGI(TAG, "HTTP Stream reader Status = %d, content_length = %d",
+    ESP_LOGI(HTTP_TAG, "HTTP Stream reader Status = %d, content_length = %d",
              esp_http_client_get_status_code(client),
              esp_http_client_get_content_length(client));
 
@@ -200,19 +210,24 @@ static int s_retry_num = 0;
 static void wifi_event_handler(void *arg, esp_event_base_t event_base,
                                int32_t event_id, void *event_data) {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
+        char *host_name = "Reetab Lyra One";
+        tcpip_adapter_set_hostname(TCPIP_ADAPTER_IF_STA, host_name);
         esp_wifi_connect();
     } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
         if (s_retry_num < 5) {
             esp_wifi_connect();
             xEventGroupClearBits(main_event_group, CONNECTED_BIT);
             s_retry_num++;
-            ESP_LOGI(TAG, "retry to connect to the AP");
+            ESP_LOGI(WIFI_TAG, "retry to connect to the AP");
+        } else {
+            fail_count++;
+            printf("HTTP REQUEST TOO LONG, FAIL COUNT: %d\n", fail_count);
+            go_to_sleep(10);
+            ESP_LOGI(WIFI_TAG, "connect to the AP fail");
         }
-        ESP_LOGI(TAG, "connect to the AP fail");
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ip_event_got_ip_t *event = (ip_event_got_ip_t *) event_data;
-        ESP_LOGI(TAG, "got ip:%s",
-                 ip4addr_ntoa(&event->ip_info.ip));
+        ESP_LOGI(WIFI_TAG, "got ip:%s", ip4addr_ntoa(&event->ip_info.ip));
         s_retry_num = 0;
         xEventGroupSetBits(main_event_group, CONNECTED_BIT);
     }
@@ -221,8 +236,15 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
 /* FreeRTOS event group to signal when we are connected*/
 
 static void initialise_wifi(wifi_config_t wifi_config) {
-    tcpip_adapter_init();
     ESP_ERROR_CHECK(esp_event_loop_create_default());
+
+//    tcpip_adapter_ip_info_t ipInfo;
+//    tcpip_adapter_set_ip_info(TCPIP_ADAPTER_IF_STA, &ipInfo);
+
+
+
+    tcpip_adapter_init();
+
 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
 
@@ -235,30 +257,28 @@ static void initialise_wifi(wifi_config_t wifi_config) {
     ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
     ESP_ERROR_CHECK(esp_wifi_start());
 
-    ESP_LOGI(TAG, "wifi_init_sta finished.");
+    ESP_LOGI(WIFI_TAG, "wifi_init_sta finished.");
 }
 
 
 static void sleep_monitor(void *ptr) {
+    esp_task_wdt_add(NULL);
     EventBits_t uxBits;
     while (1) {
-        uxBits = xEventGroupWaitBits(main_event_group, DISPLAY_UPDATED_BIT | ESPTOUCH_DONE_BIT, true, false,
-                                     portMAX_DELAY);
+        uxBits = xEventGroupWaitBits(main_event_group, DISPLAY_UPDATED_BIT, true, false, 1000 / portTICK_RATE_MS);
 
-        if ((uxBits & (DISPLAY_UPDATED_BIT | INITIALIZED_BIT)) ==
-            (DISPLAY_UPDATED_BIT | INITIALIZED_BIT)) {
+        if ((uxBits & (INITIALIZED_BIT | DISPLAY_UPDATED_BIT)) == (INITIALIZED_BIT | DISPLAY_UPDATED_BIT)) {
             esp_wifi_get_channel(&wifi_channel, &wifi_channel_second);
             go_to_sleep(configuration.sleep_seconds);
-
-        } else if ((uxBits & (DISPLAY_UPDATED_BIT | LOW_BATTERY_BIT)) ==
-                   (DISPLAY_UPDATED_BIT | LOW_BATTERY_BIT)) {
+        } else if ((uxBits & (LOW_BATTERY_BIT | DISPLAY_UPDATED_BIT)) == (LOW_BATTERY_BIT | DISPLAY_UPDATED_BIT)) {
             go_to_sleep(configuration.sleep_seconds);
-
-        } else if ((uxBits & (ESPTOUCH_DONE_BIT | STEP_1)) == (ESPTOUCH_DONE_BIT | STEP_1)) {
-            go_to_sleep(0);
+        } else if ((uxBits & (SLEEP_AFTER_UPDATE_BIT | DISPLAY_UPDATED_BIT)) == (SLEEP_AFTER_UPDATE_BIT | DISPLAY_UPDATED_BIT)) {
+            go_to_sleep(configuration.sleep_seconds);
         }
+        esp_task_wdt_reset();
     }
 }
+
 
 static void initialize_display() {
     // ========  PREPARE DISPLAY INITIALIZATION  =========
@@ -343,15 +363,17 @@ int is_text_updated() {
 }
 
 static void updateScreen(void *ptr) {
+    EventBits_t uxBits;
+
     while (1) {
 
-        xEventGroupWaitBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT, false, false, portMAX_DELAY);
+        uxBits = xEventGroupWaitBits(main_event_group, CHANGED_TEXT_BIT, false, false, portMAX_DELAY);
 
-        if (is_text_updated()) {
+        if (is_text_updated() || (uxBits & INITIALIZED_BIT) == 0) {
             printf("New text to display\n");
         } else {
             printf("Same old text\n");
-            xEventGroupClearBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+            xEventGroupClearBits(main_event_group, CHANGED_TEXT_BIT);
             xEventGroupSetBits(main_event_group, DISPLAY_UPDATED_BIT);
             continue;
         }
@@ -383,52 +405,38 @@ static void updateScreen(void *ptr) {
 //        EPD_fillRect(0,0,400,200, 5);
 
 
-        if (lines[1].font == 100) {
+        if (lines[1].font > 50) {
             _gs = 1;
             _fg = 15;
             _bg = 0;
-            EPD_jpg_image(CENTER, 15, 0, SPIFFS_BASE_PATH"/images/low_battery.jpg", NULL, 0);
         }
+
+        switch (lines[1].font) {
+            case 100:
+                EPD_jpg_image(CENTER, 15, 0, SPIFFS_BASE_PATH"/images/low_battery.jpg", NULL, 0);
+                break;
+            case 200:
+                EPD_jpg_image(CENTER, lines[1].top_margin, 0, SPIFFS_BASE_PATH"/images/icons.jpg", NULL, 0);
+                break;
+        }
+
         for (int i = 0; i < MAX_LINES; i++) {
-            if (lines[i].font == 1)
-                EPD_setFont(USER_FONT, file_fonts[0]);
-            else if (lines[i].font == 2)
-                EPD_setFont(USER_FONT, file_fonts[1]);
-            else if (lines[i].font == 3)
-                EPD_setFont(UBUNTU16_FONT, NULL);
-            else if (lines[i].font == 4)
-                EPD_setFont(ARIAL_NORMAL, NULL);
-            else if (lines[i].font == 5)
-                EPD_setFont(ARIAL_BOLD, NULL);
-            else if (lines[i].font == 6)
-                EPD_setFont(ARIAL_ROUND, NULL);
-            else if (lines[i].font == 7)
-                EPD_setFont(HALLFETICA, NULL);
-            else if (lines[i].font == 8)
-                EPD_setFont(INCONSOLA, NULL);
-            else if (lines[i].font == 9)
-                EPD_setFont(UBNUTU_BOLD, NULL);
-            else if (lines[i].font == 10)
-                EPD_setFont(USER_FONT, file_fonts[3]);
-            else if (lines[i].font == 11)
-                EPD_setFont(USER_FONT, file_fonts[2]);
-            else if (lines[i].font == 12)
-                EPD_setFont(USER_FONT, file_fonts[4]);
-            else if (lines[i].font == 13)
-                EPD_setFont(GROTESK_16, NULL);
-            else if (lines[i].font == 14)
-                EPD_setFont(GROTESK_BOLD, NULL);
+
+            if (lines[i].font > -1 && lines[i].font < 5) {
+                EPD_setFont(USER_FONT, file_fonts[lines[i].font]);
+            } else {
+                EPD_setFont(lines[i].font, NULL);
+            }
+
 
             EPD_print(lines[i].text, lines[i].left_margin, lines[i].top_margin);
         }
 
 
-
-
         EPD_UpdateScreen();
         EPD_PowerOff();
 
-        xEventGroupClearBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+        xEventGroupClearBits(main_event_group, CHANGED_TEXT_BIT);
         xEventGroupSetBits(main_event_group, DISPLAY_UPDATED_BIT);
     }
 }
@@ -442,8 +450,16 @@ static void http_get_data(void *ptr) {
 
         uxBits = xEventGroupWaitBits(main_event_group, CONNECTED_BIT, false, false, portMAX_DELAY);
 
-        if ((uxBits & (DISPLAY_TEXT_CHANGE_BIT | RECEIVED_DATA_BIT | LOADING_DATA_BIT)) > 0 ||
+        if ((uxBits & (CHANGED_TEXT_BIT | RECEIVED_DATA_BIT | LOADING_DATA_BIT)) > 0 ||
             (uxBits & CONNECTED_BIT) == 0) {
+            esp_task_wdt_reset();
+            vTaskDelay(50 / portTICK_PERIOD_MS);
+            continue;
+        }
+        /* Get new data only if int Initializing state  */
+        if ((uxBits & DISPLAY_UPDATED_BIT) > 0 && (uxBits & INITIALIZING_BIT) == 0) {
+            esp_task_wdt_reset();
+            vTaskDelay(50 / portTICK_PERIOD_MS);
             continue;
         }
 
@@ -455,7 +471,7 @@ static void http_get_data(void *ptr) {
         } else if (uxBits & INITIALIZING_BIT) { /* waiting for pairing */
             strcat(path, "/register/");
             strcat(path, data_config->device_id);
-            vTaskDelay(10000 / portTICK_PERIOD_MS);
+            vTaskDelay(2000 / portTICK_PERIOD_MS);
 
         } else if (uxBits & INITIALIZED_BIT) {  /* Normal request */
             strcat(path, "/");
@@ -464,9 +480,10 @@ static void http_get_data(void *ptr) {
             strcat(path, battery_percent);
 
         }
-        vTaskDelay(200 / portTICK_PERIOD_MS);
         xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
         http_rest_with_url(path);
+        esp_task_wdt_reset();
+        vTaskDelay(200 / portTICK_PERIOD_MS);
     }
 }
 
@@ -477,16 +494,16 @@ static void data_processing(void *ptr) {
 
 
     while (1) {
-        uxBits = xEventGroupWaitBits(main_event_group, RECEIVED_DATA_BIT, true, true, portMAX_DELAY);
+        uxBits = xEventGroupWaitBits(main_event_group, RECEIVED_DATA_BIT, false, true, portMAX_DELAY);
         if (((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) == 0) &&
-            (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
+            (uxBits & CHANGED_TEXT_BIT) == 0) {
 
             xEventGroupSetBits(main_event_group, INITIALIZING_BIT);
             // print verification code on display
             view_connected_to_wifi(lines, configuration.verification_code);
-            xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+            xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
 
-        } else if ((uxBits & INITIALIZING_BIT) && (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
+        } else if ((uxBits & INITIALIZING_BIT) && (uxBits & CHANGED_TEXT_BIT) == 0) {
             if (data_config->paired == 1) {
                 xEventGroupClearBits(main_event_group, INITIALIZING_BIT);
                 xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
@@ -498,15 +515,15 @@ static void data_processing(void *ptr) {
 
                 view_pairing_success(lines);
 
-                xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+                xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
             }
         } else if ((uxBits & INITIALIZED_BIT) == INITIALIZED_BIT &&
-                   (uxBits & DISPLAY_TEXT_CHANGE_BIT) == 0) {
+                   (uxBits & CHANGED_TEXT_BIT) == 0) {
 
-            xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+            xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
 
         }
-
+        xEventGroupClearBits(main_event_group, RECEIVED_DATA_BIT);
         vTaskDelay(200 / portTICK_PERIOD_MS);
     }
 }
@@ -531,12 +548,48 @@ static void gpio_task_interrupt(void *arg) {
     }
 }
 
+static void runtime_monitor(void *ptr) {
+    EventBits_t uxBits;
+    TickType_t runtime_ticks;
+    unsigned int runtime;
+    while (1) {
+        uxBits = xEventGroupGetBits(main_event_group);
+        runtime_ticks = xTaskGetTickCount();
+        runtime = runtime_ticks * portTICK_RATE_MS / 1000;
+        if (uxBits & INITIALIZING_BIT) {
+
+        } else if (uxBits & INITIALIZED_BIT) {
+            if (runtime > TIMEOUT_SECONDS) {
+                fail_count++;
+                go_to_sleep(10);
+            }
+        } else {
+            if (runtime > SETUP_TIMEOUT_SECONDS && (uxBits & CHANGED_TEXT_BIT) == 0) {
+                configuration.sleep_seconds = -1;
+                view_display_initial(lines);
+                xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
+                xEventGroupSetBits(main_event_group, SLEEP_AFTER_UPDATE_BIT);
+            }
+        }
+
+        ESP_LOGI(TAG, "Alive for: %d seconds", runtime);
+        vTaskDelay(1000 / portTICK_RATE_MS);
+        esp_task_wdt_reset();
+    }
+}
+
+
 void app_main() {
     main_event_group = xEventGroupCreate();
 
+    esp_task_wdt_init(11, true);
+
     ESP_ERROR_CHECK(nvs_flash_init());
     xTaskCreate(&sleep_monitor, "sleep_monitor", 2048, &configuration, 1, NULL);
+    xTaskCreate(&runtime_monitor, "runtime_monitor", 2048, &configuration, 1, NULL);
     xTaskCreate(&updateScreen, "update screen", 16384, &configuration, 5, NULL);
+
+
 
     /* GPIO INTERRUPT */
     gpio_config_t io_conf;
@@ -582,7 +635,7 @@ void app_main() {
     if (fail_count == 2) {
         fail_count++;
         view_something_went_wrong(lines);
-        xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+        xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
         configuration.sleep_seconds = 20;
     } else if (fail_count > 2 && fail_count % 2) {
         fail_count++;
@@ -594,7 +647,7 @@ void app_main() {
     if (start_battery_level < 5) {
         xEventGroupSetBits(main_event_group, LOW_BATTERY_BIT);
         view_low_battery(lines);
-        xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+        xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
         configuration.sleep_seconds = 5 * 60;
     } else {
 
@@ -604,7 +657,6 @@ void app_main() {
             xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
             xTaskCreate(&data_processing, "data_processing", 16384, &configuration, 3, NULL);
 
-            xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
             xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
 
             memcpy(wifi_config.sta.ssid, configuration.ssid, strlen(configuration.ssid) + 1);
@@ -619,21 +671,19 @@ void app_main() {
             memcpy(wifi_config.sta.ssid, configuration.ssid, strlen(configuration.ssid) + 1);
             memcpy(wifi_config.sta.password, configuration.password, strlen(configuration.password) + 1);
 
-
-            xEventGroupSetBits(main_event_group, ESPTOUCH_DONE_BIT);
             initialise_wifi(wifi_config);
         } else {
             fail_count = 0;
-            view_display_initial(lines);
-            xEventGroupSetBits(main_event_group, STEP_1);
-            xEventGroupSetBits(main_event_group, DISPLAY_TEXT_CHANGE_BIT);
+            view_display_setup(lines);
+            xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
             wifi_manager_start();
 
             /* register a callback as an example to how you can integrate your code with the wifi manager */
-            wifi_manager_set_callback(EVENT_STA_GOT_IP, &cb_connection_ok);
+            wifi_manager_set_callback(EVENT_STA_GOT_IP, &wifi_manager_done_callback);
 
             /* your code should go here. Here we simply create a task on core 2 that monitors free heap memory */
-            xTaskCreatePinnedToCore(&monitoring_task, "monitoring_task", 2048, NULL, 1, NULL, 1);
+            xTaskCreatePinnedToCore(&wifi_manager_monitoring_task, "wifi_manager_monitoring_task", 2048, NULL, 10, NULL,
+                                    0);
         }
     }
 }

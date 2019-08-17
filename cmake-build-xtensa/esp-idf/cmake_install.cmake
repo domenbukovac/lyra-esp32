@@ -105,7 +105,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mkspiffs/cmake_install.cmake")
   include("/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spiffs_image/cmake_install.cmake")
   include("/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/cmake_install.cmake")
-  include("/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/cmake_install.cmake")
 
 endif()
 

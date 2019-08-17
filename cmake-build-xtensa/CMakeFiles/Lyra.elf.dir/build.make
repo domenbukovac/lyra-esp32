@@ -145,7 +145,6 @@ Lyra.elf: esp-idf/main/libmain.a
 Lyra.elf: esp-idf/spidriver/libspidriver.a
 Lyra.elf: esp-idf/epaper/libepaper.a
 Lyra.elf: esp-idf/wifi_manager/libwifi_manager.a
-Lyra.elf: esp-idf/protocol_examples_common/libprotocol_examples_common.a
 Lyra.elf: esp-idf/asio/libasio.a
 Lyra.elf: esp-idf/coap/libcoap.a
 Lyra.elf: esp-idf/esp_adc_cal/libesp_adc_cal.a

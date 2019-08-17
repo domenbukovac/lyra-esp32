@@ -209,19 +209,6 @@ bootloader/fast:
 .PHONY : bootloader/fast
 
 #=============================================================================
-# Target rules for targets named ___idf_protocol_examples_common
-
-# Build rule for target.
-___idf_protocol_examples_common: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ___idf_protocol_examples_common
-.PHONY : ___idf_protocol_examples_common
-
-# fast build rule for target.
-___idf_protocol_examples_common/fast:
-	$(MAKE) -f CMakeFiles/___idf_protocol_examples_common.dir/build.make CMakeFiles/___idf_protocol_examples_common.dir/build
-.PHONY : ___idf_protocol_examples_common/fast
-
-#=============================================================================
 # Target rules for targets named ___idf_main
 
 # Build rule for target.
@@ -2249,19 +2236,6 @@ __idf_wifi_manager/fast:
 	$(MAKE) -f esp-idf/wifi_manager/CMakeFiles/__idf_wifi_manager.dir/build.make esp-idf/wifi_manager/CMakeFiles/__idf_wifi_manager.dir/build
 .PHONY : __idf_wifi_manager/fast
 
-#=============================================================================
-# Target rules for targets named __idf_protocol_examples_common
-
-# Build rule for target.
-__idf_protocol_examples_common: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 __idf_protocol_examples_common
-.PHONY : __idf_protocol_examples_common
-
-# fast build rule for target.
-__idf_protocol_examples_common/fast:
-	$(MAKE) -f esp-idf/protocol_examples_common/CMakeFiles/__idf_protocol_examples_common.dir/build.make esp-idf/protocol_examples_common/CMakeFiles/__idf_protocol_examples_common.dir/build
-.PHONY : __idf_protocol_examples_common/fast
-
 project_elf_src.obj: project_elf_src.c.obj
 
 .PHONY : project_elf_src.obj
@@ -2304,7 +2278,6 @@ help:
 	@echo "... size"
 	@echo "... Lyra.elf"
 	@echo "... bootloader"
-	@echo "... ___idf_protocol_examples_common"
 	@echo "... ___idf_main"
 	@echo "... ___idf_xtensa"
 	@echo "... install/strip"
@@ -2462,7 +2435,6 @@ help:
 	@echo "... __idf_spidriver"
 	@echo "... __idf_epaper"
 	@echo "... __idf_wifi_manager"
-	@echo "... __idf_protocol_examples_common"
 	@echo "... project_elf_src.obj"
 	@echo "... project_elf_src.i"
 	@echo "... project_elf_src.s"

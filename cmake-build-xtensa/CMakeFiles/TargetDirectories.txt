@@ -7,7 +7,6 @@
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/size.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/Lyra.elf.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/bootloader.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/___idf_protocol_examples_common.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/___idf_main.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/___idf_xtensa.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/install/strip.dir
@@ -615,10 +614,3 @@
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/rebuild_cache.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/edit_cache.dir
 /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/wifi_manager/CMakeFiles/__idf_wifi_manager.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/rebuild_cache.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/edit_cache.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/install/strip.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/install.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/list_install_components.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/install/local.dir
-/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/protocol_examples_common/CMakeFiles/__idf_protocol_examples_common.dir

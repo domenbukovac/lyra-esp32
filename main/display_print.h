@@ -7,11 +7,18 @@
 
 //#include "struct.h"
 
+int erase_lines(line_struct *lines) {
+    for (int i = 0; i < 8; i++) {
+        strcpy(lines[i].text, "");
+    }
+    return 1;
+}
 
-int view_display_initial(line_struct *lines) {
-    strcpy(lines[0].text, "To setup the device, connect to wifi");
+
+int view_display_setup(line_struct *lines) {
+    strcpy(lines[0].text, "CONNECT YOUR PHONE TO WI-FI");
     strcpy(lines[1].text, "LYRA ONE");
-    strcpy(lines[2].text, "using password 'setup4242'");
+    strcpy(lines[2].text, "USING PASSWORD setup4242");
 
     lines[0].font = 1;
     lines[1].font = 2;
@@ -21,9 +28,29 @@ int view_display_initial(line_struct *lines) {
     lines[1].left_margin = CENTER;
     lines[2].left_margin = CENTER;
 
-    lines[0].top_margin = 22;
+    lines[0].top_margin = 24;
     lines[1].top_margin = 52;
-    lines[2].top_margin = 96;
+    lines[2].top_margin = 98;
+    return 0;
+};
+
+int view_display_initial(line_struct *lines) {
+    erase_lines(lines);
+    strcpy(lines[2].text, "To setup the device, use pin and");
+    strcpy(lines[3].text, "press the button on the left");
+
+    lines[1].font = 200; // to display logo
+    lines[1].top_margin = 12;
+
+    lines[2].font = 1;
+    lines[3].font = 1;
+
+    lines[2].left_margin = CENTER;
+    lines[3].left_margin = CENTER;
+
+
+    lines[2].top_margin = 83;
+    lines[3].top_margin = 100;
     return 0;
 };
 
@@ -78,22 +105,22 @@ int view_low_battery(line_struct *lines) {
 
 };
 
-int view_connected_to_wifi(line_struct *lines, char* verification_code) {
+int view_connected_to_wifi(line_struct *lines, char *verification_code) {
     strcpy(lines[0].text, "VERIFICATION CODE");
     strcpy(lines[1].text, verification_code);
     strcpy(lines[2].text, "Enter the code in Reetab App");
 
-    lines[0].font = 1;
+    lines[0].font = 16;
     lines[1].font = 2;
-    lines[2].font = 1;
+    lines[2].font = 16;
 
     lines[0].left_margin = CENTER;
     lines[1].left_margin = CENTER;
     lines[2].left_margin = CENTER;
 
-    lines[0].top_margin = 26;
-    lines[1].top_margin = 50;
-    lines[2].top_margin = 100;
+    lines[0].top_margin = 17;
+    lines[1].top_margin = 52;
+    lines[2].top_margin = 99;
     return 0;
 
 };
