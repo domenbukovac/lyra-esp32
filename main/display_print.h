@@ -16,6 +16,7 @@ int erase_lines(line_struct *lines) {
 
 
 int view_display_setup(line_struct *lines) {
+    erase_lines(lines);
     strcpy(lines[0].text, "CONNECT YOUR PHONE TO WI-FI");
     strcpy(lines[1].text, "LYRA ONE");
     strcpy(lines[2].text, "USING PASSWORD setup4242");
@@ -55,6 +56,7 @@ int view_display_initial(line_struct *lines) {
 };
 
 int view_something_went_wrong(line_struct *lines) {
+    erase_lines(lines);
     strcpy(lines[0].text, "Something went wrong");
     strcpy(lines[1].text, "with the connection");
     strcpy(lines[2].text, "Please contact support");
@@ -74,6 +76,7 @@ int view_something_went_wrong(line_struct *lines) {
 };
 
 int view_pairing_success(line_struct *lines) {
+    erase_lines(lines);
     strcpy(lines[0].text, "");
     strcpy(lines[1].text, "SUCCESS");
     strcpy(lines[2].text, "Pairing was successful!");
@@ -94,18 +97,40 @@ int view_pairing_success(line_struct *lines) {
 };
 
 int view_low_battery(line_struct *lines) {
+    erase_lines(lines);
 
-    strcpy(lines[0].text, "PLEASE RECHARGE");
-    lines[0].font = 5;
-    lines[0].left_margin = CENTER;
-    lines[0].top_margin = 98;
+    strcpy(lines[2].text, "PLEASE RECHARGE");
+    lines[2].font = 7;
+    lines[2].left_margin = CENTER;
+    lines[2].top_margin = 98;
 
-    lines[1].font = 100;
+    lines[1].font = 100; // to display logo
+    lines[1].top_margin = 15; // to display logo
+    return 0;
+
+};
+
+int view_empty_battery(line_struct *lines) {
+    erase_lines(lines);
+
+    strcpy(lines[2].text, "Please recharge the device and");
+    lines[2].font = 16;
+    lines[2].left_margin = CENTER;
+    lines[2].top_margin = 80;
+
+    strcpy(lines[3].text, "click the pin to turn it on");
+    lines[3].font = 16;
+    lines[3].left_margin = CENTER;
+    lines[3].top_margin = 98;
+
+    lines[1].font = 100; // to display logo
+    lines[1].top_margin = 25; // to display logo
     return 0;
 
 };
 
 int view_connected_to_wifi(line_struct *lines, char *verification_code) {
+    erase_lines(lines);
     strcpy(lines[0].text, "VERIFICATION CODE");
     strcpy(lines[1].text, verification_code);
     strcpy(lines[2].text, "Enter the code in Reetab App");

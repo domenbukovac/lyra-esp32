@@ -103,7 +103,7 @@ int	EPD_Y;					// Y position of the next character after EPD_print() function
 // === Embedded fonts constants ===
 #define DEFAULT_FONT	0
 
-#define USER_FONT		100  // font will be read from file
+#define USER_FONT		50  // font will be read from file
 #define ARIAL_NORMAL    6  // font will be read from file
 #define ARIAL_BOLD		7  // font will be read from file
 #define ARIAL_ROUND		8  // font will be read from file

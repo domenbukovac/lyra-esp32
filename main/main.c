@@ -272,7 +272,8 @@ static void sleep_monitor(void *ptr) {
             go_to_sleep(configuration.sleep_seconds);
         } else if ((uxBits & (LOW_BATTERY_BIT | DISPLAY_UPDATED_BIT)) == (LOW_BATTERY_BIT | DISPLAY_UPDATED_BIT)) {
             go_to_sleep(configuration.sleep_seconds);
-        } else if ((uxBits & (SLEEP_AFTER_UPDATE_BIT | DISPLAY_UPDATED_BIT)) == (SLEEP_AFTER_UPDATE_BIT | DISPLAY_UPDATED_BIT)) {
+        } else if ((uxBits & (SLEEP_AFTER_UPDATE_BIT | DISPLAY_UPDATED_BIT)) ==
+                   (SLEEP_AFTER_UPDATE_BIT | DISPLAY_UPDATED_BIT)) {
             go_to_sleep(configuration.sleep_seconds);
         }
         esp_task_wdt_reset();
@@ -413,7 +414,7 @@ static void updateScreen(void *ptr) {
 
         switch (lines[1].font) {
             case 100:
-                EPD_jpg_image(CENTER, 15, 0, SPIFFS_BASE_PATH"/images/low_battery.jpg", NULL, 0);
+                EPD_jpg_image(CENTER, lines[1].top_margin, 0, SPIFFS_BASE_PATH"/images/low_battery.jpg", NULL, 0);
                 break;
             case 200:
                 EPD_jpg_image(CENTER, lines[1].top_margin, 0, SPIFFS_BASE_PATH"/images/icons.jpg", NULL, 0);
@@ -644,14 +645,20 @@ void app_main() {
 
     int start_battery_level = get_battery_level(&battery_percent);
     printf("battery level: %d\n", start_battery_level);
-    if (start_battery_level < 5) {
+
+    if (start_battery_level < 10) { /* If battery level is low */
         xEventGroupSetBits(main_event_group, LOW_BATTERY_BIT);
         view_low_battery(lines);
         xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
-        configuration.sleep_seconds = 5 * 60;
+        if (start_battery_level < 3) { /* Sleep forever */
+            view_empty_battery(lines);
+            configuration.sleep_seconds = -1;
+        } else if (start_battery_level < 5) { /* Sleep for 6 hours */
+            configuration.sleep_seconds = 6 * 60 * 60;
+        } else { /* Sleep for 2 minutes */
+            configuration.sleep_seconds = 2 * 60;
+        }
     } else {
-
-
         /* if device is configured */
         if (get_configuration_from_nvs(&configuration)) {
             xTaskCreate(&http_get_data, "http_get_data", 16384, &configuration, 2, NULL);
@@ -686,4 +693,6 @@ void app_main() {
                                     0);
         }
     }
+
+
 }

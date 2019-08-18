@@ -1,6 +1,6 @@
 "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc -DCMAKE_CXX_COMPILER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-c++ -DIDF_PATH=~/esp/esp-idf -G "CodeBlocks - Unix Makefiles" /Users/domenbukovac/LepusLabs/lyra-esp32
 -- Unexpected file in components directory: /Users/domenbukovac/esp/esp-idf/components/.DS_Store
--- Project version: 25ac4c7-dirty
+-- Project version: a2acd8e-dirty
 -- Building ESP-IDF components for target esp32
 -- Checking Python dependencies...
 ('lala', '/Users/domenbukovac/esp/esp-idf/requirements.txt')
@@ -44,7 +44,7 @@ CMAKE_C_COMPILER= /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Project version: 25ac4c7-dirty
+-- Project version: a2acd8e-dirty
 -- Building ESP-IDF components for target esp32
 -- Checking Python dependencies...
 ('lala', '/Users/domenbukovac/esp/esp-idf/requirements.txt')
