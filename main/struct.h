@@ -13,6 +13,6 @@ typedef struct
     char name[10];
     char text[100];
     int font;
-    int left_margin;
-    int top_margin;
+    int margin_left;
+    int margin_top;
 } line_struct;

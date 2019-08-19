@@ -30,10 +30,10 @@ In file included from ../main/main.c:26:
          if (cJSON_IsNumber(font) && (font->valueint != NULL)) {
                                                      ^~
 ../main/json_read.h:70:65: warning: comparison between pointer and integer
-         if (cJSON_IsNumber(top_margin) && (top_margin->valueint != NULL)) {
+         if (cJSON_IsNumber(margin_top) && (margin_top->valueint != NULL)) {
                                                                  ^~
 ../main/json_read.h:73:67: warning: comparison between pointer and integer
-         if (cJSON_IsNumber(left_margin) && (left_margin->valueint != NULL)) {
+         if (cJSON_IsNumber(margin_left) && (margin_left->valueint != NULL)) {
                                                                    ^~
 In file included from ../main/main.c:34:
 /Users/domenbukovac/esp/esp-idf/components/heap/include/esp_heap_alloc_caps.h: At top level:

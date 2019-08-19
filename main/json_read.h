@@ -57,9 +57,9 @@ int json_extract(char *json_raw, Configuration *conf, line_struct *line_structur
     cJSON_ArrayForEach(line, lines)
     {
         cJSON *font = cJSON_GetObjectItemCaseSensitive(line, "font");
-        cJSON *left_margin = cJSON_GetObjectItemCaseSensitive(line, "left_margin");
+        cJSON *margin_left = cJSON_GetObjectItemCaseSensitive(line, "margin_left");
         cJSON *text = cJSON_GetObjectItemCaseSensitive(line, "text");
-        cJSON *top_margin = cJSON_GetObjectItemCaseSensitive(line, "top_margin");
+        cJSON *margin_top = cJSON_GetObjectItemCaseSensitive(line, "margin_top");
 
         if (cJSON_IsString(text) && (text->valuestring != NULL) && (strlen(text->valuestring) < 100)) {
             strcpy(line_structure[index].text, text->valuestring);
@@ -67,11 +67,11 @@ int json_extract(char *json_raw, Configuration *conf, line_struct *line_structur
         if (cJSON_IsNumber(font) && (font->valueint != NULL)) {
             line_structure[index].font = font->valueint;
         }
-        if (cJSON_IsNumber(top_margin) && (top_margin->valueint != NULL)) {
-            line_structure[index].top_margin = top_margin->valueint;
+        if (cJSON_IsNumber(margin_top) && (margin_top->valueint != NULL)) {
+            line_structure[index].margin_top = margin_top->valueint;
         }
-        if (cJSON_IsNumber(left_margin) && (left_margin->valueint != NULL)) {
-            line_structure[index].left_margin = left_margin->valueint;
+        if (cJSON_IsNumber(margin_left) && (margin_left->valueint != NULL)) {
+            line_structure[index].margin_left = margin_left->valueint;
         }
         index++;
         if (max_lines == index){

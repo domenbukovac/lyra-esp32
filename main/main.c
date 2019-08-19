@@ -46,10 +46,11 @@
 #include "wifi_manager.h"
 
 
-//#define HOST "192.168.1.53"
-#define HOST "dev.reetab.com"
-//#define PORT 5000
-#define PORT 443
+#define HOST "192.168.1.53"
+//#define HOST "dev.reetab.com"
+#define PORT 5000
+//#define PORT 443
+#define BASE_API_URL "/api/devices/lyra"
 
 #define WAKEUP_PIN 0
 #define MAX_HTTP_SIZE 4096
@@ -58,6 +59,7 @@
 #define TIMEOUT_SECONDS 30
 #define SETUP_TIMEOUT_SECONDS 60 * 5
 
+#define MAX_FAIL_COUNT 5
 
 static Configuration configuration;
 
@@ -140,9 +142,10 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
     return ESP_OK;
 }
 
-static void http_rest_with_url(char *path) {
+static void http_rest_with_url(char *path, esp_http_client_method_t method) {
 
     printf("HTTP REST WITH URL START! \n");
+    printf("%s, %s, %d \n", path, HOST, PORT);
     char *buffer = malloc(MAX_HTTP_SIZE + 1);
 
 
@@ -150,9 +153,10 @@ static void http_rest_with_url(char *path) {
             .host = HOST,
             .port= PORT,
             .path = path,
-            .transport_type = HTTP_TRANSPORT_OVER_SSL,
+//            .transport_type = HTTP_TRANSPORT_OVER_SSL,
             .event_handler = _http_event_handler,
-            .method = HTTP_METHOD_GET
+            .method =  method,
+            .query = "sdfsdf=sdfsdf"
     };
 
     esp_http_client_handle_t client = esp_http_client_init(&config);
@@ -414,10 +418,10 @@ static void updateScreen(void *ptr) {
 
         switch (lines[1].font) {
             case 100:
-                EPD_jpg_image(CENTER, lines[1].top_margin, 0, SPIFFS_BASE_PATH"/images/low_battery.jpg", NULL, 0);
+                EPD_jpg_image(CENTER, lines[1].margin_top, 0, SPIFFS_BASE_PATH"/images/low_battery.jpg", NULL, 0);
                 break;
             case 200:
-                EPD_jpg_image(CENTER, lines[1].top_margin, 0, SPIFFS_BASE_PATH"/images/icons.jpg", NULL, 0);
+                EPD_jpg_image(CENTER, lines[1].margin_top, 0, SPIFFS_BASE_PATH"/images/icons.jpg", NULL, 0);
                 break;
         }
 
@@ -430,7 +434,7 @@ static void updateScreen(void *ptr) {
             }
 
 
-            EPD_print(lines[i].text, lines[i].left_margin, lines[i].top_margin);
+            EPD_print(lines[i].text, lines[i].margin_left, lines[i].margin_top);
         }
 
 
@@ -464,25 +468,28 @@ static void http_get_data(void *ptr) {
             continue;
         }
 
-        strcpy(path, "/api/lyra/v1");
+        strcpy(path, BASE_API_URL);
 
         if ((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) == 0) { /* Not initialized yet */
             strcat(path, "/register");
+            xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
+            http_rest_with_url(path, HTTP_METHOD_POST);
 
         } else if (uxBits & INITIALIZING_BIT) { /* waiting for pairing */
-            strcat(path, "/register/");
+            strcat(path, "/verify/");
             strcat(path, data_config->device_id);
             vTaskDelay(2000 / portTICK_PERIOD_MS);
+            xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
+            http_rest_with_url(path, HTTP_METHOD_GET);
 
         } else if (uxBits & INITIALIZED_BIT) {  /* Normal request */
-            strcat(path, "/");
+            strcat(path, "/data/");
             strcat(path, data_config->device_id);
             strcat(path, "/");
             strcat(path, battery_percent);
-
+            xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
+            http_rest_with_url(path, HTTP_METHOD_GET);
         }
-        xEventGroupSetBits(main_event_group, LOADING_DATA_BIT);
-        http_rest_with_url(path);
         esp_task_wdt_reset();
         vTaskDelay(200 / portTICK_PERIOD_MS);
     }
@@ -550,6 +557,7 @@ static void gpio_task_interrupt(void *arg) {
 }
 
 static void runtime_monitor(void *ptr) {
+    esp_task_wdt_add(NULL);
     EventBits_t uxBits;
     TickType_t runtime_ticks;
     unsigned int runtime;
@@ -557,20 +565,22 @@ static void runtime_monitor(void *ptr) {
         uxBits = xEventGroupGetBits(main_event_group);
         runtime_ticks = xTaskGetTickCount();
         runtime = runtime_ticks * portTICK_RATE_MS / 1000;
-        if (uxBits & INITIALIZING_BIT) {
-
+        if (uxBits & INITIALIZING_BIT && runtime > SETUP_TIMEOUT_SECONDS) {
+            go_to_sleep(10);
         } else if (uxBits & INITIALIZED_BIT) {
             if (runtime > TIMEOUT_SECONDS) {
                 fail_count++;
                 go_to_sleep(10);
             }
-        } else {
-            if (runtime > SETUP_TIMEOUT_SECONDS && (uxBits & CHANGED_TEXT_BIT) == 0) {
+        } else if ((uxBits & CHANGED_TEXT_BIT) == 0) {
+            if (runtime > SETUP_TIMEOUT_SECONDS) {
                 configuration.sleep_seconds = -1;
                 view_display_initial(lines);
                 xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
                 xEventGroupSetBits(main_event_group, SLEEP_AFTER_UPDATE_BIT);
             }
+        } else if (runtime > SETUP_TIMEOUT_SECONDS + 10) {
+            go_to_sleep(1);
         }
 
         ESP_LOGI(TAG, "Alive for: %d seconds", runtime);
@@ -633,12 +643,12 @@ void app_main() {
             printf("Not a deep sleep reset\n");
     }
 
-    if (fail_count == 2) {
+    if (fail_count == MAX_FAIL_COUNT) {
         fail_count++;
         view_something_went_wrong(lines);
         xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
         configuration.sleep_seconds = 20;
-    } else if (fail_count > 2 && fail_count % 2) {
+    } else if (fail_count > MAX_FAIL_COUNT && fail_count % 2) {
         fail_count++;
         go_to_sleep(fail_count * 8);
     }
@@ -693,6 +703,4 @@ void app_main() {
                                     0);
         }
     }
-
-
 }

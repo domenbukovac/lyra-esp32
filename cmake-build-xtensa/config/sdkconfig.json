@@ -325,7 +325,7 @@
     "LWIP_IP_REASSEMBLY": false, 
     "LWIP_IRAM_OPTIMIZATION": false, 
     "LWIP_L2_TO_L3_COPY": false, 
-    "LWIP_LOCAL_HOSTNAME": "espressif", 
+    "LWIP_LOCAL_HOSTNAME": "Lyra One", 
     "LWIP_LOOPBACK_MAX_PBUFS": 8, 
     "LWIP_MAX_ACTIVE_TCP": 16, 
     "LWIP_MAX_LISTENING_TCP": 16, 
