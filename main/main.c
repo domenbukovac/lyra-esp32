@@ -61,9 +61,11 @@
 
 #define MAX_FAIL_COUNT 5
 
-static Configuration configuration;
+
 
 line_struct lines[MAX_LINES];
+static Configuration configuration = { .lines = lines };
+
 
 wifi_config_t wifi_config;
 
@@ -83,6 +85,7 @@ RTC_DATA_ATTR static unsigned long rtc_text_hash;
 
 RTC_DATA_ATTR static uint8_t wifi_channel;
 RTC_DATA_ATTR static int fail_count = 0;
+RTC_DATA_ATTR static int low_battery_count = 0;
 RTC_DATA_ATTR static wifi_second_chan_t wifi_channel_second;
 
 static void go_to_sleep(int seconds) {
@@ -190,7 +193,7 @@ static void http_rest_with_url(char *path, esp_http_client_method_t method) {
              esp_http_client_get_content_length(client));
 
     if (esp_http_client_get_status_code(client) == 200) {
-        if (json_extract(buffer, &configuration, lines) == 0) {
+        if (json_extract(buffer, &configuration) == 0) {
             xEventGroupSetBits(main_event_group, RECEIVED_DATA_BIT);
             xEventGroupClearBits(main_event_group, LOADING_DATA_BIT);
         } else {
@@ -393,48 +396,43 @@ static void updateScreen(void *ptr) {
         EPD_fillScreen(0);
         orientation = LANDSCAPE_180;
 
-        _gs = 0;
-        _fg = 1;
+        _gs = 1;
+        _fg = 15;
         _bg = 0;
         text_wrap = 1;
-//        font_forceFixed = 1;
-//        #define EPD_DISPLAY_WIDTH	296
-//        #define EPD_DISPLAY_HEIGHT	128
 
-
-//         White on black
-//        _gs = 1;
-//        _fg = 0;
-//        _bg = 5;
-//        EPD_fillScreen(0);
-//        EPD_fillRect(0,0,400,200, 5);
-
-
-        if (lines[1].font > 50) {
-            _gs = 1;
-            _fg = 15;
-            _bg = 0;
+        if (configuration.custom_shade == 1) {
+            // White on black
+            _fg = configuration.fg;
+            _bg =  configuration.bg;
+            EPD_fillScreen(0);
+            EPD_fillRect(0, 0, 400, 250,  configuration.bg);
         }
 
-        switch (lines[1].font) {
-            case 100:
-                EPD_jpg_image(CENTER, lines[1].margin_top, 0, SPIFFS_BASE_PATH"/images/low_battery.jpg", NULL, 0);
-                break;
-            case 200:
-                EPD_jpg_image(CENTER, lines[1].margin_top, 0, SPIFFS_BASE_PATH"/images/icons.jpg", NULL, 0);
-                break;
-        }
 
         for (int i = 0; i < MAX_LINES; i++) {
 
-            if (lines[i].font > -1 && lines[i].font < 5) {
-                EPD_setFont(USER_FONT, file_fonts[lines[i].font]);
+            if (lines[i].font > 50) {
+                switch (lines[i].font) {
+                    case 100:
+                        EPD_jpg_image(CENTER, lines[i].margin_top, 0, SPIFFS_BASE_PATH"/images/low_battery.jpg", NULL,
+                                      0);
+                        break;
+                    case 200:
+                        EPD_jpg_image(CENTER, lines[i].margin_top, 0, SPIFFS_BASE_PATH"/images/icons.jpg", NULL, 0);
+                        break;
+                }
             } else {
-                EPD_setFont(lines[i].font, NULL);
+                if (lines[i].font > -1 && lines[i].font < 5) {
+                    EPD_setFont(USER_FONT, file_fonts[lines[i].font]);
+
+                } else {
+                    EPD_setFont(lines[i].font, NULL);
+                }
+                EPD_print(lines[i].text, lines[i].margin_left, lines[i].margin_top);
             }
 
 
-            EPD_print(lines[i].text, lines[i].margin_left, lines[i].margin_top);
         }
 
 
@@ -580,7 +578,7 @@ static void runtime_monitor(void *ptr) {
                 xEventGroupSetBits(main_event_group, SLEEP_AFTER_UPDATE_BIT);
             }
         } else if (runtime > SETUP_TIMEOUT_SECONDS + 10) {
-            go_to_sleep(1);
+            esp_restart();
         }
 
         ESP_LOGI(TAG, "Alive for: %d seconds", runtime);
@@ -596,7 +594,7 @@ void app_main() {
     esp_task_wdt_init(11, true);
 
     ESP_ERROR_CHECK(nvs_flash_init());
-    xTaskCreate(&sleep_monitor, "sleep_monitor", 2048, &configuration, 1, NULL);
+    xTaskCreate(&sleep_monitor, "sleep_monitor", 2048, &configuration, 2, NULL);
     xTaskCreate(&runtime_monitor, "runtime_monitor", 2048, &configuration, 1, NULL);
     xTaskCreate(&updateScreen, "update screen", 16384, &configuration, 5, NULL);
 
@@ -656,17 +654,19 @@ void app_main() {
     int start_battery_level = get_battery_level(&battery_percent);
     printf("battery level: %d\n", start_battery_level);
 
-    if (start_battery_level < 10) { /* If battery level is low */
+    if (start_battery_level < 8) { /* If battery level is low */
         xEventGroupSetBits(main_event_group, LOW_BATTERY_BIT);
         view_low_battery(lines);
         xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
-        if (start_battery_level < 3) { /* Sleep forever */
+        if (start_battery_level < 3 && low_battery_count > 30) { /* Sleep forever */
             view_empty_battery(lines);
             configuration.sleep_seconds = -1;
-        } else if (start_battery_level < 5) { /* Sleep for 6 hours */
+        } else if (start_battery_level < 5 && low_battery_count > 20) { /* Sleep for 6 hours */
             configuration.sleep_seconds = 6 * 60 * 60;
+            low_battery_count++;
         } else { /* Sleep for 2 minutes */
             configuration.sleep_seconds = 2 * 60;
+            low_battery_count++;
         }
     } else {
         /* if device is configured */

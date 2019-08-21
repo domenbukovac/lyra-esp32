@@ -8,7 +8,7 @@
 #include "cJSON.h"
 
 #endif
-int json_extract(char *json_raw, Configuration *conf, line_struct *line_structure) {
+int json_extract(char *json_raw, Configuration *conf) {
     const cJSON *line = NULL;
     const cJSON *lines = NULL;
 
@@ -16,6 +16,9 @@ int json_extract(char *json_raw, Configuration *conf, line_struct *line_structur
     const cJSON *verification_code = NULL;
     const cJSON *device_id = NULL;
     const cJSON *paired = NULL;
+    const cJSON *custom_shade = NULL;
+    const cJSON *bg = NULL;
+    const cJSON *fg = NULL;
     int status = 0;
 
     cJSON *data_json = cJSON_Parse(json_raw);
@@ -40,6 +43,21 @@ int json_extract(char *json_raw, Configuration *conf, line_struct *line_structur
         conf->paired = paired->valueint;
     }
 
+    custom_shade = cJSON_GetObjectItemCaseSensitive(data_json, "custom_shade");
+    if (cJSON_IsNumber(custom_shade)) {
+        conf->custom_shade = custom_shade->valueint;
+    }
+
+    bg = cJSON_GetObjectItemCaseSensitive(data_json, "bg");
+    if (cJSON_IsNumber(bg)) {
+        conf->bg = bg->valueint;
+    }
+
+    fg = cJSON_GetObjectItemCaseSensitive(data_json, "fg");
+    if (cJSON_IsNumber(fg)) {
+        conf->fg = fg->valueint;
+    }
+
 
     verification_code = cJSON_GetObjectItemCaseSensitive(data_json, "verification_code");
     if (cJSON_IsString(verification_code) && (verification_code->valuestring != NULL)) {
@@ -62,16 +80,16 @@ int json_extract(char *json_raw, Configuration *conf, line_struct *line_structur
         cJSON *margin_top = cJSON_GetObjectItemCaseSensitive(line, "margin_top");
 
         if (cJSON_IsString(text) && (text->valuestring != NULL) && (strlen(text->valuestring) < 100)) {
-            strcpy(line_structure[index].text, text->valuestring);
+            strcpy(conf->lines[index].text, text->valuestring);
         }
         if (cJSON_IsNumber(font) && (font->valueint != NULL)) {
-            line_structure[index].font = font->valueint;
+            conf->lines[index].font = font->valueint;
         }
         if (cJSON_IsNumber(margin_top) && (margin_top->valueint != NULL)) {
-            line_structure[index].margin_top = margin_top->valueint;
+            conf->lines[index].margin_top = margin_top->valueint;
         }
         if (cJSON_IsNumber(margin_left) && (margin_left->valueint != NULL)) {
-            line_structure[index].margin_left = margin_left->valueint;
+            conf->lines[index].margin_left = margin_left->valueint;
         }
         index++;
         if (max_lines == index){
