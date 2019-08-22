@@ -1272,6 +1272,39 @@
             {
                 "children": [], 
                 "depends_on": null, 
+                "help": "Base API path\n", 
+                "id": "API_BASE_URL", 
+                "name": "API_BASE_URL", 
+                "range": null, 
+                "title": "API Base url", 
+                "type": "string"
+            }, 
+            {
+                "children": [], 
+                "depends_on": null, 
+                "help": "Port used in api server\n", 
+                "id": "API_PORT", 
+                "name": "API_PORT", 
+                "range": [
+                    0, 
+                    66000
+                ], 
+                "title": "API Port", 
+                "type": "int"
+            }, 
+            {
+                "children": [], 
+                "depends_on": null, 
+                "help": "API HOST\n", 
+                "id": "API_HOST", 
+                "name": "API_HOST", 
+                "range": null, 
+                "title": "API Host", 
+                "type": "string"
+            }, 
+            {
+                "children": [], 
+                "depends_on": null, 
                 "help": "Starting address of the SPIFFS area in ESP32 Flash\nWrite the address in hex format, 0x180000\n", 
                 "id": "SPIFFS_BASE_ADDR", 
                 "name": "SPIFFS_BASE_ADDR", 
@@ -1279,7 +1312,7 @@
                     1048576, 
                     33546240
                 ], 
-                "title": "blablalba", 
+                "title": "SPIFFS base address", 
                 "type": "hex"
             }, 
             {
@@ -1292,7 +1325,7 @@
                     262144, 
                     2097152
                 ], 
-                "title": "1048576", 
+                "title": "Spiffs size", 
                 "type": "int"
             }, 
             {
@@ -1305,57 +1338,26 @@
                     4098, 
                     65536
                 ], 
-                "title": "8192", 
+                "title": "spiffs log block size", 
                 "type": "int"
             }, 
             {
                 "children": [], 
                 "depends_on": null, 
-                "help": "Set it to the phisycal page size og the used SPI Flash chip.\n", 
+                "help": "Set it to the physical page size og the used SPI Flash chip.\n", 
                 "id": "SPIFFS_LOG_PAGE_SIZE", 
                 "name": "SPIFFS_LOG_PAGE_SIZE", 
                 "range": [
                     256, 
                     2048
                 ], 
-                "title": "256", 
+                "title": "spiffs log page size", 
                 "type": "int"
-            }, 
-            {
-                "children": [
-                    {
-                        "children": [], 
-                        "depends_on": "EXAMPLE_USE_WIFI", 
-                        "help": "SSID (network name) for the demo to connect to.\n", 
-                        "id": "WIFI_SSID", 
-                        "name": "WIFI_SSID", 
-                        "range": null, 
-                        "title": "Simona", 
-                        "type": "string"
-                    }, 
-                    {
-                        "children": [], 
-                        "depends_on": "EXAMPLE_USE_WIFI", 
-                        "help": "WiFi password (WPA or WPA2) for the demo to use.\n", 
-                        "id": "WIFI_PASSWORD", 
-                        "name": "WIFI_PASSWORD", 
-                        "range": null, 
-                        "title": "12345678devet", 
-                        "type": "string"
-                    }
-                ], 
-                "depends_on": null, 
-                "help": "If WiFi is used ntp server will be used to provide the exact time\nand file timestamps will be correct.\n", 
-                "id": "EXAMPLE_USE_WIFI", 
-                "name": "EXAMPLE_USE_WIFI", 
-                "range": null, 
-                "title": "1", 
-                "type": "bool"
             }
         ], 
         "depends_on": null, 
-        "id": "epaper-display-demo-configuration", 
-        "title": "ePaper Display DEMO Configuration", 
+        "id": "lyra-configuration", 
+        "title": "Lyra Configuration", 
         "type": "menu"
     }, 
     {

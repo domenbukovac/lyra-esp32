@@ -1,49 +1,49 @@
-menu "ePaper Display DEMO Configuration"
+menu "Lyra Configuration"
+
+config API_BASE_URL
+    string "API Base url"
+    default "/api/devices/lyra"
+    help
+	Base API path
+
+config API_PORT
+   	int "API Port"
+    range 0 66000
+    default 443
+    help
+	Port used in api server
+
+config API_HOST
+    string "API Host"
+   	default "192.168.1.53"
+    help
+	API HOST
 
 config SPIFFS_BASE_ADDR
-    hex "blablalba"
+    hex "SPIFFS base address"
     range 0x100000 0x1FFE000
-    default 0x180000
+    default 0x300000
     help
 	Starting address of the SPIFFS area in ESP32 Flash
 	Write the address in hex format, 0x180000
 
 config SPIFFS_SIZE
-    int 1048576
+    int "Spiffs size"
     range 262144 2097152
     default 1048576
 
 config SPIFFS_LOG_BLOCK_SIZE
-    int 8192
+    int "spiffs log block size"
     range 4098 65536
     default 8192
 
 config SPIFFS_LOG_PAGE_SIZE
-    int 256
+    int "spiffs log page size"
     range 256 2048
     default 256
     help
-	Set it to the phisycal page size og the used SPI Flash chip.
+	Set it to the physical page size og the used SPI Flash chip.
 
-config EXAMPLE_USE_WIFI
-    bool 1
-    default n
-    help
-        If WiFi is used ntp server will be used to provide the exact time
-        and file timestamps will be correct.
-config WIFI_SSID
-    string "Simona"
-   	depends on EXAMPLE_USE_WIFI
-    default "myssid"
-    help
-	SSID (network name) for the demo to connect to.
-
-config WIFI_PASSWORD
-    string "12345678devet"
-   	depends on EXAMPLE_USE_WIFI
-    default "mypassword"
-    help
-	WiFi password (WPA or WPA2) for the demo to use.
 
 
 endmenu

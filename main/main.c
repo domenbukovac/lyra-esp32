@@ -46,11 +46,9 @@
 #include "wifi_manager.h"
 
 
-#define HOST "192.168.1.53"
-//#define HOST "dev.reetab.com"
-#define PORT 5000
-//#define PORT 443
-#define BASE_API_URL "/api/devices/lyra"
+#define API_HOST CONFIG_API_HOST
+#define API_PORT CONFIG_API_PORT
+#define API_BASE_URL CONFIG_API_BASE_URL
 
 #define WAKEUP_PIN 0
 #define MAX_HTTP_SIZE 4096
@@ -82,6 +80,7 @@ static const char *file_fonts[] = {"/spiffs/fonts/DotMatrix_M.fon", "/spiffs/fon
 
 char battery_percent[8];
 RTC_DATA_ATTR static unsigned long rtc_text_hash;
+RTC_DATA_ATTR static unsigned int rtc_options_hash;
 
 RTC_DATA_ATTR static uint8_t wifi_channel;
 RTC_DATA_ATTR static int fail_count = 0;
@@ -148,15 +147,19 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
 static void http_rest_with_url(char *path, esp_http_client_method_t method) {
 
     printf("HTTP REST WITH URL START! \n");
-    printf("%s, %s, %d \n", path, HOST, PORT);
+    printf("%s, %s, %d \n", path, API_HOST, API_PORT);
     char *buffer = malloc(MAX_HTTP_SIZE + 1);
 
+    esp_http_client_transport_t transport = HTTP_TRANSPORT_UNKNOWN;
+    if (API_PORT == 443){
+        transport = HTTP_TRANSPORT_OVER_SSL;
+    }
 
     esp_http_client_config_t config = {
-            .host = HOST,
-            .port= PORT,
+            .host = API_HOST,
+            .port= API_PORT,
             .path = path,
-//            .transport_type = HTTP_TRANSPORT_OVER_SSL,
+            .transport_type = transport,
             .event_handler = _http_event_handler,
             .method =  method,
             .query = "sdfsdf=sdfsdf"
@@ -356,14 +359,19 @@ int is_text_updated() {
     int c;
 
     for (int i = 0; i < 8; i++) {
-        char *str = lines[i].text;
+        char *str = configuration.lines[i].text;
         while ((c = *str++))
-            hash = ((hash << 5) + hash) + c;
-        hash = ((hash << 5) + hash) + c;
+            hash = ((hash << 5) + hash) + c + i;
+        hash = ((hash << 5) + hash) + (char) configuration.lines[i].font;
+        hash = ((hash << 5) + hash) + (char) configuration.lines[i].margin_left;
+        hash = ((hash << 5) + hash) + (char) configuration.lines[i].margin_top;
     }
 
-    if (hash != rtc_text_hash) {
+    int options_hash = configuration.custom_shade + (configuration.bg << 1) + (configuration.fg << 5);
+
+    if (hash != rtc_text_hash || options_hash != rtc_options_hash ) {
         rtc_text_hash = hash;
+        rtc_options_hash = options_hash;
         return 1;
     }
 
@@ -466,7 +474,7 @@ static void http_get_data(void *ptr) {
             continue;
         }
 
-        strcpy(path, BASE_API_URL);
+        strcpy(path, API_BASE_URL);
 
         if ((uxBits & (INITIALIZING_BIT | INITIALIZED_BIT)) == 0) { /* Not initialized yet */
             strcat(path, "/register");
