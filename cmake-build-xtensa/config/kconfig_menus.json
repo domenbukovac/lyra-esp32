@@ -1305,6 +1305,19 @@
             {
                 "children": [], 
                 "depends_on": null, 
+                "help": "Port used in api server\n", 
+                "id": "INTERRUPT_PIN", 
+                "name": "INTERRUPT_PIN", 
+                "range": [
+                    0, 
+                    50
+                ], 
+                "title": "Interrupt pin", 
+                "type": "int"
+            }, 
+            {
+                "children": [], 
+                "depends_on": null, 
                 "help": "Starting address of the SPIFFS area in ESP32 Flash\nWrite the address in hex format, 0x180000\n", 
                 "id": "SPIFFS_BASE_ADDR", 
                 "name": "SPIFFS_BASE_ADDR", 

@@ -19,6 +19,13 @@ config API_HOST
     help
 	API HOST
 
+config INTERRUPT_PIN
+   	int "Interrupt pin"
+    range 0 50
+    default 5
+    help
+	Port used in api server
+
 config SPIFFS_BASE_ADDR
     hex "SPIFFS base address"
     range 0x100000 0x1FFE000
