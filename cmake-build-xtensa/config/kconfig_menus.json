@@ -6357,6 +6357,155 @@
                         "children": [
                             {
                                 "children": [], 
+                                "depends_on": "<choice COAP_MBEDTLS_ENCRYPTION_MODE>", 
+                                "help": null, 
+                                "id": "COAP_MBEDTLS_PSK", 
+                                "name": "COAP_MBEDTLS_PSK", 
+                                "range": null, 
+                                "title": "Pre-Shared Keys", 
+                                "type": "bool"
+                            }, 
+                            {
+                                "children": [], 
+                                "depends_on": "<choice COAP_MBEDTLS_ENCRYPTION_MODE>", 
+                                "help": null, 
+                                "id": "COAP_MBEDTLS_PKI", 
+                                "name": "COAP_MBEDTLS_PKI", 
+                                "range": null, 
+                                "title": "PKI Certificates", 
+                                "type": "bool"
+                            }
+                        ], 
+                        "depends_on": null, 
+                        "help": "If the CoAP information is to be encrypted, the encryption environment\ncan be set up in one of two ways (default being Pre-Shared key mode)\n\n- Encrypt using defined Pre-Shared Keys (PSK if uri includes coaps://)\n- Encrypt using defined Public Key Infrastructure (PKI if uri includes coaps://)\n", 
+                        "id": "component-config-coap-configuration-coap-encryption-method", 
+                        "name": "COAP_MBEDTLS_ENCRYPTION_MODE", 
+                        "title": "CoAP Encryption method", 
+                        "type": "choice"
+                    }, 
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [], 
+                                        "depends_on": "<choice COAP_MBEDTLS_DEBUG_LEVEL>", 
+                                        "help": null, 
+                                        "id": "COAP_LOG_EMERG", 
+                                        "name": "COAP_LOG_EMERG", 
+                                        "range": null, 
+                                        "title": "Emergency", 
+                                        "type": "bool"
+                                    }, 
+                                    {
+                                        "children": [], 
+                                        "depends_on": "<choice COAP_MBEDTLS_DEBUG_LEVEL>", 
+                                        "help": null, 
+                                        "id": "COAP_LOG_ALERT", 
+                                        "name": "COAP_LOG_ALERT", 
+                                        "range": null, 
+                                        "title": "Alert", 
+                                        "type": "bool"
+                                    }, 
+                                    {
+                                        "children": [], 
+                                        "depends_on": "<choice COAP_MBEDTLS_DEBUG_LEVEL>", 
+                                        "help": null, 
+                                        "id": "COAP_LOG_CRIT", 
+                                        "name": "COAP_LOG_CRIT", 
+                                        "range": null, 
+                                        "title": "Critical", 
+                                        "type": "bool"
+                                    }, 
+                                    {
+                                        "children": [], 
+                                        "depends_on": "<choice COAP_MBEDTLS_DEBUG_LEVEL>", 
+                                        "help": null, 
+                                        "id": "COAP_LOG_ERROR", 
+                                        "name": "COAP_LOG_ERROR", 
+                                        "range": null, 
+                                        "title": "Error", 
+                                        "type": "bool"
+                                    }, 
+                                    {
+                                        "children": [], 
+                                        "depends_on": "<choice COAP_MBEDTLS_DEBUG_LEVEL>", 
+                                        "help": null, 
+                                        "id": "COAP_LOG_WARNING", 
+                                        "name": "COAP_LOG_WARNING", 
+                                        "range": null, 
+                                        "title": "Warning", 
+                                        "type": "bool"
+                                    }, 
+                                    {
+                                        "children": [], 
+                                        "depends_on": "<choice COAP_MBEDTLS_DEBUG_LEVEL>", 
+                                        "help": null, 
+                                        "id": "COAP_LOG_NOTICE", 
+                                        "name": "COAP_LOG_NOTICE", 
+                                        "range": null, 
+                                        "title": "Notice", 
+                                        "type": "bool"
+                                    }, 
+                                    {
+                                        "children": [], 
+                                        "depends_on": "<choice COAP_MBEDTLS_DEBUG_LEVEL>", 
+                                        "help": null, 
+                                        "id": "COAP_LOG_INFO", 
+                                        "name": "COAP_LOG_INFO", 
+                                        "range": null, 
+                                        "title": "Info", 
+                                        "type": "bool"
+                                    }, 
+                                    {
+                                        "children": [], 
+                                        "depends_on": "<choice COAP_MBEDTLS_DEBUG_LEVEL>", 
+                                        "help": null, 
+                                        "id": "COAP_LOG_DEBUG", 
+                                        "name": "COAP_LOG_DEBUG", 
+                                        "range": null, 
+                                        "title": "Debug", 
+                                        "type": "bool"
+                                    }
+                                ], 
+                                "depends_on": "COAP_MBEDTLS_DEBUG", 
+                                "help": "Set CoAP debugging level\n", 
+                                "id": "component-config-coap-configuration-enable-coap-debugging-set-coap-debugging-level", 
+                                "name": "COAP_MBEDTLS_DEBUG_LEVEL", 
+                                "title": "Set CoAP debugging level", 
+                                "type": "choice"
+                            }
+                        ], 
+                        "depends_on": null, 
+                        "help": "Enable CoAP debugging functions at compile time for the example code.\n\nIf this option is enabled, call coap_set_log_level()\nat runtime in order to enable CoAP debug output via the ESP\nlog mechanism.\n", 
+                        "id": "COAP_MBEDTLS_DEBUG", 
+                        "name": "COAP_MBEDTLS_DEBUG", 
+                        "range": null, 
+                        "title": "Enable CoAP debugging", 
+                        "type": "bool"
+                    }, 
+                    {
+                        "children": [], 
+                        "depends_on": null, 
+                        "help": null, 
+                        "id": "COAP_LOG_DEFAULT_LEVEL", 
+                        "name": "COAP_LOG_DEFAULT_LEVEL", 
+                        "range": null, 
+                        "title": null, 
+                        "type": "int"
+                    }
+                ], 
+                "depends_on": null, 
+                "id": "component-config-coap-configuration", 
+                "title": "CoAP Configuration", 
+                "type": "menu"
+            }, 
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [], 
                                 "depends_on": null, 
                                 "help": "ADC power can be controlled by the FSM instead of software. This allows the ADC to\nbe shut off when it is not working leading to lower power consumption. However\nusing the FSM control ADC power will increase the noise of ADC.\n", 
                                 "id": "ADC_FORCE_XPD_FSM", 
@@ -6535,6 +6684,16 @@
                         "range": null, 
                         "title": "Enable ESP-TLS Server", 
                         "type": "bool"
+                    }, 
+                    {
+                        "children": [], 
+                        "depends_on": null, 
+                        "help": "Enable support for pre shared key ciphers\n", 
+                        "id": "ESP_TLS_PSK_VERIFICATION", 
+                        "name": "ESP_TLS_PSK_VERIFICATION", 
+                        "range": null, 
+                        "title": "Enable PSK verification", 
+                        "type": "bool"
                     }
                 ], 
                 "depends_on": null, 
@@ -6544,6 +6703,76 @@
             }, 
             {
                 "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [], 
+                                "depends_on": "<choice ESP32_REV_MIN>", 
+                                "help": null, 
+                                "id": "ESP32_REV_MIN_0", 
+                                "name": "ESP32_REV_MIN_0", 
+                                "range": null, 
+                                "title": "Rev 0", 
+                                "type": "bool"
+                            }, 
+                            {
+                                "children": [], 
+                                "depends_on": "<choice ESP32_REV_MIN>", 
+                                "help": null, 
+                                "id": "ESP32_REV_MIN_1", 
+                                "name": "ESP32_REV_MIN_1", 
+                                "range": null, 
+                                "title": "Rev 1", 
+                                "type": "bool"
+                            }, 
+                            {
+                                "children": [], 
+                                "depends_on": "<choice ESP32_REV_MIN>", 
+                                "help": null, 
+                                "id": "ESP32_REV_MIN_2", 
+                                "name": "ESP32_REV_MIN_2", 
+                                "range": null, 
+                                "title": "Rev 2", 
+                                "type": "bool"
+                            }, 
+                            {
+                                "children": [], 
+                                "depends_on": "<choice ESP32_REV_MIN>", 
+                                "help": null, 
+                                "id": "ESP32_REV_MIN_3", 
+                                "name": "ESP32_REV_MIN_3", 
+                                "range": null, 
+                                "title": "Rev 3", 
+                                "type": "bool"
+                            }
+                        ], 
+                        "depends_on": null, 
+                        "help": "Minimum revision that ESP-IDF would support.\nESP-IDF performs different strategy on different esp32 revision.\n", 
+                        "id": "component-config-esp32-specific-minimum-supported-esp32-revision", 
+                        "name": "ESP32_REV_MIN", 
+                        "title": "Minimum Supported ESP32 Revision", 
+                        "type": "choice"
+                    }, 
+                    {
+                        "children": [], 
+                        "depends_on": null, 
+                        "help": null, 
+                        "id": "ESP32_REV_MIN", 
+                        "name": "ESP32_REV_MIN", 
+                        "range": null, 
+                        "title": null, 
+                        "type": "int"
+                    }, 
+                    {
+                        "children": [], 
+                        "depends_on": null, 
+                        "help": null, 
+                        "id": "ESP32_DPORT_WORKAROUND", 
+                        "name": "ESP32_DPORT_WORKAROUND", 
+                        "range": null, 
+                        "title": null, 
+                        "type": "bool"
+                    }, 
                     {
                         "children": [
                             {

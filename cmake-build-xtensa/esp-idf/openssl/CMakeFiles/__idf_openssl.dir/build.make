@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -60,106 +60,106 @@ include esp-idf/openssl/CMakeFiles/__idf_openssl.dir/flags.make
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.obj: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/flags.make
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.obj: /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_cert.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.obj"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_cert.c
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_cert.c
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.i"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_cert.c > CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_cert.c > CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.i
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.s"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_cert.c -o CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_cert.c -o CMakeFiles/__idf_openssl.dir/library/ssl_cert.c.s
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.obj: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/flags.make
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.obj: /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_lib.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.obj"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_lib.c
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_lib.c
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.i"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_lib.c > CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_lib.c > CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.i
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.s"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_lib.c -o CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_lib.c -o CMakeFiles/__idf_openssl.dir/library/ssl_lib.c.s
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.obj: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/flags.make
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.obj: /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_methods.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.obj"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_methods.c
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_methods.c
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.i"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_methods.c > CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_methods.c > CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.i
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.s"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_methods.c -o CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_methods.c -o CMakeFiles/__idf_openssl.dir/library/ssl_methods.c.s
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.obj: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/flags.make
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.obj: /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_pkey.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.obj"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_pkey.c
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_pkey.c
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.i"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_pkey.c > CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_pkey.c > CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.i
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.s"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_pkey.c -o CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_pkey.c -o CMakeFiles/__idf_openssl.dir/library/ssl_pkey.c.s
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.obj: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/flags.make
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.obj: /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_stack.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.obj"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_stack.c
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_stack.c
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.i"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_stack.c > CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_stack.c > CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.i
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.s"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_stack.c -o CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_stack.c -o CMakeFiles/__idf_openssl.dir/library/ssl_stack.c.s
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.obj: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/flags.make
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.obj: /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_x509.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.obj"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_x509.c
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_x509.c
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.i"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_x509.c > CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_x509.c > CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.i
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.s"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_x509.c -o CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/library/ssl_x509.c -o CMakeFiles/__idf_openssl.dir/library/ssl_x509.c.s
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.obj: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/flags.make
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.obj: /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_pm.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.obj"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_pm.c
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_pm.c
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.i"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_pm.c > CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_pm.c > CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.i
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.s"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_pm.c -o CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_pm.c -o CMakeFiles/__idf_openssl.dir/platform/ssl_pm.c.s
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.obj: esp-idf/openssl/CMakeFiles/__idf_openssl.dir/flags.make
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.obj: /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_port.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.obj"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_port.c
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.obj   -c /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_port.c
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.i"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_port.c > CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_port.c > CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.i
 
 esp-idf/openssl/CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.s"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_port.c -o CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/openssl && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/esp/esp-idf/components/openssl/platform/ssl_port.c -o CMakeFiles/__idf_openssl.dir/platform/ssl_port.c.s
 
 # Object files for target __idf_openssl
 __idf_openssl_OBJECTS = \

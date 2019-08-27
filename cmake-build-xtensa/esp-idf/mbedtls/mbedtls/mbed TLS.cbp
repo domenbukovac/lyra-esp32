@@ -75,13 +75,13 @@
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/app_trace/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/Makefile&quot;  VERBOSE=1 mbedcrypto"/>
@@ -128,13 +128,13 @@
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/app_trace/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/Makefile&quot;  VERBOSE=1 mbedcrypto/fast"/>
@@ -181,13 +181,13 @@
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/app_trace/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/Makefile&quot;  VERBOSE=1 mbedx509"/>
@@ -234,13 +234,13 @@
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/app_trace/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/Makefile&quot;  VERBOSE=1 mbedx509/fast"/>
@@ -287,13 +287,13 @@
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/app_trace/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/Makefile&quot;  VERBOSE=1 mbedtls"/>
@@ -340,13 +340,13 @@
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"/>
 					<Add directory="/Users/domenbukovac/esp/esp-idf/components/app_trace/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
-					<Add directory="/Users/domenbukovac/esp/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include/c++/8.2.0/backward"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/include-fixed"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/sys-include"/>
+					<Add directory="/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/Makefile&quot;  VERBOSE=1 mbedtls/fast"/>
@@ -591,31 +591,34 @@
 			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp32/aes.c">
-			<Option target="mbedtls"/>
+			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp32/sha.c">
-			<Option target="mbedtls"/>
+			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp_bignum.c">
-			<Option target="mbedtls"/>
+			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp_hardware.c">
-			<Option target="mbedtls"/>
+			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp_mem.c">
 			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp_sha.c">
-			<Option target="mbedtls"/>
+			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp_sha1.c">
-			<Option target="mbedtls"/>
+			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp_sha256.c">
-			<Option target="mbedtls"/>
+			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp_sha512.c">
-			<Option target="mbedtls"/>
+			<Option target="mbedcrypto"/>
+		</Unit>
+		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/esp_timing.c">
+			<Option target="mbedcrypto"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/mbedtls_debug.c">
 			<Option target="mbedtls"/>
@@ -626,7 +629,7 @@
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/partitions_example.csv">
+		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/partitions.csv">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/Users/domenbukovac/LepusLabs/lyra-esp32/sdkconfig">

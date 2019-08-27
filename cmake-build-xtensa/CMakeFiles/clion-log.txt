@@ -1,10 +1,9 @@
-"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc -DCMAKE_CXX_COMPILER=/Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-c++ -DIDF_PATH=~/esp/esp-idf -G "CodeBlocks - Unix Makefiles" /Users/domenbukovac/LepusLabs/lyra-esp32
+"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc -DCMAKE_CXX_COMPILER=/Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-c++ -DIDF_PATH=/Users/domenbukovac/esp/esp-idf -G "CodeBlocks - Unix Makefiles" /Users/domenbukovac/LepusLabs/lyra-esp32
 -- Unexpected file in components directory: /Users/domenbukovac/esp/esp-idf/components/.DS_Store
--- Project version: 18f8841-dirty
+-- Project version: aa8244d-dirty
 -- Building ESP-IDF components for target esp32
 -- Checking Python dependencies...
-('lala', '/Users/domenbukovac/esp/esp-idf/requirements.txt')
-Python requirements from ~/esp/esp-idf/requirements.txt are satisfied.
+Python requirements from /Users/domenbukovac/esp/esp-idf/requirements.txt are satisfied.
 Loading defaults file /Users/domenbukovac/LepusLabs/lyra-esp32/sdkconfig.defaults...
 -- Adding linker script /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp32/esp32_out.ld
 -- Adding linker script /Users/domenbukovac/esp/esp-idf/components/esp32/ld/esp32.project.ld.in
@@ -20,37 +19,36 @@ Loading defaults file /Users/domenbukovac/LepusLabs/lyra-esp32/sdkconfig.default
 You have changed variables that require your cache to be deleted.
 Configure will be re-run and you may have to reset some variables.
 The following variables have changed:
-CMAKE_C_COMPILER= /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc
-CMAKE_CXX_COMPILER= /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-c++
-CMAKE_C_COMPILER= /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc
-CMAKE_CXX_COMPILER= /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-c++
-CMAKE_C_COMPILER= /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc
+CMAKE_C_COMPILER= /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc
+CMAKE_CXX_COMPILER= /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-c++
+CMAKE_C_COMPILER= /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc
+CMAKE_CXX_COMPILER= /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-c++
+CMAKE_C_COMPILER= /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-cc
 
 -- Found Git: /usr/bin/git (found version "2.20.1 (Apple Git-117)") 
 -- Unexpected file in components directory: /Users/domenbukovac/esp/esp-idf/components/.DS_Store
 -- The C compiler identification is GNU 8.2.0
 -- The CXX compiler identification is GNU 8.2.0
 -- The ASM compiler identification is GNU
--- Found assembler: /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
--- Check for working C compiler: /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
--- Check for working C compiler: /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -- works
+-- Found assembler: /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
+-- Check for working C compiler: /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
+-- Check for working C compiler: /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -- works
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Check for working CXX compiler: /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++
--- Check for working CXX compiler: /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ -- works
+-- Check for working CXX compiler: /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++
+-- Check for working CXX compiler: /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ -- works
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Project version: 18f8841-dirty
+-- Project version: aa8244d-dirty
 -- Building ESP-IDF components for target esp32
 -- Checking Python dependencies...
-('lala', '/Users/domenbukovac/esp/esp-idf/requirements.txt')
-Python requirements from ~/esp/esp-idf/requirements.txt are satisfied.
+Python requirements from /Users/domenbukovac/esp/esp-idf/requirements.txt are satisfied.
 Loading defaults file /Users/domenbukovac/LepusLabs/lyra-esp32/sdkconfig.defaults...
--- Found PythonInterp: /usr/bin/python (found version "2.7.10") 
+-- Found PythonInterp: /Users/domenbukovac/.espressif/python_env/idf4.1_py2.7_env/bin/python (found version "2.7.16") 
 -- Found Perl: /usr/bin/perl (found version "5.18.4") 
 -- Adding linker script /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp32/esp32_out.ld
 -- Adding linker script /Users/domenbukovac/esp/esp-idf/components/esp32/ld/esp32.project.ld.in

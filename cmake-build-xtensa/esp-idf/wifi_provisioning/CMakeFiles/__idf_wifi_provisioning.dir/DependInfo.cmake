@@ -27,7 +27,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/wifi_provisioning/include"
   "/Users/domenbukovac/esp/esp-idf/components/wifi_provisioning/src"
   "/Users/domenbukovac/esp/esp-idf/components/wifi_provisioning/proto-c"
-  "/Users/domenbukovac/esp/esp-idf/components/wifi_provisioning/../protocomm/proto-c"
+  "/Users/domenbukovac/esp/esp-idf/components/protocomm/proto-c"
   "/Users/domenbukovac/esp/esp-idf/components/newlib/platform_include"
   "/Users/domenbukovac/esp/esp-idf/components/freertos/include"
   "/Users/domenbukovac/esp/esp-idf/components/heap/include"
@@ -64,7 +64,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include"
   "/Users/domenbukovac/esp/esp-idf/components/protobuf-c/protobuf-c"
   "/Users/domenbukovac/esp/esp-idf/components/mdns/include"
-  "/Users/domenbukovac/esp/esp-idf/components/console/."
+  "/Users/domenbukovac/esp/esp-idf/components/console"
   "/Users/domenbukovac/esp/esp-idf/components/json/cJSON"
   )
 

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/code.js.S
+
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/index.html.S
+
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/jquery.gz.S
+
+/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/style.css.S
+

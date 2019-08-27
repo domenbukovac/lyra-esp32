@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -65,47 +65,47 @@ CMakeFiles/mconf-idf-complete: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-co
 CMakeFiles/mconf-idf-complete: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build
 CMakeFiles/mconf-idf-complete: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-install
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'mconf-idf'"
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/mconf-idf-complete
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-done
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles/mconf-idf-complete
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-done
 
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-install: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No install step for 'mconf-idf'"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-install
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-install
 
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-mkdir:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'mconf-idf'"
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/esp/esp-idf/tools/kconfig
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/tmp
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-mkdir
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/esp/esp-idf/tools/kconfig
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/tmp
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E make_directory /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-mkdir
 
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-mkdir
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "No download step for 'mconf-idf'"
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download
 
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-update: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No update step for 'mconf-idf'"
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-update
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-update
 
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-patch: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'mconf-idf'"
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-patch
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-patch
 
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure: mconf-idf-prefix/tmp/mconf-idf-cfgcmd.txt
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-update
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-patch
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No configure step for 'mconf-idf'"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo_append
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure
 
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/conf.c
@@ -121,13 +121,12 @@ mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/es
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/nconf.gui.c
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/symbol.c
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/util.c
-mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/zconf.tab.c
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/kconfig/Makefile
 mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build: /Users/domenbukovac/esp/esp-idf/tools/cmake/idf.cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'mconf-idf'"
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && rm -f /Users/domenbukovac/esp/esp-idf/tools/kconfig/zconf.lex.c /Users/domenbukovac/esp/esp-idf/tools/kconfig/zconf.hash.c
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && make -f /Users/domenbukovac/esp/esp-idf/tools/kconfig/Makefile mconf-idf
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/kconfig_bin && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E touch /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build
 
 mconf-idf: CMakeFiles/mconf-idf
 mconf-idf: CMakeFiles/mconf-idf-complete

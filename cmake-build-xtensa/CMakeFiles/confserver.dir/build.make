@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa
 include CMakeFiles/confserver.dir/progress.make
 
 CMakeFiles/confserver:
-	python /Users/domenbukovac/esp/esp-idf/tools/kconfig_new/confserver.py --env-file /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/config.env --kconfig /Users/domenbukovac/esp/esp-idf/Kconfig --config /Users/domenbukovac/LepusLabs/lyra-esp32/sdkconfig
+	python /Users/domenbukovac/esp/esp-idf/tools/kconfig_new/confserver.py --env-file /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/config.env --kconfig /Users/domenbukovac/esp/esp-idf/Kconfig --sdkconfig-rename /Users/domenbukovac/esp/esp-idf/sdkconfig.rename --config /Users/domenbukovac/LepusLabs/lyra-esp32/sdkconfig
 
 confserver: CMakeFiles/confserver
 confserver: CMakeFiles/confserver.dir/build.make

@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,25 +59,25 @@ CMAKE_BINARY_DIR = /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
@@ -93,7 +93,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -104,7 +104,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -115,13 +115,13 @@ edit_cache/fast: edit_cache
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # The main all target
@@ -197,33 +197,6 @@ src/coexist.s: src/coexist.c.s
 src/coexist.c.s:
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/build.make esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/coexist.c.s
 .PHONY : src/coexist.c.s
-
-src/crypto_ops.obj: src/crypto_ops.c.obj
-
-.PHONY : src/crypto_ops.obj
-
-# target to build an object file
-src/crypto_ops.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/build.make esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/crypto_ops.c.obj
-.PHONY : src/crypto_ops.c.obj
-
-src/crypto_ops.i: src/crypto_ops.c.i
-
-.PHONY : src/crypto_ops.i
-
-# target to preprocess a source file
-src/crypto_ops.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/build.make esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/crypto_ops.c.i
-.PHONY : src/crypto_ops.c.i
-
-src/crypto_ops.s: src/crypto_ops.c.s
-
-.PHONY : src/crypto_ops.s
-
-# target to generate assembly for a file
-src/crypto_ops.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/build.make esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/crypto_ops.c.s
-.PHONY : src/crypto_ops.c.s
 
 src/lib_printf.obj: src/lib_printf.c.obj
 
@@ -403,9 +376,6 @@ help:
 	@echo "... src/coexist.obj"
 	@echo "... src/coexist.i"
 	@echo "... src/coexist.s"
-	@echo "... src/crypto_ops.obj"
-	@echo "... src/crypto_ops.i"
-	@echo "... src/crypto_ops.s"
 	@echo "... src/lib_printf.obj"
 	@echo "... src/lib_printf.i"
 	@echo "... src/lib_printf.s"

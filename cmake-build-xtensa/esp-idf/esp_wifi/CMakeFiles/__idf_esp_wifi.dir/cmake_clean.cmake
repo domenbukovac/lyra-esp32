@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/__idf_esp_wifi.dir/src/coexist.c.obj"
-  "CMakeFiles/__idf_esp_wifi.dir/src/crypto_ops.c.obj"
   "CMakeFiles/__idf_esp_wifi.dir/src/lib_printf.c.obj"
   "CMakeFiles/__idf_esp_wifi.dir/src/mesh_event.c.obj"
   "CMakeFiles/__idf_esp_wifi.dir/src/phy_init.c.obj"

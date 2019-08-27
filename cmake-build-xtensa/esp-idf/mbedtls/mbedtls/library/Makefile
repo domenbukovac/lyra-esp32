@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,43 +59,43 @@ CMAKE_BINARY_DIR = /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -106,7 +106,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -222,7 +222,7 @@ __/__/port/esp32/aes.obj: __/__/port/esp32/aes.c.obj
 
 # target to build an object file
 __/__/port/esp32/aes.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp32/aes.c.obj
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp32/aes.c.obj
 .PHONY : __/__/port/esp32/aes.c.obj
 
 __/__/port/esp32/aes.i: __/__/port/esp32/aes.c.i
@@ -231,7 +231,7 @@ __/__/port/esp32/aes.i: __/__/port/esp32/aes.c.i
 
 # target to preprocess a source file
 __/__/port/esp32/aes.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp32/aes.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp32/aes.c.i
 .PHONY : __/__/port/esp32/aes.c.i
 
 __/__/port/esp32/aes.s: __/__/port/esp32/aes.c.s
@@ -240,7 +240,7 @@ __/__/port/esp32/aes.s: __/__/port/esp32/aes.c.s
 
 # target to generate assembly for a file
 __/__/port/esp32/aes.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp32/aes.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp32/aes.c.s
 .PHONY : __/__/port/esp32/aes.c.s
 
 __/__/port/esp32/sha.obj: __/__/port/esp32/sha.c.obj
@@ -249,7 +249,7 @@ __/__/port/esp32/sha.obj: __/__/port/esp32/sha.c.obj
 
 # target to build an object file
 __/__/port/esp32/sha.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp32/sha.c.obj
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp32/sha.c.obj
 .PHONY : __/__/port/esp32/sha.c.obj
 
 __/__/port/esp32/sha.i: __/__/port/esp32/sha.c.i
@@ -258,7 +258,7 @@ __/__/port/esp32/sha.i: __/__/port/esp32/sha.c.i
 
 # target to preprocess a source file
 __/__/port/esp32/sha.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp32/sha.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp32/sha.c.i
 .PHONY : __/__/port/esp32/sha.c.i
 
 __/__/port/esp32/sha.s: __/__/port/esp32/sha.c.s
@@ -267,7 +267,7 @@ __/__/port/esp32/sha.s: __/__/port/esp32/sha.c.s
 
 # target to generate assembly for a file
 __/__/port/esp32/sha.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp32/sha.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp32/sha.c.s
 .PHONY : __/__/port/esp32/sha.c.s
 
 __/__/port/esp_bignum.obj: __/__/port/esp_bignum.c.obj
@@ -276,7 +276,7 @@ __/__/port/esp_bignum.obj: __/__/port/esp_bignum.c.obj
 
 # target to build an object file
 __/__/port/esp_bignum.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_bignum.c.obj
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_bignum.c.obj
 .PHONY : __/__/port/esp_bignum.c.obj
 
 __/__/port/esp_bignum.i: __/__/port/esp_bignum.c.i
@@ -285,7 +285,7 @@ __/__/port/esp_bignum.i: __/__/port/esp_bignum.c.i
 
 # target to preprocess a source file
 __/__/port/esp_bignum.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_bignum.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_bignum.c.i
 .PHONY : __/__/port/esp_bignum.c.i
 
 __/__/port/esp_bignum.s: __/__/port/esp_bignum.c.s
@@ -294,7 +294,7 @@ __/__/port/esp_bignum.s: __/__/port/esp_bignum.c.s
 
 # target to generate assembly for a file
 __/__/port/esp_bignum.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_bignum.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_bignum.c.s
 .PHONY : __/__/port/esp_bignum.c.s
 
 __/__/port/esp_hardware.obj: __/__/port/esp_hardware.c.obj
@@ -303,7 +303,7 @@ __/__/port/esp_hardware.obj: __/__/port/esp_hardware.c.obj
 
 # target to build an object file
 __/__/port/esp_hardware.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_hardware.c.obj
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_hardware.c.obj
 .PHONY : __/__/port/esp_hardware.c.obj
 
 __/__/port/esp_hardware.i: __/__/port/esp_hardware.c.i
@@ -312,7 +312,7 @@ __/__/port/esp_hardware.i: __/__/port/esp_hardware.c.i
 
 # target to preprocess a source file
 __/__/port/esp_hardware.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_hardware.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_hardware.c.i
 .PHONY : __/__/port/esp_hardware.c.i
 
 __/__/port/esp_hardware.s: __/__/port/esp_hardware.c.s
@@ -321,7 +321,7 @@ __/__/port/esp_hardware.s: __/__/port/esp_hardware.c.s
 
 # target to generate assembly for a file
 __/__/port/esp_hardware.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_hardware.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_hardware.c.s
 .PHONY : __/__/port/esp_hardware.c.s
 
 __/__/port/esp_mem.obj: __/__/port/esp_mem.c.obj
@@ -357,7 +357,7 @@ __/__/port/esp_sha.obj: __/__/port/esp_sha.c.obj
 
 # target to build an object file
 __/__/port/esp_sha.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha.c.obj
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha.c.obj
 .PHONY : __/__/port/esp_sha.c.obj
 
 __/__/port/esp_sha.i: __/__/port/esp_sha.c.i
@@ -366,7 +366,7 @@ __/__/port/esp_sha.i: __/__/port/esp_sha.c.i
 
 # target to preprocess a source file
 __/__/port/esp_sha.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha.c.i
 .PHONY : __/__/port/esp_sha.c.i
 
 __/__/port/esp_sha.s: __/__/port/esp_sha.c.s
@@ -375,7 +375,7 @@ __/__/port/esp_sha.s: __/__/port/esp_sha.c.s
 
 # target to generate assembly for a file
 __/__/port/esp_sha.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha.c.s
 .PHONY : __/__/port/esp_sha.c.s
 
 __/__/port/esp_sha1.obj: __/__/port/esp_sha1.c.obj
@@ -384,7 +384,7 @@ __/__/port/esp_sha1.obj: __/__/port/esp_sha1.c.obj
 
 # target to build an object file
 __/__/port/esp_sha1.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha1.c.obj
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha1.c.obj
 .PHONY : __/__/port/esp_sha1.c.obj
 
 __/__/port/esp_sha1.i: __/__/port/esp_sha1.c.i
@@ -393,7 +393,7 @@ __/__/port/esp_sha1.i: __/__/port/esp_sha1.c.i
 
 # target to preprocess a source file
 __/__/port/esp_sha1.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha1.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha1.c.i
 .PHONY : __/__/port/esp_sha1.c.i
 
 __/__/port/esp_sha1.s: __/__/port/esp_sha1.c.s
@@ -402,7 +402,7 @@ __/__/port/esp_sha1.s: __/__/port/esp_sha1.c.s
 
 # target to generate assembly for a file
 __/__/port/esp_sha1.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha1.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha1.c.s
 .PHONY : __/__/port/esp_sha1.c.s
 
 __/__/port/esp_sha256.obj: __/__/port/esp_sha256.c.obj
@@ -411,7 +411,7 @@ __/__/port/esp_sha256.obj: __/__/port/esp_sha256.c.obj
 
 # target to build an object file
 __/__/port/esp_sha256.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha256.c.obj
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha256.c.obj
 .PHONY : __/__/port/esp_sha256.c.obj
 
 __/__/port/esp_sha256.i: __/__/port/esp_sha256.c.i
@@ -420,7 +420,7 @@ __/__/port/esp_sha256.i: __/__/port/esp_sha256.c.i
 
 # target to preprocess a source file
 __/__/port/esp_sha256.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha256.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha256.c.i
 .PHONY : __/__/port/esp_sha256.c.i
 
 __/__/port/esp_sha256.s: __/__/port/esp_sha256.c.s
@@ -429,7 +429,7 @@ __/__/port/esp_sha256.s: __/__/port/esp_sha256.c.s
 
 # target to generate assembly for a file
 __/__/port/esp_sha256.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha256.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha256.c.s
 .PHONY : __/__/port/esp_sha256.c.s
 
 __/__/port/esp_sha512.obj: __/__/port/esp_sha512.c.obj
@@ -438,7 +438,7 @@ __/__/port/esp_sha512.obj: __/__/port/esp_sha512.c.obj
 
 # target to build an object file
 __/__/port/esp_sha512.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha512.c.obj
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha512.c.obj
 .PHONY : __/__/port/esp_sha512.c.obj
 
 __/__/port/esp_sha512.i: __/__/port/esp_sha512.c.i
@@ -447,7 +447,7 @@ __/__/port/esp_sha512.i: __/__/port/esp_sha512.c.i
 
 # target to preprocess a source file
 __/__/port/esp_sha512.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha512.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha512.c.i
 .PHONY : __/__/port/esp_sha512.c.i
 
 __/__/port/esp_sha512.s: __/__/port/esp_sha512.c.s
@@ -456,8 +456,35 @@ __/__/port/esp_sha512.s: __/__/port/esp_sha512.c.s
 
 # target to generate assembly for a file
 __/__/port/esp_sha512.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/__/__/port/esp_sha512.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_sha512.c.s
 .PHONY : __/__/port/esp_sha512.c.s
+
+__/__/port/esp_timing.obj: __/__/port/esp_timing.c.obj
+
+.PHONY : __/__/port/esp_timing.obj
+
+# target to build an object file
+__/__/port/esp_timing.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_timing.c.obj
+.PHONY : __/__/port/esp_timing.c.obj
+
+__/__/port/esp_timing.i: __/__/port/esp_timing.c.i
+
+.PHONY : __/__/port/esp_timing.i
+
+# target to preprocess a source file
+__/__/port/esp_timing.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_timing.c.i
+.PHONY : __/__/port/esp_timing.c.i
+
+__/__/port/esp_timing.s: __/__/port/esp_timing.c.s
+
+.PHONY : __/__/port/esp_timing.s
+
+# target to generate assembly for a file
+__/__/port/esp_timing.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/__/__/port/esp_timing.c.s
+.PHONY : __/__/port/esp_timing.c.s
 
 __/__/port/mbedtls_debug.obj: __/__/port/mbedtls_debug.c.obj
 
@@ -2662,6 +2689,9 @@ help:
 	@echo "... __/__/port/esp_sha512.obj"
 	@echo "... __/__/port/esp_sha512.i"
 	@echo "... __/__/port/esp_sha512.s"
+	@echo "... __/__/port/esp_timing.obj"
+	@echo "... __/__/port/esp_timing.i"
+	@echo "... __/__/port/esp_timing.s"
 	@echo "... __/__/port/mbedtls_debug.obj"
 	@echo "... __/__/port/mbedtls_debug.i"
 	@echo "... __/__/port/mbedtls_debug.s"

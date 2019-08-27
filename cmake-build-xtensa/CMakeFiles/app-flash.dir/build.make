@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa
 include CMakeFiles/app-flash.dir/progress.make
 
 CMakeFiles/app-flash:
-	cd /Users/domenbukovac/esp/esp-idf/components/esptool_py && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -D IDF_PATH="/Users/domenbukovac/esp/esp-idf" -D ESPTOOLPY="python /Users/domenbukovac/esp/esp-idf/components/esptool_py/esptool/esptool.py --chip esp32" -D ESPTOOL_ARGS="write_flash @flash_app_args" -D ESPTOOL_WORKING_DIR="/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa" -P run_esptool.cmake
+	cd /Users/domenbukovac/esp/esp-idf/components/esptool_py && "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -D IDF_PATH="/Users/domenbukovac/esp/esp-idf" -D ESPTOOLPY="python /Users/domenbukovac/esp/esp-idf/components/esptool_py/esptool/esptool.py --chip esp32" -D ESPTOOL_ARGS="write_flash @flash_app_args" -D ESPTOOL_WORKING_DIR="/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa" -P run_esptool.cmake
 
 app-flash: CMakeFiles/app-flash
 app-flash: CMakeFiles/app-flash.dir/build.make

@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -56,10 +56,10 @@ include esp-idf/partition_table/CMakeFiles/partition_table.dir/progress.make
 esp-idf/partition_table/CMakeFiles/partition_table: partition_table/partition-table.bin
 
 
-partition_table/partition-table.bin: /Users/domenbukovac/LepusLabs/lyra-esp32/partitions_example.csv
+partition_table/partition-table.bin: /Users/domenbukovac/LepusLabs/lyra-esp32/partitions.csv
 partition_table/partition-table.bin: /Users/domenbukovac/esp/esp-idf/components/partition_table/gen_esp32part.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../../partition_table/partition-table.bin"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/partition_table && python /Users/domenbukovac/esp/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --disable-md5sum --flash-size 4MB /Users/domenbukovac/LepusLabs/lyra-esp32/partitions_example.csv /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/partition_table/partition-table.bin
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/partition_table && python /Users/domenbukovac/esp/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --disable-md5sum --flash-size 4MB /Users/domenbukovac/LepusLabs/lyra-esp32/partitions.csv /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/partition_table/partition-table.bin
 
 partition_table: esp-idf/partition_table/CMakeFiles/partition_table
 partition_table: partition_table/partition-table.bin

@@ -20,7 +20,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "config"
-  "../components/wifi_manager/."
+  "../components/wifi_manager"
   "/Users/domenbukovac/esp/esp-idf/components/newlib/platform_include"
   "/Users/domenbukovac/esp/esp-idf/components/freertos/include"
   "/Users/domenbukovac/esp/esp-idf/components/heap/include"
@@ -52,7 +52,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/mdns/include"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/include"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include"
-  "/Users/domenbukovac/esp/esp-idf/components/console/."
+  "/Users/domenbukovac/esp/esp-idf/components/console"
   "/Users/domenbukovac/esp/esp-idf/components/nvs_flash/include"
   "/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/include"
   "/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/port/include"
@@ -74,7 +74,7 @@ set(CMAKE_TARGET_DEFINITIONS_C
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "config"
-  "../components/wifi_manager/."
+  "../components/wifi_manager"
   "/Users/domenbukovac/esp/esp-idf/components/newlib/platform_include"
   "/Users/domenbukovac/esp/esp-idf/components/freertos/include"
   "/Users/domenbukovac/esp/esp-idf/components/heap/include"
@@ -106,7 +106,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/mdns/include"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/include"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include"
-  "/Users/domenbukovac/esp/esp-idf/components/console/."
+  "/Users/domenbukovac/esp/esp-idf/components/console"
   "/Users/domenbukovac/esp/esp-idf/components/nvs_flash/include"
   "/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/include"
   "/Users/domenbukovac/esp/esp-idf/components/wpa_supplicant/port/include"

@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,8 +59,8 @@ CMakeFiles/gen_project_binary: .bin_timestamp
 .bin_timestamp: Lyra.elf
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating binary image from built executable"
 	python /Users/domenbukovac/esp/esp-idf/components/esptool_py/esptool/esptool.py --chip esp32 elf2image --flash_mode dio --flash_freq 40m --flash_size 4MB --elf-sha256-offset 0xb0 -o /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/Lyra.bin Lyra.elf
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo "Generated /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/Lyra.bin"
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E md5sum /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/Lyra.bin > /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/.bin_timestamp
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo "Generated /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/Lyra.bin"
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E md5sum /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/Lyra.bin > /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/.bin_timestamp
 
 gen_project_binary: CMakeFiles/gen_project_binary
 gen_project_binary: .bin_timestamp

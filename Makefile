@@ -4,6 +4,7 @@
 #
 
 PROJECT_NAME := Lyra
+EXTRA_COMPONENT_DIRS += ./components
 
 #EXTRA_CFLAGS += --save-temps
 

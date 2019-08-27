@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_wpa_supplicant.dir/src/crypto/aes-wrap.c.obj"
   "CMakeFiles/__idf_wpa_supplicant.dir/src/crypto/bignum.c.obj"
   "CMakeFiles/__idf_wpa_supplicant.dir/src/crypto/crypto_mbedtls.c.obj"
+  "CMakeFiles/__idf_wpa_supplicant.dir/src/crypto/crypto_ops.c.obj"
   "CMakeFiles/__idf_wpa_supplicant.dir/src/crypto/crypto_internal-cipher.c.obj"
   "CMakeFiles/__idf_wpa_supplicant.dir/src/crypto/crypto_internal-modexp.c.obj"
   "CMakeFiles/__idf_wpa_supplicant.dir/src/crypto/crypto_internal-rsa.c.obj"

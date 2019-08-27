@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -60,15 +60,15 @@ include esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/flags.make
 esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.obj: esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/flags.make
 esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.obj: ../components/spidriver/spi_master_lobo.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.obj"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/spidriver/spi_master_lobo.c
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.obj   -c /Users/domenbukovac/LepusLabs/lyra-esp32/components/spidriver/spi_master_lobo.c
 
 esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.i"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/spidriver/spi_master_lobo.c > CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.i
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/domenbukovac/LepusLabs/lyra-esp32/components/spidriver/spi_master_lobo.c > CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.i
 
 esp-idf/spidriver/CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.s"
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver && /Users/domenbukovac/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/spidriver/spi_master_lobo.c -o CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.s
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/spidriver && /Users/domenbukovac/.espressif/tools/xtensa-esp32-elf/esp32-2019r1-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/domenbukovac/LepusLabs/lyra-esp32/components/spidriver/spi_master_lobo.c -o CMakeFiles/__idf_spidriver.dir/spi_master_lobo.c.s
 
 # Object files for target __idf_spidriver
 __idf_spidriver_OBJECTS = \

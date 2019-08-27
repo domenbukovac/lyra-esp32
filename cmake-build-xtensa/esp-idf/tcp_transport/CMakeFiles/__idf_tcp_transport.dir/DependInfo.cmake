@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/transport.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/transport_ssl.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_ssl.c.obj"
-  "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/transport_strcasestr.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_strcasestr.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/transport_tcp.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_tcp.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/transport_utils.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_utils.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/transport_ws.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_ws.c.obj"
@@ -22,7 +21,6 @@ set(CMAKE_TARGET_DEFINITIONS_C
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "config"
   "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/include"
-  "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/PRIVATE_INCLUDE_DIRS"
   "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/private_include"
   "/Users/domenbukovac/esp/esp-idf/components/newlib/platform_include"
   "/Users/domenbukovac/esp/esp-idf/components/freertos/include"
@@ -51,9 +49,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/efuse/include"
   "/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"
   "/Users/domenbukovac/esp/esp-idf/components/app_trace/include"
-  "/Users/domenbukovac/esp/esp-idf/components/esp-tls/."
-  "/Users/domenbukovac/esp/esp-idf/components/esp-tls/PRIVATE_INCLUDE_DIRS"
-  "/Users/domenbukovac/esp/esp-idf/components/esp-tls/private_include"
+  "/Users/domenbukovac/esp/esp-idf/components/esp-tls"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/include"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include"
   )

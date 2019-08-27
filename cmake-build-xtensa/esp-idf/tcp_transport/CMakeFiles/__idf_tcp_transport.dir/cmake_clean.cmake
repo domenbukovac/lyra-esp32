@@ -4,7 +4,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_tcp_transport.dir/transport_tcp.c.obj"
   "CMakeFiles/__idf_tcp_transport.dir/transport_ws.c.obj"
   "CMakeFiles/__idf_tcp_transport.dir/transport_utils.c.obj"
-  "CMakeFiles/__idf_tcp_transport.dir/transport_strcasestr.c.obj"
   "libtcp_transport.pdb"
   "libtcp_transport.a"
 )

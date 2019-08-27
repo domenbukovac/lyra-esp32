@@ -14,7 +14,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "config"
-  "/Users/domenbukovac/esp/esp-idf/components/console/."
+  "/Users/domenbukovac/esp/esp-idf/components/console"
   "/Users/domenbukovac/esp/esp-idf/components/newlib/platform_include"
   "/Users/domenbukovac/esp/esp-idf/components/freertos/include"
   "/Users/domenbukovac/esp/esp-idf/components/heap/include"

@@ -17,8 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_C
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "config"
-  "/Users/domenbukovac/esp/esp-idf/components/esp-tls/."
-  "/Users/domenbukovac/esp/esp-idf/components/esp-tls/PRIVATE_INCLUDE_DIRS"
+  "/Users/domenbukovac/esp/esp-idf/components/esp-tls"
   "/Users/domenbukovac/esp/esp-idf/components/esp-tls/private_include"
   "/Users/domenbukovac/esp/esp-idf/components/newlib/platform_include"
   "/Users/domenbukovac/esp/esp-idf/components/freertos/include"

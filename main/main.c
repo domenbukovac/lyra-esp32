@@ -58,6 +58,7 @@
 #define SETUP_TIMEOUT_SECONDS 60 * 5
 
 #define MAX_FAIL_COUNT 5
+#define RESTART_FAIL_COUNT 14
 
 
 
@@ -79,19 +80,19 @@ static const char *file_fonts[] = {"/spiffs/fonts/DotMatrix_M.fon", "/spiffs/fon
                                    "/spiffs/fonts/KelveticaNobis.fon"};
 
 char battery_percent[8];
-RTC_DATA_ATTR static unsigned long rtc_text_hash;
-RTC_DATA_ATTR static unsigned int rtc_options_hash;
+RTC_DATA_ATTR unsigned long rtc_text_hash;
+RTC_DATA_ATTR unsigned int rtc_options_hash;
 
-RTC_DATA_ATTR static uint8_t wifi_channel;
-RTC_DATA_ATTR static int fail_count = 0;
-RTC_DATA_ATTR static int low_battery_count = 0;
-RTC_DATA_ATTR static wifi_second_chan_t wifi_channel_second;
+RTC_DATA_ATTR uint8_t wifi_channel;
+RTC_DATA_ATTR int fail_count = 0;
+RTC_DATA_ATTR int low_battery_count = 0;
+RTC_DATA_ATTR wifi_second_chan_t wifi_channel_second;
 
 static void go_to_sleep(int seconds) {
     ESP_LOGI(SLEEP_TAG, "Going to sleep for %d seconds", seconds);
     esp_sleep_enable_ext0_wakeup(WAKEUP_PIN, 0);
 
-    if (seconds < 0)
+    if (seconds == -100)
         esp_deep_sleep_start();
     else
         esp_deep_sleep(1000000LL * seconds);
@@ -196,6 +197,7 @@ static void http_rest_with_url(char *path, esp_http_client_method_t method) {
              esp_http_client_get_content_length(client));
 
     if (esp_http_client_get_status_code(client) == 200) {
+        fail_count = 0;
         if (json_extract(buffer, &configuration) == 0) {
             xEventGroupSetBits(main_event_group, RECEIVED_DATA_BIT);
             xEventGroupClearBits(main_event_group, LOADING_DATA_BIT);
@@ -520,16 +522,18 @@ static void data_processing(void *ptr) {
         } else if ((uxBits & INITIALIZING_BIT) && (uxBits & CHANGED_TEXT_BIT) == 0) {
             if (data_config->paired == 1) {
                 xEventGroupClearBits(main_event_group, INITIALIZING_BIT);
-                xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
-
+//                xEventGroupSetBits(main_event_group, INITIALIZED_BIT);
+                printf("HURRAD\n");
                 strcpy(data_config->ssid, (const char *) wifi_config.sta.ssid);
                 strcpy(data_config->password, (const char *) wifi_config.sta.password);
+                data_config->sleep_seconds = 10;
 
                 save_configuration_to_nvs(data_config);
 
                 view_pairing_success(lines);
 
                 xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
+                xEventGroupSetBits(main_event_group, SLEEP_AFTER_UPDATE_BIT);
             }
         } else if ((uxBits & INITIALIZED_BIT) == INITIALIZED_BIT &&
                    (uxBits & CHANGED_TEXT_BIT) == 0) {
@@ -580,7 +584,7 @@ static void runtime_monitor(void *ptr) {
             }
         } else if ((uxBits & CHANGED_TEXT_BIT) == 0) {
             if (runtime > SETUP_TIMEOUT_SECONDS) {
-                configuration.sleep_seconds = -1;
+                configuration.sleep_seconds = -100;
                 view_display_initial(lines);
                 xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
                 xEventGroupSetBits(main_event_group, SLEEP_AFTER_UPDATE_BIT);
@@ -589,7 +593,7 @@ static void runtime_monitor(void *ptr) {
             esp_restart();
         }
 
-        ESP_LOGI(TAG, "Alive for: %d seconds", runtime);
+        ESP_LOGI(TAG, "Dead for: %d seconds", runtime);
         vTaskDelay(1000 / portTICK_RATE_MS);
         esp_task_wdt_reset();
     }
@@ -599,7 +603,7 @@ static void runtime_monitor(void *ptr) {
 void app_main() {
     main_event_group = xEventGroupCreate();
 
-    esp_task_wdt_init(11, true);
+    esp_task_wdt_init(2, true);
 
     ESP_ERROR_CHECK(nvs_flash_init());
     xTaskCreate(&sleep_monitor, "sleep_monitor", 2048, &configuration, 2, NULL);
@@ -648,8 +652,9 @@ void app_main() {
         default:
             printf("Not a deep sleep reset\n");
     }
-
-    if (fail_count == MAX_FAIL_COUNT) {
+    if (fail_count == RESTART_FAIL_COUNT){
+        esp_restart();
+    } else if (fail_count == MAX_FAIL_COUNT) {
         fail_count++;
         view_something_went_wrong(lines);
         xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);

@@ -62,7 +62,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/include"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include"
   "/Users/domenbukovac/esp/esp-idf/components/protobuf-c/protobuf-c"
-  "/Users/domenbukovac/esp/esp-idf/components/console/."
+  "/Users/domenbukovac/esp/esp-idf/components/console"
   "/Users/domenbukovac/esp/esp-idf/components/esp_http_server/include"
   "/Users/domenbukovac/esp/esp-idf/components/nghttp/port/include"
   "/Users/domenbukovac/esp/esp-idf/components/nghttp/nghttp2/lib/includes"

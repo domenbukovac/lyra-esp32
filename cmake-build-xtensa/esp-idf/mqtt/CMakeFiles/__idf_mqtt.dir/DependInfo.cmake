@@ -54,11 +54,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/include"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include"
   "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/include"
-  "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/PRIVATE_INCLUDE_DIRS"
-  "/Users/domenbukovac/esp/esp-idf/components/tcp_transport/private_include"
-  "/Users/domenbukovac/esp/esp-idf/components/esp-tls/."
-  "/Users/domenbukovac/esp/esp-idf/components/esp-tls/PRIVATE_INCLUDE_DIRS"
-  "/Users/domenbukovac/esp/esp-idf/components/esp-tls/private_include"
+  "/Users/domenbukovac/esp/esp-idf/components/esp-tls"
   )
 
 # Targets to which this target links.

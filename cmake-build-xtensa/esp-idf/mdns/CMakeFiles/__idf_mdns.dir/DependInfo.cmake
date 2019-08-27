@@ -49,7 +49,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/app_trace/include"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/include"
   "/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include"
-  "/Users/domenbukovac/esp/esp-idf/components/console/."
+  "/Users/domenbukovac/esp/esp-idf/components/console"
   )
 
 # Targets to which this target links.

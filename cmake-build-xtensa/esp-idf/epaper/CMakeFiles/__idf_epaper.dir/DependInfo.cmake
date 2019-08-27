@@ -30,7 +30,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "config"
-  "../components/epaper/."
+  "../components/epaper"
   "/Users/domenbukovac/esp/esp-idf/components/newlib/platform_include"
   "/Users/domenbukovac/esp/esp-idf/components/freertos/include"
   "/Users/domenbukovac/esp/esp-idf/components/heap/include"
@@ -59,7 +59,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"
   "/Users/domenbukovac/esp/esp-idf/components/app_trace/include"
   "/Users/domenbukovac/esp/esp-idf/components/spi_flash/include"
-  "../components/spidriver/."
+  "../components/spidriver"
   )
 
 # Targets to which this target links.

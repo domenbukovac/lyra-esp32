@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,19 +59,19 @@ CMAKE_BINARY_DIR = /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -82,7 +82,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -93,25 +93,25 @@ edit_cache/fast: edit_cache
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.5728.100/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+	"/Users/domenbukovac/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
@@ -252,33 +252,6 @@ libcoap/src/block.c.s:
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/block.c.s
 .PHONY : libcoap/src/block.c.s
 
-libcoap/src/coap_debug.obj: libcoap/src/coap_debug.c.obj
-
-.PHONY : libcoap/src/coap_debug.obj
-
-# target to build an object file
-libcoap/src/coap_debug.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_debug.c.obj
-.PHONY : libcoap/src/coap_debug.c.obj
-
-libcoap/src/coap_debug.i: libcoap/src/coap_debug.c.i
-
-.PHONY : libcoap/src/coap_debug.i
-
-# target to preprocess a source file
-libcoap/src/coap_debug.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_debug.c.i
-.PHONY : libcoap/src/coap_debug.c.i
-
-libcoap/src/coap_debug.s: libcoap/src/coap_debug.c.s
-
-.PHONY : libcoap/src/coap_debug.s
-
-# target to generate assembly for a file
-libcoap/src/coap_debug.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_debug.c.s
-.PHONY : libcoap/src/coap_debug.c.s
-
 libcoap/src/coap_event.obj: libcoap/src/coap_event.c.obj
 
 .PHONY : libcoap/src/coap_event.obj
@@ -333,32 +306,32 @@ libcoap/src/coap_hashkey.c.s:
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_hashkey.c.s
 .PHONY : libcoap/src/coap_hashkey.c.s
 
-libcoap/src/coap_notls.obj: libcoap/src/coap_notls.c.obj
+libcoap/src/coap_io.obj: libcoap/src/coap_io.c.obj
 
-.PHONY : libcoap/src/coap_notls.obj
+.PHONY : libcoap/src/coap_io.obj
 
 # target to build an object file
-libcoap/src/coap_notls.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_notls.c.obj
-.PHONY : libcoap/src/coap_notls.c.obj
+libcoap/src/coap_io.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_io.c.obj
+.PHONY : libcoap/src/coap_io.c.obj
 
-libcoap/src/coap_notls.i: libcoap/src/coap_notls.c.i
+libcoap/src/coap_io.i: libcoap/src/coap_io.c.i
 
-.PHONY : libcoap/src/coap_notls.i
+.PHONY : libcoap/src/coap_io.i
 
 # target to preprocess a source file
-libcoap/src/coap_notls.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_notls.c.i
-.PHONY : libcoap/src/coap_notls.c.i
+libcoap/src/coap_io.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_io.c.i
+.PHONY : libcoap/src/coap_io.c.i
 
-libcoap/src/coap_notls.s: libcoap/src/coap_notls.c.s
+libcoap/src/coap_io.s: libcoap/src/coap_io.c.s
 
-.PHONY : libcoap/src/coap_notls.s
+.PHONY : libcoap/src/coap_io.s
 
 # target to generate assembly for a file
-libcoap/src/coap_notls.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_notls.c.s
-.PHONY : libcoap/src/coap_notls.c.s
+libcoap/src/coap_io.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_io.c.s
+.PHONY : libcoap/src/coap_io.c.s
 
 libcoap/src/coap_session.obj: libcoap/src/coap_session.c.obj
 
@@ -657,32 +630,59 @@ libcoap/src/uri.c.s:
 	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/uri.c.s
 .PHONY : libcoap/src/uri.c.s
 
-port/coap_io.obj: port/coap_io.c.obj
+port/coap_debug.obj: port/coap_debug.c.obj
 
-.PHONY : port/coap_io.obj
+.PHONY : port/coap_debug.obj
 
 # target to build an object file
-port/coap_io.c.obj:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_io.c.obj
-.PHONY : port/coap_io.c.obj
+port/coap_debug.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_debug.c.obj
+.PHONY : port/coap_debug.c.obj
 
-port/coap_io.i: port/coap_io.c.i
+port/coap_debug.i: port/coap_debug.c.i
 
-.PHONY : port/coap_io.i
+.PHONY : port/coap_debug.i
 
 # target to preprocess a source file
-port/coap_io.c.i:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_io.c.i
-.PHONY : port/coap_io.c.i
+port/coap_debug.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_debug.c.i
+.PHONY : port/coap_debug.c.i
 
-port/coap_io.s: port/coap_io.c.s
+port/coap_debug.s: port/coap_debug.c.s
 
-.PHONY : port/coap_io.s
+.PHONY : port/coap_debug.s
 
 # target to generate assembly for a file
-port/coap_io.c.s:
-	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_io.c.s
-.PHONY : port/coap_io.c.s
+port/coap_debug.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_debug.c.s
+.PHONY : port/coap_debug.c.s
+
+port/coap_mbedtls.obj: port/coap_mbedtls.c.obj
+
+.PHONY : port/coap_mbedtls.obj
+
+# target to build an object file
+port/coap_mbedtls.c.obj:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_mbedtls.c.obj
+.PHONY : port/coap_mbedtls.c.obj
+
+port/coap_mbedtls.i: port/coap_mbedtls.c.i
+
+.PHONY : port/coap_mbedtls.i
+
+# target to preprocess a source file
+port/coap_mbedtls.c.i:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_mbedtls.c.i
+.PHONY : port/coap_mbedtls.c.i
+
+port/coap_mbedtls.s: port/coap_mbedtls.c.s
+
+.PHONY : port/coap_mbedtls.s
+
+# target to generate assembly for a file
+port/coap_mbedtls.c.s:
+	cd /Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa && $(MAKE) -f esp-idf/coap/CMakeFiles/__idf_coap.dir/build.make esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_mbedtls.c.s
+.PHONY : port/coap_mbedtls.c.s
 
 # Help Target
 help:
@@ -706,18 +706,15 @@ help:
 	@echo "... libcoap/src/block.obj"
 	@echo "... libcoap/src/block.i"
 	@echo "... libcoap/src/block.s"
-	@echo "... libcoap/src/coap_debug.obj"
-	@echo "... libcoap/src/coap_debug.i"
-	@echo "... libcoap/src/coap_debug.s"
 	@echo "... libcoap/src/coap_event.obj"
 	@echo "... libcoap/src/coap_event.i"
 	@echo "... libcoap/src/coap_event.s"
 	@echo "... libcoap/src/coap_hashkey.obj"
 	@echo "... libcoap/src/coap_hashkey.i"
 	@echo "... libcoap/src/coap_hashkey.s"
-	@echo "... libcoap/src/coap_notls.obj"
-	@echo "... libcoap/src/coap_notls.i"
-	@echo "... libcoap/src/coap_notls.s"
+	@echo "... libcoap/src/coap_io.obj"
+	@echo "... libcoap/src/coap_io.i"
+	@echo "... libcoap/src/coap_io.s"
 	@echo "... libcoap/src/coap_session.obj"
 	@echo "... libcoap/src/coap_session.i"
 	@echo "... libcoap/src/coap_session.s"
@@ -751,9 +748,12 @@ help:
 	@echo "... libcoap/src/uri.obj"
 	@echo "... libcoap/src/uri.i"
 	@echo "... libcoap/src/uri.s"
-	@echo "... port/coap_io.obj"
-	@echo "... port/coap_io.i"
-	@echo "... port/coap_io.s"
+	@echo "... port/coap_debug.obj"
+	@echo "... port/coap_debug.i"
+	@echo "... port/coap_debug.s"
+	@echo "... port/coap_mbedtls.obj"
+	@echo "... port/coap_mbedtls.i"
+	@echo "... port/coap_mbedtls.s"
 .PHONY : help
 
 

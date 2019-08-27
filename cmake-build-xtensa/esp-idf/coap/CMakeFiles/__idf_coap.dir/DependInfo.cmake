@@ -7,10 +7,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/address.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/address.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/async.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/async.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/block.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/block.c.obj"
-  "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/coap_debug.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_debug.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/coap_event.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_event.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/coap_hashkey.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_hashkey.c.obj"
-  "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/coap_notls.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_notls.c.obj"
+  "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/coap_io.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_io.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/coap_session.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_session.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/coap_time.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/coap_time.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/encode.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/encode.c.obj"
@@ -22,12 +21,14 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/str.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/str.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/subscribe.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/subscribe.c.obj"
   "/Users/domenbukovac/esp/esp-idf/components/coap/libcoap/src/uri.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/libcoap/src/uri.c.obj"
-  "/Users/domenbukovac/esp/esp-idf/components/coap/port/coap_io.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_io.c.obj"
+  "/Users/domenbukovac/esp/esp-idf/components/coap/port/coap_debug.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_debug.c.obj"
+  "/Users/domenbukovac/esp/esp-idf/components/coap/port/coap_mbedtls.c" "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/coap/CMakeFiles/__idf_coap.dir/port/coap_mbedtls.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
+  "MBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\""
   "WITH_POSIX"
   )
 
@@ -65,6 +66,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/domenbukovac/esp/esp-idf/components/efuse/include"
   "/Users/domenbukovac/esp/esp-idf/components/efuse/esp32/include"
   "/Users/domenbukovac/esp/esp-idf/components/app_trace/include"
+  "/Users/domenbukovac/esp/esp-idf/components/mbedtls/port/include"
+  "/Users/domenbukovac/esp/esp-idf/components/mbedtls/mbedtls/include"
   )
 
 # Targets to which this target links.
@@ -95,10 +98,10 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/tcpip_adapter/CMakeFiles/__idf_tcpip_adapter.dir/DependInfo.cmake"
-  "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/DependInfo.cmake"
+  "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/DependInfo.cmake"
   "/Users/domenbukovac/LepusLabs/lyra-esp32/cmake-build-xtensa/esp-idf/smartconfig_ack/CMakeFiles/__idf_smartconfig_ack.dir/DependInfo.cmake"
   )
 
