@@ -352,7 +352,8 @@ static void initialize_display() {
     ret = spi_lobo_device_deselect(disp_spi);
     assert(ret == ESP_OK);
 
-    // EPD_DisplayClearFull();
+//     EPD_DisplayClearFull();
+     EPD_DisplayClearPart();
 }
 
 
