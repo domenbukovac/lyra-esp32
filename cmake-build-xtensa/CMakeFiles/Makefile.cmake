@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../.git/HEAD"
-  "../.git/refs/heads/master"
+  "../.git/packed-refs"
   "../CMakeLists.txt"
   "CMakeFiles/3.14.5/CMakeASMCompiler.cmake"
   "CMakeFiles/3.14.5/CMakeCCompiler.cmake"
@@ -289,7 +289,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.14.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/git-data/HEAD"
   "CMakeFiles/git-data/grabRef.cmake"
-  "CMakeFiles/git-data/head-ref"
+  "CMakeFiles/git-data/packed-refs"
   "config.env"
   "bootloader-prefix/tmp/bootloader-cfgcmd.txt"
   "project_description.json"
