@@ -59,6 +59,7 @@
 
 #define MAX_FAIL_COUNT 5
 #define RESTART_FAIL_COUNT 14
+#define SLEEP_FOREVER -100
 
 
 
@@ -92,7 +93,7 @@ static void go_to_sleep(int seconds) {
     ESP_LOGI(SLEEP_TAG, "Going to sleep for %d seconds", seconds);
     esp_sleep_enable_ext0_wakeup(WAKEUP_PIN, 0);
 
-    if (seconds == -100)
+    if (seconds == SLEEP_FOREVER)
         esp_deep_sleep_start();
     else
         esp_deep_sleep(1000000LL * seconds);
@@ -585,7 +586,7 @@ static void runtime_monitor(void *ptr) {
             }
         } else if ((uxBits & CHANGED_TEXT_BIT) == 0) {
             if (runtime > SETUP_TIMEOUT_SECONDS) {
-                configuration.sleep_seconds = -100;
+                configuration.sleep_seconds = SLEEP_FOREVER;
                 view_display_initial(lines);
                 xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
                 xEventGroupSetBits(main_event_group, SLEEP_AFTER_UPDATE_BIT);
@@ -674,7 +675,7 @@ void app_main() {
         xEventGroupSetBits(main_event_group, CHANGED_TEXT_BIT);
         if (start_battery_level < 3 && low_battery_count > 30) { /* Sleep forever */
             view_empty_battery(lines);
-            configuration.sleep_seconds = -1;
+            configuration.sleep_seconds = SLEEP_FOREVER;
         } else if (start_battery_level < 5 && low_battery_count > 20) { /* Sleep for 6 hours */
             configuration.sleep_seconds = 6 * 60 * 60;
             low_battery_count++;
