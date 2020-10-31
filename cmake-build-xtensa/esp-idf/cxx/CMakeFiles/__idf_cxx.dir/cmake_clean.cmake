@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/__idf_cxx.dir/cxx_exception_stubs.cpp.obj"
   "CMakeFiles/__idf_cxx.dir/cxx_guards.cpp.obj"
-  "libcxx.pdb"
   "libcxx.a"
+  "libcxx.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

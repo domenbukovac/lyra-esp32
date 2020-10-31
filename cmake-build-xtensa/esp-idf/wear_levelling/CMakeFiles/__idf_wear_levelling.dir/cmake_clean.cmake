@@ -6,8 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_wear_levelling.dir/WL_Flash.cpp.obj"
   "CMakeFiles/__idf_wear_levelling.dir/crc32.cpp.obj"
   "CMakeFiles/__idf_wear_levelling.dir/wear_levelling.cpp.obj"
-  "libwear_levelling.pdb"
   "libwear_levelling.a"
+  "libwear_levelling.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

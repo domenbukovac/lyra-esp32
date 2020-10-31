@@ -1,6 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-6e22592de6f21b1903376989c59791554dd26af1 refs/heads/http_client
-e0a687df778e2ee9ddb9323ca2dbec539b437960 refs/heads/master
-8b6f84889e7d9071690ee410d457881b220c4974 refs/heads/migrate-to-CMake
-aa8244dc484f40451d86c33ec1282f03bed08f5b refs/remotes/origin/master
-8b6f84889e7d9071690ee410d457881b220c4974 refs/remotes/origin/migrate-to-CMake

@@ -22,8 +22,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_nghttp.dir/nghttp2/lib/nghttp2_submit.c.obj"
   "CMakeFiles/__idf_nghttp.dir/nghttp2/lib/nghttp2_version.c.obj"
   "CMakeFiles/__idf_nghttp.dir/port/http_parser.c.obj"
-  "libnghttp.pdb"
   "libnghttp.a"
+  "libnghttp.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -8,8 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_spiffs.dir/spiffs_hydrogen.c.obj"
   "CMakeFiles/__idf_spiffs.dir/spiffs_nucleus.c.obj"
   "CMakeFiles/__idf_spiffs.dir/spiffs_vfs.c.obj"
-  "libspiffs.pdb"
   "libspiffs.a"
+  "libspiffs.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

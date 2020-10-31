@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_sdmmc.dir/sdmmc_io.c.obj"
   "CMakeFiles/__idf_sdmmc.dir/sdmmc_mmc.c.obj"
   "CMakeFiles/__idf_sdmmc.dir/sdmmc_sd.c.obj"
-  "libsdmmc.pdb"
   "libsdmmc.a"
+  "libsdmmc.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

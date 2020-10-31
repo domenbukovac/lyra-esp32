@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "flash_bootloader_args.in.in2"
   "../../flash_bootloader_args"
   "CMakeFiles/bootloader-flash"
 )

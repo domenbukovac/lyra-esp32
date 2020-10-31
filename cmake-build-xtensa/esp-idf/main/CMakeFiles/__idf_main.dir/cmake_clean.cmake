@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/__idf_main.dir/main.c.obj"
   "CMakeFiles/__idf_main.dir/nvs.c.obj"
-  "libmain.pdb"
   "libmain.a"
+  "libmain.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

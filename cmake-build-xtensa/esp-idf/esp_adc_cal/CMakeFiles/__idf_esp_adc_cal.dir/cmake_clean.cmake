@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_adc_cal.dir/esp_adc_cal.c.obj"
-  "libesp_adc_cal.pdb"
+  "CMakeFiles/__idf_esp_adc_cal.dir/esp_adc_cal_esp32.c.obj"
   "libesp_adc_cal.a"
+  "libesp_adc_cal.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

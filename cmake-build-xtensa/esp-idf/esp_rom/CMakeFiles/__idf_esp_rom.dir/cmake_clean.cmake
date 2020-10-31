@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_rom.dir/esp_rom.c.obj"
-  "libesp_rom.pdb"
+  "CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_crc.c.obj"
+  "CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_sys.c.obj"
+  "CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_uart.c.obj"
   "libesp_rom.a"
+  "libesp_rom.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,0 +1,6 @@
+source "/Users/domenbukovac/esp/esp-idf/components/app_update/Kconfig.projbuild"
+source "/Users/domenbukovac/esp/esp-idf/components/bootloader/Kconfig.projbuild"
+source "/Users/domenbukovac/esp/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "/Users/domenbukovac/esp/esp-idf/components/partition_table/Kconfig.projbuild"
+source "/Users/domenbukovac/LepusLabs/lyra-esp32/components/wifi_manager/Kconfig.projbuild"
+source "/Users/domenbukovac/LepusLabs/lyra-esp32/main/Kconfig.projbuild"

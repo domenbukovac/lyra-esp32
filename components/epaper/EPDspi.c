@@ -17,7 +17,7 @@
 #include "esp_system.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "esp_heap_alloc_caps.h"
+#include "esp_heap_caps.h"
 #include "soc/spi_reg.h"
 #include "EPDspi.h"
 
@@ -157,7 +157,7 @@ static void IRAM_ATTR SPI_send_data(uint8_t *data, uint32_t len, uint8_t rep)
 	else if (rep == 0)  _dma_send(data, len);
 	else {
 		// ==== Repeat data, more than 512 bits total ====
-		uint8_t *transbuf = pvPortMallocCaps(len, MALLOC_CAP_DMA);
+		uint8_t *transbuf = pvPortMalloc(len);
 		if (transbuf == NULL) return;
 
 		memset(transbuf, data[0], len);

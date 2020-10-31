@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../ldgen_libraries.in"
   "../../ldgen_libraries"
+  "../../ldgen_libraries.in"
   "CMakeFiles/__ldgen_output_esp32.project.ld"
   "ld/esp32.project.ld"
 )

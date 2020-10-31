@@ -4,9 +4,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj"
   "CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj"
   "CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj"
+  "CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj"
   "CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj"
-  "libesp_http_server.pdb"
   "libesp_http_server.a"
+  "libesp_http_server.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_tcpip_adapter.dir/event_handlers.c.obj"
-  "CMakeFiles/__idf_tcpip_adapter.dir/tcpip_adapter_lwip.c.obj"
-  "libtcpip_adapter.pdb"
+  "CMakeFiles/__idf_tcpip_adapter.dir/tcpip_adapter_compat.c.obj"
   "libtcpip_adapter.a"
+  "libtcpip_adapter.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

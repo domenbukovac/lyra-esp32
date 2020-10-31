@@ -30,7 +30,7 @@
 #include <stdio.h>
 #include <esp_task_wdt.h>
 
-#include "esp_heap_alloc_caps.h"
+#include "esp_heap_caps.h"
 #include "esp_tls.h"
 #include "esp_http_client.h"
 
@@ -298,11 +298,11 @@ static void initialize_display() {
     // ========  PREPARE DISPLAY INITIALIZATION  =========
     esp_err_t ret;
 
-    disp_buffer = pvPortMallocCaps(EPD_DISPLAY_WIDTH * (EPD_DISPLAY_HEIGHT / 8), MALLOC_CAP_DMA);
+    disp_buffer = pvPortMalloc(EPD_DISPLAY_WIDTH * (EPD_DISPLAY_HEIGHT / 8));
     assert(disp_buffer);
     drawBuff = disp_buffer;
 
-    gs_disp_buffer = pvPortMallocCaps(EPD_DISPLAY_WIDTH * EPD_DISPLAY_HEIGHT, MALLOC_CAP_DMA);
+    gs_disp_buffer = pvPortMalloc(EPD_DISPLAY_WIDTH * EPD_DISPLAY_HEIGHT);
     assert(gs_disp_buffer);
     gs_drawBuff = gs_disp_buffer;
 

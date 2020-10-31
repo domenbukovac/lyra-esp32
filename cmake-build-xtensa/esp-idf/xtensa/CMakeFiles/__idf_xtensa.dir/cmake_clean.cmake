@@ -2,9 +2,14 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_xtensa.dir/debug_helpers.c.obj"
   "CMakeFiles/__idf_xtensa.dir/debug_helpers_asm.S.obj"
   "CMakeFiles/__idf_xtensa.dir/eri.c.obj"
+  "CMakeFiles/__idf_xtensa.dir/esp32/trax_init.c.obj"
+  "CMakeFiles/__idf_xtensa.dir/expression_with_stack_xtensa.c.obj"
+  "CMakeFiles/__idf_xtensa.dir/expression_with_stack_xtensa_asm.S.obj"
   "CMakeFiles/__idf_xtensa.dir/trax.c.obj"
-  "libxtensa.pdb"
+  "CMakeFiles/__idf_xtensa.dir/xtensa_intr.c.obj"
+  "CMakeFiles/__idf_xtensa.dir/xtensa_intr_asm.S.obj"
   "libxtensa.a"
+  "libxtensa.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

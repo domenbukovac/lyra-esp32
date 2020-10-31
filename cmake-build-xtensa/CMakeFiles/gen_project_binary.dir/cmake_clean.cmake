@@ -1,14 +1,15 @@
 file(REMOVE_RECURSE
-  "config/sdkconfig.h"
-  "config/sdkconfig.cmake"
-  "bootloader/bootloader.elf"
-  "bootloader/bootloader.bin"
-  "bootloader/bootloader.map"
+  ".bin_timestamp"
   "Lyra.bin"
   "Lyra.map"
+  "bootloader/bootloader.bin"
+  "bootloader/bootloader.elf"
+  "bootloader/bootloader.map"
+  "config/sdkconfig.cmake"
+  "config/sdkconfig.h"
+  "flash_project_args"
   "project_elf_src.c"
   "CMakeFiles/gen_project_binary"
-  ".bin_timestamp"
 )
 
 # Per-language clean rules from dependency scanning.

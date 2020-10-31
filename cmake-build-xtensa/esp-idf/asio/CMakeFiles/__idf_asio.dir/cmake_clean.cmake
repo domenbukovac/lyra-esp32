@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/__idf_asio.dir/asio/asio/src/asio.cpp.obj"
-  "libasio.pdb"
   "libasio.a"
+  "libasio.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

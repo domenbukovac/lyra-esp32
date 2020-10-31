@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/__idf_protobuf-c.dir/protobuf-c/protobuf-c/protobuf-c.c.obj"
-  "libprotobuf-c.pdb"
   "libprotobuf-c.a"
+  "libprotobuf-c.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

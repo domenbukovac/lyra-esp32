@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/__idf_esp-tls.dir/esp_tls.c.obj"
-  "libesp-tls.pdb"
+  "CMakeFiles/__idf_esp-tls.dir/esp_tls_mbedtls.c.obj"
   "libesp-tls.a"
+  "libesp-tls.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
